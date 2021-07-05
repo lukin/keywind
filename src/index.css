@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Separate
+    ======================================================================== */
+
+  .separate {
+    @apply flex items-center text-center;
+  }
+
+  .separate::after,
+  .separate::before {
+    content: '';
+    @apply border-b border-gray-300 flex-1;
+  }
+
+  .separate:not(:empty)::after {
+    @apply ml-2;
+  }
+
+  .separate:not(:empty)::before {
+    @apply mr-2;
+  }
+}
