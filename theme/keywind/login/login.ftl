@@ -51,16 +51,16 @@
           </@inputPrimary.kw>
         </div>
         <div class="flex items-center justify-between">
-            <#if realm.rememberMe && !usernameEditDisabled??>
-              <@checkboxPrimary.kw checked=login.rememberMe?? name="rememberMe">
-                ${msg("rememberMe")}
-              </@checkboxPrimary.kw>
-            </#if>
-            <#if realm.resetPasswordAllowed>
-              <@linkPrimary.kw href=url.loginResetCredentialsUrl>
-                <span class="text-sm">${msg("doForgotPassword")}</span>
-              </@linkPrimary.kw>
-            </#if>
+          <#if realm.rememberMe && !usernameEditDisabled??>
+            <@checkboxPrimary.kw checked=login.rememberMe?? name="rememberMe">
+              ${msg("rememberMe")}
+            </@checkboxPrimary.kw>
+          </#if>
+          <#if realm.resetPasswordAllowed>
+            <@linkPrimary.kw href=url.loginResetCredentialsUrl>
+              <span class="text-sm">${msg("doForgotPassword")}</span>
+            </@linkPrimary.kw>
+          </#if>
         </div>
         <div class="pt-4">
           <@buttonPrimary.kw name="login" type="submit">
