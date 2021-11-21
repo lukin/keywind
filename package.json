@@ -1,19 +1,21 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "scripts": {
+    "build": "snowpack build",
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "alpinejs": "^3.5.1"
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",
-    "@tailwindcss/forms": "^0.3.3",
-    "@types/tailwindcss": "^2.2.1",
-    "autoprefixer": "^10.3.1",
-    "cssnano": "^5.0.7",
-    "postcss": "^8.3.6",
-    "snowpack": "^3.8.6",
-    "tailwindcss": "^2.2.7"
-  },
-  "dependencies": {
-    "alpinejs": "^3.2.3"
+    "@tailwindcss/forms": "^0.3.4",
+    "@types/tailwindcss": "^2.2.4",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.11",
+    "postcss": "^8.3.11",
+    "snowpack": "^3.8.8",
+    "tailwindcss": "^2.2.19"
   }
 }
