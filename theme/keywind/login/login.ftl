@@ -34,7 +34,7 @@
             disabled=usernameEditDisabled??
             invalid=["username", "password"]
             name="username"
-            type=realm.loginWithEmailAllowed?string("email", "text")
+            type="text"
             value=(login.username)!''
           >
             <@labelUsername.kw />
