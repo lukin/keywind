@@ -20,7 +20,7 @@
           autofocus=true
           invalid=["username"]
           name="username"
-          type=realm.loginWithEmailAllowed?string("email", "text")
+          type="text"
           value=(auth?has_content && auth.showUsername())?then(auth.attemptedUsername, '')
         >
           <@labelUsername.kw />
