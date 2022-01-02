@@ -15,7 +15,7 @@ module.exports = {
     bundle: true,
     entrypoints: ['./src/index.js'],
     minify: true,
-    target: 'es6',
+    target: 'es2017',
   },
   plugins: ['@snowpack/plugin-postcss'],
 };
