@@ -4,13 +4,14 @@
 
 <#macro kw>
   <#nested "show-username">
-  <div class="mb-4">
-    <div class="font-bold mb-2 text-center">${auth.attemptedUsername}</div>
-    <@buttonPrimary.kw component="a" href="${url.loginRestartFlowUrl}">
-      <@buttonIcon.kw>
-        <@iconExternalLink.kw />
-      </@buttonIcon.kw>
-      ${msg("restartLoginTooltip")}
-    </@buttonPrimary.kw>
+  <div class="mb-4 flex items-center justify-center">
+    <div class="font-bold text-center">${auth.attemptedUsername}</div>
+    <@buttonIcon.kw
+      component="a"
+      href="${url.loginRestartFlowUrl}"
+      title="${msg('restartLoginTooltip')}"
+    >
+      <@iconExternalLink.kw />
+    </@buttonIcon.kw>
   </div>
 </#macro>

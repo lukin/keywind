@@ -1,6 +1,6 @@
 <#macro kw component="span" rest...>
   <${component}
-    class="absolute left-0 ml-3 text-lg"
+    class="ml-3 text-lg text-primary-600"
     <#list rest as attrName, attrValue>
       ${attrName}="${attrValue}"
     </#list>
