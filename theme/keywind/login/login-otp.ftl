@@ -1,59 +1,53 @@
 <#import "template.ftl" as layout>
 <#import "components/button/primary.ftl" as buttonPrimary>
 <#import "components/input/primary.ftl" as inputPrimary>
-<#import "components/radio/primary.ftl" as radioPrimary>
 <#import "components/label/totp.ftl" as labelTotp>
 <#import "components/link/secondary.ftl" as linkSecondary>
+<#import "components/radio/primary.ftl" as radioPrimary>
 
 <@layout.registrationLayout
-  displayMessage=!messagesPerField.existsError('totp')
+  displayMessage=!messagesPerField.existsError("totp")
   ;
   section
 >
   <#if section="header">
-      ${msg("doLogIn")}
+    ${msg("doLogIn")}
   <#elseif section="form">
     <form
       action="${url.loginAction}"
-      method="post"
       class="m-0 space-y-4"
+      method="post"
     >
       <#if otpLogin.userOtpCredentials?size gt 1>
-        <div class="${properties.kcFormGroupClass!}">
-          <div class="flex flex-wrap items-center">
-            <#list otpLogin.userOtpCredentials as otpCredential>
-              <@radioPrimary.kw
-                tabIndex="${otpCredential?index}"
-                id="kc-otp-credential-${otpCredential?index}"
-                name="selectedCredentialId"
-                value="${otpCredential.id}"
-                checked=(otpCredential.id == otpLogin.selectedCredentialId)
-              >
-                ${otpCredential.userLabel}
-              </@radioPrimary.kw>
-            </#list>
-          </div>
+        <div class="flex items-center space-x-4">
+          <#list otpLogin.userOtpCredentials as otpCredential>
+            <@radioPrimary.kw
+              checked=(otpCredential.id == otpLogin.selectedCredentialId)
+              id="kw-otp-credential-${otpCredential?index}"
+              name="selectedCredentialId"
+              tabIndex="${otpCredential?index}"
+              value="${otpCredential.id}"
+            >
+              ${otpCredential.userLabel}
+            </@radioPrimary.kw>
+          </#list>
         </div>
       </#if>
-
-      <div class="py-2">
+      <div>
         <@inputPrimary.kw
           autocomplete="off"
           autofocus=true
-          invalid=["otp"]
+          invalid=["totp"]
           name="otp"
           type="text"
-          id="otp"
         >
           <@labelTotp.kw />
         </@inputPrimary.kw>
       </div>
-
-      <div class="py-2 flex flex-col items-center justify-center space-y-2">
+      <div class="pt-4">
         <@buttonPrimary.kw
           name="submitAction"
           type="submit"
-          value=msg("doLogIn")
         >
           ${msg("doLogIn")}
         </@buttonPrimary.kw>

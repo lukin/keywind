@@ -7,7 +7,9 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 ### Styled Pages
 
 - Login
+- Login Config TOTP
 - Login IDP Link Confirm
+- Login OTP
 - Login Reset Password
 - Login Update Password
 - Login Update Profile
@@ -77,9 +79,6 @@ You can inherit Keywind components in your own theme. For example, to resize the
 When you're ready to deploy your own theme, run the build command to generate a static production build.
 
 ```bash
-npm install
-npm run build
-# or
-yarn install
-yarn build
+pnpm install
+pnpm build
 ```

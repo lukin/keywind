@@ -1,17 +1,15 @@
-<#import "../button/icon.ftl" as buttonIcon >
-<#import "../button/primary.ftl" as buttonPrimary>
 <#import "../icon/external-link.ftl" as iconExternalLink>
+<#import "../link/primary.ftl" as linkPrimary>
 
 <#macro kw>
   <#nested "show-username">
-  <div class="mb-4 flex items-center justify-center">
-    <div class="font-bold text-center">${auth.attemptedUsername}</div>
-    <@buttonIcon.kw
-      component="a"
+  <div class="flex items-center justify-center mb-4 space-x-2">
+    <b>${auth.attemptedUsername}</b>
+    <@linkPrimary.kw
       href="${url.loginRestartFlowUrl}"
       title="${msg('restartLoginTooltip')}"
     >
       <@iconExternalLink.kw />
-    </@buttonIcon.kw>
+    </@linkPrimary.kw>
   </div>
 </#macro>

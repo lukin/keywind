@@ -7,8 +7,8 @@
 <#import "components/link/primary.ftl" as linkPrimary>
 
 <@layout.registrationLayout
+  displayMessage=!messagesPerField.existsError("totp", "userLabel")
   displayRequiredFields=false
-  displayMessage=!messagesPerField.existsError('totp','userLabel')
   ;
   section
 >
@@ -18,18 +18,16 @@
     <ol class="list-decimal pl-4 space-y-2">
       <li>
         <p>${msg("loginTotpStep1")}</p>
-
-        <ul class="ml-6 list-disc space-y-1">
+        <ul class="list-disc pl-6 py-2 space-y-2">
           <#list totp.policy.supportedApplications as app>
             <li>${app}</li>
           </#list>
         </ul>
       </li>
-
       <#if mode?? && mode = "manual">
-        <li class="pt-2">
+        <li>
           <p>${msg("loginTotpManualStep2")}</p>
-          <p class="font-bold text-xl">${totp.totpSecretEncoded}</p>
+          <p class="font-bold py-2 text-xl">${totp.totpSecretEncoded}</p>
         </li>
         <li>
           <@linkPrimary.kw href=totp.qrUrl>
@@ -38,8 +36,7 @@
         </li>
         <li>
           <p>${msg("loginTotpManualStep3")}</p>
-
-          <ul class="ml-6 list-disc space-y-2">
+          <ul class="list-disc pl-6 py-2 space-y-2">
             <li>${msg("loginTotpType")}: ${msg("loginTotp." + totp.policy.type)}</li>
             <li>${msg("loginTotpAlgorithm")}: ${totp.policy.getAlgorithmKey()}</li>
             <li>${msg("loginTotpDigits")}: ${totp.policy.digits}</li>
@@ -53,21 +50,18 @@
       <#else>
         <li>
           <p>${msg("loginTotpStep2")}</p>
-
-          <img class="text-center mx-auto" src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode"><br/>
-          <p>
-            <@linkPrimary.kw href=totp.manualUrl>
-              ${msg("loginTotpUnableToScan")}
-            </@linkPrimary.kw>
-          </p>
+          <img
+            alt="Figure: Barcode"
+            class="mx-auto"
+            src="data:image/png;base64, ${totp.totpSecretQrCode}"
+          >
+          <@linkPrimary.kw href=totp.manualUrl>
+            ${msg("loginTotpUnableToScan")}
+          </@linkPrimary.kw>
         </li>
       </#if>
-      <li>
-        <p>${msg("loginTotpStep3")}</p>
-      </li>
-      <li>
-        <p>${msg("loginTotpStep3DeviceName")}</p>
-      </li>
+      <li>${msg("loginTotpStep3")}</li>
+      <li>${msg("loginTotpStep3DeviceName")}</li>
     </ol>
     <form action="${url.loginAction}" class="m-0 space-y-4" method="post">
       <div>
@@ -76,50 +70,40 @@
           autofocus=true
           invalid=["totp"]
           name="totp"
+          required=false
           type="text"
-          id="totp"
         >
           <@labelTotp.kw />
         </@inputPrimary.kw>
-        <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
-        <#if mode??><input type="hidden" id="mode" name="mode" value="${mode}"/></#if>
+        <input name="totpSecret" type="hidden" value="${totp.totpSecret}">
+        <#if mode??>
+          <input name="mode" type="hidden" value="${mode}">
+        </#if>
       </div>
-
       <div>
         <@inputPrimary.kw
           autocomplete="off"
-          autofocus=true
           invalid=["userLabel"]
           name="userLabel"
+          required=false
           type="text"
-          id="totp"
         >
           <@labelUserDevice.kw />
         </@inputPrimary.kw>
       </div>
-
       <#if isAppInitiatedAction??>
-        <div class="py-2 flex flex-col space-y-1">
-          <@buttonPrimary.kw
-            type="submit"
-            value=msg("doSubmit")
-          >
+        <div class="flex flex-col pt-4 space-y-2">
+          <@buttonPrimary.kw type="submit">
             ${msg("doSubmit")}
           </@buttonPrimary.kw>
 
-          <@buttonSecondary.kw
-            type="submit"
-            value="true"
-          >
+          <@buttonSecondary.kw name="cancel-aia" type="submit">
             ${msg("doCancel")}
           </@buttonSecondary.kw>
         </div>
       <#else>
-        <div class="py-2">
-          <@buttonPrimary.kw
-            type="submit"
-            value=msg("doSubmit")
-          >
+        <div class="pt-4">
+          <@buttonPrimary.kw type="submit">
             ${msg("doSubmit")}
           </@buttonPrimary.kw>
         </div>
