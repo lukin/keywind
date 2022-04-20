@@ -23,6 +23,6 @@
           </div>
         </#if>
       </#list>
-    </ul>
+    </div>
   </div>
 </#macro>
