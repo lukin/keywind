@@ -76,7 +76,7 @@
     <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
       <div class="text-center">
         ${msg("noAccount")}
-        <@linkPrimary.kw href=url.registrationUrl>
+        <@linkPrimary.kw href=url.registrationUrl flexclass="">
           ${msg("doRegister")}
         </@linkPrimary.kw>
       </div>

@@ -9,7 +9,6 @@
         data-provider="${provider.alias}"
         href="${provider.loginUrl}"
         title="${provider.displayName!}"
-        type="button"
       >
         <#if provider.iconClasses?has_content>
           <i class="${provider.iconClasses!}"></i>
