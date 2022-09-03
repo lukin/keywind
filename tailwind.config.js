@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 /**
- * @type { import('@types/tailwindcss/tailwind-config').TailwindConfig }
+ * @type { import('tailwindcss/types').Config }
  */
 module.exports = {
   content: ['./theme/**/*.ftl'],
