@@ -64,7 +64,6 @@
           <@inputPrimary.kw
             autocomplete="new-password"
             invalid=["password", "password-confirm"]
-            message=false
             name="password"
             type="password"
           >
