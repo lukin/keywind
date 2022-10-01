@@ -9,7 +9,7 @@
     <p>${msg("logoutConfirmHeader")}</p>
     <form action="${url.logoutConfirmAction}" class="m-0 space-y-4" method="post">
       <input name="session_code" type="hidden" value="${logoutConfirm.code}">
-      <@buttonPrimary.kw type="submit">
+      <@buttonPrimary.kw name="confirmLogout" type="submit" value="Logout">
         ${msg("doLogout")}
       </@buttonPrimary.kw>
     </form>
