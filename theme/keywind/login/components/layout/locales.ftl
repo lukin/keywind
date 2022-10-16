@@ -11,6 +11,7 @@
     </@linkSecondary.kw>
     <div
       class="absolute bg-white bottom-0 -left-4 max-h-80 mb-6 overflow-y-scroll rounded-lg shadow-lg"
+      x-cloak
       x-show="open"
       @click.away="open = false"
     >

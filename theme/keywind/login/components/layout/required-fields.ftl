@@ -1,3 +1,3 @@
 <#macro kw>
-  <div class="text-gray-600 text-sm">* ${msg("requiredFields")}</div>
+  <div class="text-secondary-600 text-sm">* ${msg("requiredFields")}</div>
 </#macro>

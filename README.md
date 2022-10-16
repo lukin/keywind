@@ -16,12 +16,21 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - Logout Confirm
 - Register
 
-### Social Media Icons
+### Identity Provider Icons
 
+- Bitbucket
 - Facebook
 - GitHub
+- GitLab
 - Google
+- Instagram
+- LinkedIn
 - Microsoft
+- OpenID
+- Red Hat OpenShift
+- PayPal
+- Stack Overflow
+- Twitter
 
 ## Installation
 
