@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer components {
+  /* Alpine.js
+    ======================================================================== */
+
+  [x-cloak] {
+    @apply hidden !important;
+  }
+
   /* Separate
     ======================================================================== */
 
@@ -13,7 +20,7 @@
   .separate::after,
   .separate::before {
     content: '';
-    @apply border-b border-gray-300 flex-1;
+    @apply border-b border-secondary-200 flex-1;
   }
 
   .separate:not(:empty)::after {

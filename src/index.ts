@@ -1,6 +1,6 @@
-import Alpine from 'alpinejs';
-
 import './index.css';
+
+import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
 
