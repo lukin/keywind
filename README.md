@@ -11,11 +11,17 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - Login IDP Link Confirm
 - Login OAuth Grant
 - Login OTP
+- Login Recovery Authn Code Config
+- Login Recovery Authn Code Input
 - Login Reset Password
 - Login Update Password
 - Login Update Profile
 - Logout Confirm
 - Register
+- Select Authenticator
+- WebAuthn Authenticate
+- WebAuthn Error
+- WebAuthn Register
 
 ### Identity Provider Icons
 
