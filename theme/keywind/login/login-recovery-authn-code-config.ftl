@@ -1,6 +1,7 @@
 <#import "template.ftl" as layout>
 <#import "components/button/primary.ftl" as buttonPrimary>
 <#import "components/button/secondary.ftl" as buttonSecondary>
+<#import "components/button/secondary-small.ftl" as buttonSecondarySmall>
 <#import "components/checkbox/primary.ftl" as checkboxPrimary>
 
 <@layout.registrationLayout; section>
@@ -23,15 +24,14 @@
 
     <!-- actions -->
     <div class="flex items-stretch space-x-4 mb-4">
-        <button id="printRecoveryCodes" type="button" class="bg-secondary-100 flex justify-center px-2 py-1 relative rounded text-xs text-secondary-600 w-full focus:outline-none focus:ring-2 focus:ring-secondary-600 focus:ring-offset-2 hover:bg-secondary-200 hover:text-secondary-900">
-            ${kcSanitize(msg("recovery-codes-print"))}
-        </button>
-        <button id="downloadRecoveryCodes" type="button" class="bg-secondary-100 flex justify-center px-2 py-1 relative rounded text-xs text-secondary-600 w-full focus:outline-none focus:ring-2 focus:ring-secondary-600 focus:ring-offset-2 hover:bg-secondary-200 hover:text-secondary-900">
-            ${kcSanitize(msg("recovery-codes-download"))}
-        </button>
-        <button id="copyRecoveryCodes" type="button" class="bg-secondary-100 flex justify-center px-2 py-1 relative rounded text-xs text-secondary-600 w-full focus:outline-none focus:ring-2 focus:ring-secondary-600 focus:ring-offset-2 hover:bg-secondary-200 hover:text-secondary-900">
-            ${kcSanitize(msg("recovery-codes-copy"))}
-        </button>
+        <@buttonSecondarySmall.kw type="button" id="printRecoveryCodes">
+          ${kcSanitize(msg("recovery-codes-print"))}
+        <@buttonSecondarySmall.kw type="button" id="downloadRecoveryCodes">
+          ${kcSanitize(msg("recovery-codes-download"))}
+        </@buttonSecondarySmall.kw>
+        <@buttonSecondarySmall.kw type="button" id="copyRecoveryCodes">
+          ${kcSanitize(msg("recovery-codes-copy"))}
+        </@buttonSecondarySmall.kw>
     </div>
 
     <form action="${url.loginAction}" class="m-0 space-y-4m" method="post">
