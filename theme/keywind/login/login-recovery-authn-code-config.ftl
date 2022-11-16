@@ -26,6 +26,7 @@
     <div class="flex items-stretch space-x-4 mb-4">
         <@buttonSecondarySmall.kw type="button" id="printRecoveryCodes">
           ${kcSanitize(msg("recovery-codes-print"))}
+        </@buttonSecondarySmall.kw>
         <@buttonSecondarySmall.kw type="button" id="downloadRecoveryCodes">
           ${kcSanitize(msg("recovery-codes-download"))}
         </@buttonSecondarySmall.kw>
