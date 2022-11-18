@@ -18,7 +18,6 @@
         </div>
     </form>
 
-    <script type="text/javascript" src="${url.resourcesCommonPath}/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="${url.resourcesPath}/js/base64url.js"></script>
     <script type="text/javascript">
 
@@ -26,8 +25,8 @@
 
             // Check if WebAuthn is supported by this browser
             if (!window.PublicKeyCredential) {
-                jQuery("#error").val("${msg("webauthn-unsupported-browser-text")?no_esc}");
-                jQuery("#register").submit();
+                document.querySelector("#error").value = "${msg("webauthn-unsupported-browser-text")?no_esc}";
+                document.querySelector("#register").submit();
                 return;
             }
 
@@ -100,14 +99,14 @@
                     let attestationObject = result.response.attestationObject;
                     let publicKeyCredentialId = result.rawId;
 
-                    jQuery("#clientDataJSON").val(base64url.encode(new Uint8Array(clientDataJSON), {pad: false}));
-                    jQuery("#attestationObject").val(base64url.encode(new Uint8Array(attestationObject), {pad: false}));
-                    jQuery("#publicKeyCredentialId").val(base64url.encode(new Uint8Array(publicKeyCredentialId), {pad: false}));
+                    document.querySelector("#clientDataJSON").value = base64url.encode(new Uint8Array(clientDataJSON), {pad: false});
+                    document.querySelector("#attestationObject").value = base64url.encode(new Uint8Array(attestationObject), {pad: false});
+                    document.querySelector("#publicKeyCredentialId").value = base64url.encode(new Uint8Array(publicKeyCredentialId), {pad: false});
 
                     if (typeof result.response.getTransports === "function") {
                         let transports = result.response.getTransports();
                         if (transports) {
-                            jQuery("#transports").val(getTransportsAsString(transports));
+                            document.querySelector("#transports").value = getTransportsAsString(transports);
                         }
                     } else {
                         console.log("Your browser is not able to recognize supported transport media for the authenticator.");
@@ -116,14 +115,14 @@
                     let initLabel = "WebAuthn Authenticator (Default Label)";
                     let labelResult = window.prompt("Please input your registered authenticator's label", initLabel);
                     if (labelResult === null) labelResult = initLabel;
-                    jQuery("#authenticatorLabel").val(labelResult);
+                    document.querySelector("#authenticatorLabel").value = labelResult;
 
-                    jQuery("#register").submit();
+                    document.querySelector("#register").submit();
 
                 })
                 .catch(function (err) {
-                    jQuery("#error").val(err);
-                    jQuery("#register").submit();
+                    document.querySelector("#error").value = err;
+                    document.querySelector("#register").submit();
                 });
         }
 
