@@ -5,7 +5,7 @@
 <@layout.registrationLayout; section>
     <#if section="header">
         <#if client.attributes.logoUri??>
-            <img class="mb-2 mx-auto" src="${client.attributes.logoUri}"/>
+            <img class="mb-4 mx-auto" src="${client.attributes.logoUri}"/>
         </#if>
         <p>
         <#if client.name?has_content>
