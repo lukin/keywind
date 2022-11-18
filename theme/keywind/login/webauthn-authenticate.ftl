@@ -51,7 +51,6 @@
         </@buttonPrimary.kw>
     </div>
 
-<script type="text/javascript" src="${url.resourcesCommonPath}/node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="${url.resourcesPath}/js/base64url.js"></script>
 <script type="text/javascript">
     function webAuthnAuthenticate() {
@@ -85,8 +84,8 @@
 function doAuthenticate(allowCredentials) {
     // Check if WebAuthn is supported by this browser
     if (!window.PublicKeyCredential) {
-        jQuery("#error").val("${msg("webauthn-unsupported-browser-text")?no_esc}");
-        jQuery("#webauth").submit();
+        document.querySelector("#error").value = "${msg("webauthn-unsupported-browser-text")?no_esc}";
+        document.querySelector("#webauth").submit();
         return;
     }
     let challenge = "${challenge}";
@@ -108,18 +107,18 @@ function doAuthenticate(allowCredentials) {
             let clientDataJSON = result.response.clientDataJSON;
             let authenticatorData = result.response.authenticatorData;
             let signature = result.response.signature;
-            jQuery("#clientDataJSON").val(base64url.encode(new Uint8Array(clientDataJSON), { pad: false }));
-            jQuery("#authenticatorData").val(base64url.encode(new Uint8Array(authenticatorData), { pad: false }));
-            jQuery("#signature").val(base64url.encode(new Uint8Array(signature), { pad: false }));
-            jQuery("#credentialId").val(result.id);
+            document.querySelector("#clientDataJSON").value = base64url.encode(new Uint8Array(clientDataJSON), { pad: false });
+            document.querySelector("#authenticatorData").value = base64url.encode(new Uint8Array(authenticatorData), { pad: false });
+            document.querySelector("#signature").value = base64url.encode(new Uint8Array(signature), { pad: false });
+            document.querySelector("#credentialId").value = result.id;
             if(result.response.userHandle) {
-                jQuery("#userHandle").val(base64url.encode(new Uint8Array(result.response.userHandle), { pad: false }));
+                document.querySelector("#userHandle").value = base64url.encode(new Uint8Array(result.response.userHandle), { pad: false });
             }
-            jQuery("#webauth").submit();
+            document.querySelector("#webauth").submit();
         })
         .catch((err) => {
-            jQuery("#error").val(err);
-            jQuery("#webauth").submit();
+            document.querySelector("#error").value = err;
+            document.querySelector("#webauth").submit();
         })
     ;
 }
