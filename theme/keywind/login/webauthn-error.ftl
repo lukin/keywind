@@ -15,7 +15,7 @@
             }
         </script>
 
-        <form action="${url.loginAction}" method="post" class="m-0">
+        <form id="kc-error-credential-form" action="${url.loginAction}" method="post" class="m-0">
             <input type="hidden" id="executionValue" name="authenticationExecution"/>
             <input type="hidden" id="isSetRetry" name="isSetRetry"/>
         </form>
