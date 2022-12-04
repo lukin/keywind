@@ -9,6 +9,7 @@
 <#import "./provider/oidc.ftl" as oidcIcon>
 <#import "./provider/openshift.ftl" as openshiftIcon>
 <#import "./provider/paypal.ftl" as paypalIcon>
+<#import "./provider/slack.ftl" as slackIcon>
 <#import "./provider/stackoverflow.ftl" as stackoverflowIcon>
 <#import "./provider/twitter.ftl" as twitterIcon>
 
@@ -58,6 +59,10 @@
 
 <#macro paypal>
   <@paypalIcon.kw />
+</#macro>
+
+<#macro slack>
+  <@slackIcon.kw />
 </#macro>
 
 <#macro stackoverflow>
