@@ -16,27 +16,27 @@
     ${msg("loginTotpTitle")}
   <#elseif section="form">
     <ol class="list-decimal pl-4 space-y-2">
-      <li>
+      <li class="space-y-2">
         <p>${msg("loginTotpStep1")}</p>
-        <ul class="list-disc pl-6 py-2 space-y-2">
+        <ul class="list-disc pl-4">
           <#list totp.supportedApplications as app>
             <li>${msg(app)}</li>
           </#list>
         </ul>
       </li>
       <#if mode?? && mode = "manual">
-        <li>
+        <li class="space-y-2">
           <p>${msg("loginTotpManualStep2")}</p>
-          <p class="font-bold py-2 text-xl">${totp.totpSecretEncoded}</p>
+          <p class="font-bold text-xl">${totp.totpSecretEncoded}</p>
         </li>
         <li>
           <@linkPrimary.kw href=totp.qrUrl>
             ${msg("loginTotpScanBarcode")}
           </@linkPrimary.kw>
         </li>
-        <li>
+        <li class="space-y-2">
           <p>${msg("loginTotpManualStep3")}</p>
-          <ul class="list-disc pl-6 py-2 space-y-2">
+          <ul class="list-disc pl-4">
             <li>${msg("loginTotpType")}: ${msg("loginTotp." + totp.policy.type)}</li>
             <li>${msg("loginTotpAlgorithm")}: ${totp.policy.getAlgorithmKey()}</li>
             <li>${msg("loginTotpDigits")}: ${totp.policy.digits}</li>
@@ -96,7 +96,6 @@
           <@buttonPrimary.kw type="submit">
             ${msg("doSubmit")}
           </@buttonPrimary.kw>
-
           <@buttonSecondary.kw name="cancel-aia" type="submit">
             ${msg("doCancel")}
           </@buttonSecondary.kw>
