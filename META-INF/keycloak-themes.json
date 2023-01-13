@@ -1,8 +1,9 @@
 {
   "themes": [
     {
-      "name": "keywind",
+      "name": "newtemp",
       "types": ["login"]
     }
   ]
 }
+
