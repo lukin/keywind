@@ -1,6 +1,7 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/button/secondary.ftl" as buttonSecondary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
+<#import "components/atoms/form.ftl" as form>
 
 <@layout.registrationLayout; section>
   <#if section="header">
@@ -46,16 +47,16 @@
         </#if>
       </h3>
     </#if>
-    <form action="${url.oauthAction}" class="m-0 space-y-4" method="POST">
+    <@form.kw action=url.oauthAction method="post">
       <input name="code" type="hidden" value="${oauth.code}">
-      <div class="flex flex-col pt-4 space-y-2">
-        <@buttonPrimary.kw name="accept" type="submit">
+      <@buttonGroup.kw>
+        <@button.kw color="primary" name="accept" type="submit">
           ${msg("doYes")}
-        </@buttonPrimary.kw>
-        <@buttonSecondary.kw name="cancel" type="submit">
+        </@button.kw>
+        <@button.kw color="secondary" name="cancel" type="submit">
           ${msg("doNo")}
-        </@buttonSecondary.kw>
-      </div>
-    </form>
+        </@button.kw>
+      </@buttonGroup.kw>
+    </@form.kw>
   </#if>
 </@layout.registrationLayout>

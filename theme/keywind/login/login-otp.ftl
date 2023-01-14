@@ -1,9 +1,12 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/input/primary.ftl" as inputPrimary>
-<#import "components/label/totp.ftl" as labelTotp>
-<#import "components/link/secondary.ftl" as linkSecondary>
-<#import "components/radio/primary.ftl" as radioPrimary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/input.ftl" as input>
+<#import "components/atoms/radio.ftl" as radio>
+<#import "features/labels/totp.ftl" as totpLabel>
+
+<#assign totpLabel><@totpLabel.kw /></#assign>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("totp")
@@ -13,45 +16,35 @@
   <#if section="header">
     ${msg("doLogIn")}
   <#elseif section="form">
-    <form
-      action="${url.loginAction}"
-      class="m-0 space-y-4"
-      method="post"
-    >
+    <@form.kw action=url.loginAction method="post">
       <#if otpLogin.userOtpCredentials?size gt 1>
         <div class="flex items-center space-x-4">
           <#list otpLogin.userOtpCredentials as otpCredential>
-            <@radioPrimary.kw
+            <@radio.kw
               checked=(otpCredential.id == otpLogin.selectedCredentialId)
               id="kw-otp-credential-${otpCredential?index}"
+              label=otpCredential.userLabel
               name="selectedCredentialId"
-              tabIndex="${otpCredential?index}"
-              value="${otpCredential.id}"
-            >
-              ${otpCredential.userLabel}
-            </@radioPrimary.kw>
+              tabindex=otpCredential?index
+              value=otpCredential.id
+            />
           </#list>
         </div>
       </#if>
-      <div>
-        <@inputPrimary.kw
-          autocomplete="off"
-          autofocus=true
-          invalid=["totp"]
-          name="otp"
-          type="text"
-        >
-          <@labelTotp.kw />
-        </@inputPrimary.kw>
-      </div>
-      <div class="pt-4">
-        <@buttonPrimary.kw
-          name="submitAction"
-          type="submit"
-        >
+      <@input.kw
+        autocomplete="off"
+        autofocus=true
+        invalid=messagesPerField.existsError("totp")
+        label=totpLabel
+        message=kcSanitize(messagesPerField.get("totp"))
+        name="otp"
+        type="text"
+      />
+      <@buttonGroup.kw>
+        <@button.kw color="primary" name="submitAction" type="submit">
           ${msg("doLogIn")}
-        </@buttonPrimary.kw>
-      </div>
-    </form>
+        </@button.kw>
+      </@buttonGroup.kw>
+    </@form.kw>
   </#if>
 </@layout.registrationLayout>
