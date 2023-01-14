@@ -1,23 +1,24 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/link/secondary.ftl" as linkSecondary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/link.ftl" as link>
 
 <@layout.registrationLayout; section>
-  <#if section = "header">
+  <#if section="header">
     ${msg("logoutConfirmTitle")}
-  <#elseif section = "form">
+  <#elseif section="form">
     <p>${msg("logoutConfirmHeader")}</p>
-    <form action="${url.logoutConfirmAction}" class="m-0 space-y-4" method="post">
+    <@form.kw action=url.logoutConfirmAction method="post">
       <input name="session_code" type="hidden" value="${logoutConfirm.code}">
-      <@buttonPrimary.kw name="confirmLogout" type="submit" value="${msg('doLogout')}">
+      <@button.kw color="primary" name="confirmLogout" type="submit" value=msg('doLogout')>
         ${msg("doLogout")}
-      </@buttonPrimary.kw>
-    </form>
+      </@button.kw>
+    </@form.kw>
     <#if !logoutConfirm.skipLink>
       <#if (client.baseUrl)?has_content>
-        <@linkSecondary.kw href=client.baseUrl>
-          <span class="text-sm">${kcSanitize(msg("backToApplication"))?no_esc}</span>
-        </@linkSecondary.kw>
+        <@link.kw color="secondary" href=client.baseUrl size="small">
+          ${kcSanitize(msg("backToApplication"))?no_esc}
+        </@link.kw>
       </#if>
     </#if>
   </#if>

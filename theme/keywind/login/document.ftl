@@ -1,4 +1,4 @@
-<#macro kw>
+<#macro kw script="">
   <title>${msg("loginTitle", (realm.displayName!""))}</title>
 
   <meta charset="utf-8" />
@@ -23,9 +23,13 @@
     </#list>
   </#if>
 
+  <#if script?has_content>
+    <script defer src="${url.resourcesPath}/${script}" type="module"></script>
+  </#if>
+
   <#if properties.scripts?has_content>
     <#list properties.scripts?split(" ") as script>
-      <script defer src="${url.resourcesPath}/${script}" type="text/javascript"></script>
+      <script defer src="${url.resourcesPath}/${script}" type="module"></script>
     </#list>
   </#if>
 </#macro>
