@@ -1,26 +1,26 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/input/primary.ftl" as inputPrimary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/input.ftl" as input>
 
 <@layout.registrationLayout; section>
-<#if section="header">
-    ${kcSanitize(msg("auth-recovery-code-header"))}
-<#elseif section = "form">
-    <form class="m-0 space-y-4" action="${url.loginAction}" method="post">
-        <@inputPrimary.kw
-          autocomplete="off"
-          autofocus=true
-          invalid=["firstName"]
-          name="recoveryCodeInput"
-          type="text"
-          value=(register.formData.firstName)!''
-        >
-          ${msg("auth-recovery-code-prompt", recoveryAuthnCodesInputBean.codeNumber?c)}
-        </@inputPrimary.kw>
-
-        <@buttonPrimary.kw type="submit" name="login">
-          ${kcSanitize(msg("doLogIn"))}
-        </@buttonPrimary.kw>
-    </form>
-</#if>
+  <#if section="header">
+    ${msg("auth-recovery-code-header")}
+  <#elseif section="form">
+    <@form.kw action=url.loginAction method="post">
+      <@input.kw
+        autocomplete="off"
+        autofocus=true
+        label=msg("auth-recovery-code-prompt", recoveryAuthnCodesInputBean.codeNumber?c)
+        name="recoveryCodeInput"
+        type="text"
+      />
+      <@buttonGroup.kw>
+        <@button.kw color="primary" name="login" type="submit">
+          ${msg("doLogIn")}
+        </@button.kw>
+      </@buttonGroup.kw>
+    </@form.kw>
+  </#if>
 </@layout.registrationLayout>
