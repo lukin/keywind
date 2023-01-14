@@ -1,10 +1,14 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/button/secondary.ftl" as buttonSecondary>
-<#import "components/input/primary.ftl" as inputPrimary>
-<#import "components/label/totp.ftl" as labelTotp>
-<#import "components/label/userdevice.ftl" as labelUserDevice>
-<#import "components/link/primary.ftl" as linkPrimary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/input.ftl" as input>
+<#import "components/atoms/link.ftl" as link>
+<#import "features/labels/totp.ftl" as totpLabel>
+<#import "features/labels/totp-device.ftl" as totpDeviceLabel>
+
+<#assign totpLabel><@totpLabel.kw /></#assign>
+<#assign totpDeviceLabel><@totpDeviceLabel.kw /></#assign>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("totp", "userLabel")
@@ -16,33 +20,33 @@
     ${msg("loginTotpTitle")}
   <#elseif section="form">
     <ol class="list-decimal pl-4 space-y-2">
-      <li>
+      <li class="space-y-2">
         <p>${msg("loginTotpStep1")}</p>
-        <ul class="list-disc pl-6 py-2 space-y-2">
-          <#list totp.policy.supportedApplications as app>
-            <li>${app}</li>
+        <ul class="list-disc pl-4">
+          <#list totp.supportedApplications as app>
+            <li>${msg(app)}</li>
           </#list>
         </ul>
       </li>
-      <#if mode?? && mode = "manual">
+      <#if mode?? && mode="manual">
         <li>
           <p>${msg("loginTotpManualStep2")}</p>
-          <p class="font-bold py-2 text-xl">${totp.totpSecretEncoded}</p>
+          <p class="font-bold text-xl">${totp.totpSecretEncoded}</p>
         </li>
         <li>
-          <@linkPrimary.kw href=totp.qrUrl>
+          <@link.kw color="primary" href=totp.qrUrl>
             ${msg("loginTotpScanBarcode")}
-          </@linkPrimary.kw>
+          </@link.kw>
         </li>
-        <li>
+        <li class="space-y-2">
           <p>${msg("loginTotpManualStep3")}</p>
-          <ul class="list-disc pl-6 py-2 space-y-2">
+          <ul class="list-disc pl-4">
             <li>${msg("loginTotpType")}: ${msg("loginTotp." + totp.policy.type)}</li>
             <li>${msg("loginTotpAlgorithm")}: ${totp.policy.getAlgorithmKey()}</li>
             <li>${msg("loginTotpDigits")}: ${totp.policy.digits}</li>
-            <#if totp.policy.type = "totp">
+            <#if totp.policy.type="totp">
               <li>${msg("loginTotpInterval")}: ${totp.policy.period}</li>
-            <#elseif totp.policy.type = "hotp">
+            <#elseif totp.policy.type="hotp">
               <li>${msg("loginTotpCounter")}: ${totp.policy.initialCounter}</li>
             </#if>
           </ul>
@@ -55,59 +59,52 @@
             class="mx-auto"
             src="data:image/png;base64, ${totp.totpSecretQrCode}"
           >
-          <@linkPrimary.kw href=totp.manualUrl>
+          <@link.kw color="primary" href=totp.manualUrl>
             ${msg("loginTotpUnableToScan")}
-          </@linkPrimary.kw>
+          </@link.kw>
         </li>
       </#if>
       <li>${msg("loginTotpStep3")}</li>
       <li>${msg("loginTotpStep3DeviceName")}</li>
     </ol>
-    <form action="${url.loginAction}" class="m-0 space-y-4" method="post">
-      <div>
-        <@inputPrimary.kw
-          autocomplete="off"
-          autofocus=true
-          invalid=["totp"]
-          name="totp"
-          required=false
-          type="text"
-        >
-          <@labelTotp.kw />
-        </@inputPrimary.kw>
-        <input name="totpSecret" type="hidden" value="${totp.totpSecret}">
-        <#if mode??>
-          <input name="mode" type="hidden" value="${mode}">
-        </#if>
-      </div>
-      <div>
-        <@inputPrimary.kw
-          autocomplete="off"
-          invalid=["userLabel"]
-          name="userLabel"
-          required=false
-          type="text"
-        >
-          <@labelUserDevice.kw />
-        </@inputPrimary.kw>
-      </div>
-      <#if isAppInitiatedAction??>
-        <div class="flex flex-col pt-4 space-y-2">
-          <@buttonPrimary.kw type="submit">
-            ${msg("doSubmit")}
-          </@buttonPrimary.kw>
-
-          <@buttonSecondary.kw name="cancel-aia" type="submit">
-            ${msg("doCancel")}
-          </@buttonSecondary.kw>
-        </div>
-      <#else>
-        <div class="pt-4">
-          <@buttonPrimary.kw type="submit">
-            ${msg("doSubmit")}
-          </@buttonPrimary.kw>
-        </div>
+    <@form.kw action=url.loginAction method="post">
+      <input name="totpSecret" type="hidden" value="${totp.totpSecret}">
+      <#if mode??>
+        <input name="mode" type="hidden" value="${mode}">
       </#if>
-    </form>
+      <@input.kw
+        autocomplete="off"
+        autofocus=true
+        invalid=messagesPerField.existsError("totp")
+        label=totpLabel
+        message=kcSanitize(messagesPerField.get("totp"))
+        name="totp"
+        required=false
+        type="text"
+      />
+      <@input.kw
+        autocomplete="off"
+        invalid=messagesPerField.existsError("userLabel")
+        label=totpDeviceLabel
+        message=kcSanitize(messagesPerField.get("userLabel"))
+        name="userLabel"
+        required=false
+        type="text"
+      />
+      <@buttonGroup.kw>
+        <#if isAppInitiatedAction??>
+          <@button.kw color="primary" type="submit">
+            ${msg("doSubmit")}
+          </@button.kw>
+          <@button.kw color="secondary" name="cancel-aia" type="submit" value="true">
+            ${msg("doCancel")}
+          </@button.kw>
+        <#else>
+          <@button.kw color="primary" type="submit">
+            ${msg("doSubmit")}
+          </@button.kw>
+        </#if>
+      </@buttonGroup.kw>
+    </@form.kw>
   </#if>
 </@layout.registrationLayout>
