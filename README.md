@@ -45,7 +45,7 @@ Keywind has been designed with component-based architecture from the start, and 
 parent=keywind
 ```
 
-4. Brand and customize components with [FreeMaker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
+4. Brand and customize components with [FreeMarker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
 
 ## Customization
 
