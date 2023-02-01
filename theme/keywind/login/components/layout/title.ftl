@@ -1,5 +1,5 @@
 <#macro kw>
   <div class="font-bold text-center text-2xl">
-    ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
+					<img class="h-12 w-auto" src="https://www.app.trysafe.co/static/media/login-logo.d3a62b41.png" alt="" />
   </div>
 </#macro>
