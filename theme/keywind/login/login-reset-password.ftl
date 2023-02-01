@@ -33,7 +33,7 @@
       </div>
     </form>
   <#elseif section="info">
-    ${msg("emailInstruction")}
+    ${msg("Check your email for password reset link")}
   <#elseif section="nav">
     <@linkSecondary.kw href=url.loginUrl>
       <span class="text-sm">${kcSanitize(msg("backToLogin"))?no_esc}</span>
