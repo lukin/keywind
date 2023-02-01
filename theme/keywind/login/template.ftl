@@ -28,9 +28,7 @@
       <@container.kw>
         <@card.kw>
           <@cardHeader.kw>
-          <div class="flex justify-center">
             <@title.kw />
-            <div>
             <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
               <@subtitle.kw>
                 <#nested "header">
