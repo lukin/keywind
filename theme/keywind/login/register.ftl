@@ -14,29 +14,6 @@
     <form action="${url.registrationAction}" class="m-0 space-y-4" method="post">
       <div>
         <@inputPrimary.kw
-          autocomplete="given-name"
-          autofocus=true
-          invalid=["firstName"]
-          name="firstName"
-          type="text"
-          value=(register.formData.firstName)!''
-        >
-          ${msg("firstName")}
-        </@inputPrimary.kw>
-      </div>
-      <div>
-        <@inputPrimary.kw
-          autocomplete="family-name"
-          invalid=["lastName"]
-          name="lastName"
-          type="text"
-          value=(register.formData.lastName)!''
-        >
-          ${msg("lastName")}
-        </@inputPrimary.kw>
-      </div>
-      <div>
-        <@inputPrimary.kw
           autocomplete="email"
           invalid=["email"]
           name="email"
