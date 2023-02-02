@@ -9,6 +9,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - Login
 - Login Config TOTP
 - Login IDP Link Confirm
+- Login OAuth Grant
 - Login OTP
 - Login Reset Password
 - Login Update Password
@@ -44,16 +45,17 @@ Keywind has been designed with component-based architecture from the start, and 
 parent=keywind
 ```
 
-4. Brand and customize components with [FreeMaker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
+4. Brand and customize components with [FreeMarker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
 
 ## Customization
 
 ### Theme
 
-When you do need to customize a palette, you can configure your colors under the `colors` key in the `theme` section of `tailwind.config.js` file:
+When you do need to customize a palette, you can configure your colors under the `colors` key in the `theme` section of Tailwind config file:
+
+`tailwind.config.js`
 
 ```js
-// tailwind.config.js
 module.exports = {
   theme: {
     extend: {
@@ -69,18 +71,15 @@ Read more about Tailwind CSS configuration in the [documentation](https://tailwi
 
 ### Components
 
-You can inherit Keywind components in your own theme. For example, to resize the primary button you should create a styled `theme/mytheme/components/button/primary.ftl` file:
+You can update Keywind components in your own child theme. For example, create a copy of the `body` component and change the background:
+
+`theme/mytheme/login/components/atoms/body.ftl`
 
 ```
-<#macro kw component="button" rest...>
-  <${component}
-    class="bg-primary-600 flex justify-center px-6 py-3 relative rounded-lg text-md text-white w-full focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 hover:bg-primary-700"
-    <#list rest as attrName, attrValue>
-      ${attrName}="${attrValue}"
-    </#list>
-  >
+<#macro kw>
+  <body class="bg-primary-100">
     <#nested>
-  </${component}>
+  </body>
 </#macro>
 ```
 

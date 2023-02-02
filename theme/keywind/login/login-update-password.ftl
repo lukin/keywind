@@ -1,6 +1,9 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/input/primary.ftl" as inputPrimary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
+<#import "components/atoms/checkbox.ftl" as checkbox>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/input.ftl" as input>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("password", "password-confirm")
@@ -10,7 +13,7 @@
   <#if section="header">
     ${msg("updatePasswordTitle")}
   <#elseif section="form">
-    <form action="${url.loginAction}" class="m-0 space-y-4" method="post">
+    <@form.kw action=url.loginAction method="post">
       <input
         autocomplete="username"
         name="username"
@@ -18,36 +21,44 @@
         value="${username}"
       >
       <input autocomplete="current-password" name="password" type="hidden">
-      <div>
-        <@inputPrimary.kw
-          autocomplete="new-password"
-          autofocus=true
-          invalid=["password", "password-confirm"]
-          message=false
-          name="password-new"
-          type="password"
-        >
-          ${msg("passwordNew")}
-        </@inputPrimary.kw>
-      </div>
-      <div>
-        <@inputPrimary.kw
-          autocomplete="new-password"
-          invalid=["password-confirm"]
-          name="password-confirm"
-          type="password"
-        >
-          ${msg("passwordConfirm")}
-        </@inputPrimary.kw>
-      </div>
-
-      <#-- TODO isAppInitiatedAction -->
-
-      <div>
-        <@buttonPrimary.kw type="submit">
-          ${msg("doSubmit")}
-        </@buttonPrimary.kw>
-      </div>
-    </form>
+      <@input.kw
+        autocomplete="new-password"
+        autofocus=true
+        invalid=messagesPerField.existsError("password", "password-confirm")
+        label=msg("passwordNew")
+        name="password-new"
+        type="password"
+      />
+      <@input.kw
+        autocomplete="new-password"
+        invalid=messagesPerField.existsError("password-confirm")
+        label=msg("passwordConfirm")
+        message=kcSanitize(messagesPerField.get("password-confirm"))
+        name="password-confirm"
+        type="password"
+      />
+      <#if isAppInitiatedAction??>
+        <@checkbox.kw
+          checked=true
+          label=msg("logoutOtherSessions")
+          name="logout-sessions"
+          value="on"
+        />
+      </#if>
+      <@buttonGroup.kw>
+        <#if isAppInitiatedAction??>
+          <@button.kw color="primary" type="submit">
+            ${msg("doSubmit")}
+          </@button.kw>
+          <@button.kw color="secondary" name="cancel-aia" type="submit" value="true">
+            ${msg("doCancel")}
+          </@button.kw>
+        <#else>
+          <@button.kw color="primary" type="submit">
+            ${msg("doSubmit")}
+          </@button.kw>
+        </#if>
+      </@buttonGroup.kw>
+    </@form.kw>
   </#if>
 </@layout.registrationLayout>
