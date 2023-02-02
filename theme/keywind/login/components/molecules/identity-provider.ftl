@@ -43,6 +43,9 @@
         <#case "paypal">
           <#assign colorClass="hover:bg-provider-paypal/10">
           <#break>
+        <#case "slack">
+          <#assign colorClass="hover:bg-provider-slack/10">
+          <#break>
         <#case "stackoverflow">
           <#assign colorClass="hover:bg-provider-stackoverflow/10">
           <#break>

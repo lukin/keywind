@@ -30,6 +30,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - OpenID
 - Red Hat OpenShift
 - PayPal
+- Slack
 - Stack Overflow
 - Twitter
 

@@ -27,6 +27,7 @@ module.exports = {
           oidc: '#F78C40',
           openshift: '#EE0000',
           paypal: '#00457C',
+          slack: '#4A154B',
           stackoverflow: '#F58025',
           twitter: '#1DA1F2',
         },
