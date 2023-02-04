@@ -1,28 +1,28 @@
 <#import "template.ftl" as layout>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/link.ftl" as link>
+
 <@layout.registrationLayout displayInfo=false; section>
-    <#if section = "header">
-        ${kcSanitize(msg("loginChooseAuthenticator-registration-title"))}
-    <#elseif section = "form">
-
-        <script type="text/javascript">
-            function fillAndSubmit(authExecId) {
-                document.getElementById('authexec-hidden-input').value = authExecId;
-                document.getElementById('kc-select-credential-form').submit();
-            }
-        </script>
-
-        <form id="kc-select-credential-form" action="${url.loginAction}" class="m-0 space-y-4" method="post">
-            <div class="flex flex-col space-y-4">
-                <#list auth.authenticationSelections as authenticationSelection>
-                    <div class="px-4 py-2 relative rounded-lg cursor-pointer hover:bg-primary-50" onclick="fillAndSubmit('${authenticationSelection.authExecId}')">
-                        <p class="font-bold text-lg">${msg('${authenticationSelection.displayName}')}</p>
-                        <p>${msg('${authenticationSelection.helpText}')}</p>
-                    </div>
-                </#list>
-            </div>
-            <input type="hidden" id="authexec-hidden-input" name="authenticationExecution" />
-        </form>
-
-    </#if>
+  <#if section="header">
+    ${msg("loginChooseAuthenticator")}
+  <#elseif section="form">
+    <div x-data>
+      <@form.kw action=url.loginAction method="post" x\-ref="selectCredentialForm">
+        <input name="authenticationExecution" type="hidden" x-ref="authExecInput" />
+        <#list auth.authenticationSelections as authenticationSelection>
+          <div>
+            <@link.kw
+              @click="$refs.authExecInput.value = '${authenticationSelection.authExecId}'; $refs.selectCredentialForm.submit()"
+              color="primary"
+              component="button"
+              type="button"
+            >
+              ${msg("${authenticationSelection.displayName}")}
+            </@link.kw>
+            <div class="text-sm">${msg("${authenticationSelection.helpText}")}</div>
+          </div>
+        </#list>
+      </@form.kw>
+    </div>
+  </#if>
 </@layout.registrationLayout>
-

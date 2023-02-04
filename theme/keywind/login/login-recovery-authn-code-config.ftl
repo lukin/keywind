@@ -5,14 +5,14 @@
 <#import "components/atoms/checkbox.ftl" as checkbox>
 <#import "components/atoms/form.ftl" as form>
 
-<@layout.registrationLayout script="dist/recoveryCodes.js" ; section>
+<@layout.registrationLayout script="dist/recoveryCodes.js"; section>
   <#if section="header">
     ${msg("recovery-code-config-header")}
   <#elseif section="form">
     <div class="space-y-6" x-data="recoveryCodes">
       <@alert.kw color="warning">
         <div class="space-y-2">
-          <h4 class="font-bold">${msg("recovery-code-config-warning-title")}</h4>
+          <h4 class="font-medium">${msg("recovery-code-config-warning-title")}</h4>
           <p>${msg("recovery-code-config-warning-message")}</p>
         </div>
       </@alert.kw>

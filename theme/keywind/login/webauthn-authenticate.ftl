@@ -1,129 +1,71 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/button/secondary.ftl" as buttonSecondary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
 
-<@layout.registrationLayout; section>
-<#if section="header">
-    ${msg("webauthn-login-title")}
-
-<#elseif section = "form">
-    <div class="m-0">
-        <form id="webauth" action="${url.loginAction}" method="post">
-            <input type="hidden" id="clientDataJSON" name="clientDataJSON"/>
-            <input type="hidden" id="authenticatorData" name="authenticatorData"/>
-            <input type="hidden" id="signature" name="signature"/>
-            <input type="hidden" id="credentialId" name="credentialId"/>
-            <input type="hidden" id="userHandle" name="userHandle"/>
-            <input type="hidden" id="error" name="error"/>
+<@layout.registrationLayout script="dist/webAuthnAuthenticate.js"; section>
+  <#if section="title">
+    title
+  <#elseif section="header">
+    ${kcSanitize(msg("webauthn-login-title"))?no_esc}
+  <#elseif section="form">
+    <div x-data="webAuthnAuthenticate">
+      <form action="${url.loginAction}" method="post" x-ref="webAuthnForm">
+        <input name="authenticatorData" type="hidden" x-ref="authenticatorDataInput" />
+        <input name="clientDataJSON" type="hidden" x-ref="clientDataJSONInput" />
+        <input name="credentialId" type="hidden" x-ref="credentialIdInput" />
+        <input name="error" type="hidden" x-ref="errorInput" />
+        <input name="signature" type="hidden" x-ref="signatureInput" />
+        <input name="userHandle" type="hidden" x-ref="userHandleInput" />
+      </form>
+      <#if authenticators??>
+        <form x-ref="authnSelectForm">
+          <#list authenticators.authenticators as authenticator>
+            <input value="${authenticator.credentialId}" type="hidden" />
+          </#list>
         </form>
-
-        <#if authenticators??>
-            <form id="authn_select" class="m-0">
-                <#list authenticators.authenticators as authenticator>
-                    <input type="hidden" name="authn_use_chk" value="${authenticator.credentialId}"/>
-                </#list>
-            </form>
-
-            <#if shouldDisplayAuthenticators?? && shouldDisplayAuthenticators>
-                <#if authenticators.authenticators?size gt 1>
-                    <p class="font-bold py-2 text-xl">${kcSanitize(msg("webauthn-available-authenticators"))?no_esc}</p>
-                </#if>
-
-                <#list authenticators.authenticators as authenticator>
-                    <div class="my-5">
-                        <p><span class="font-bold">${kcSanitize(msg('${authenticator.label}'))?no_esc}</span>
-                        <#--<#if authenticator.transports?? && authenticator.transports.displayNameProperties?has_content>
-                            (<#list authenticator.transports.displayNameProperties as nameProperty>
-                                ${kcSanitize(msg('${nameProperty!}'))?no_esc}
-                                <#if nameProperty?has_next>, </#if>
-                            </#list>)
-                        </#if>-->
-                        </p>
-
-                        <p>${kcSanitize(msg('webauthn-createdAt-label'))?no_esc}: <span class="font-bold">${kcSanitize(authenticator.createdAt)?no_esc}</span></p>
-                    </div>
-                </#list>
-            </#if>
+        <#if shouldDisplayAuthenticators?? && shouldDisplayAuthenticators>
+          <#if authenticators.authenticators?size gt 1>
+            <p>${kcSanitize(msg("webauthn-available-authenticators"))?no_esc}</p>
+          </#if>
+          <#list authenticators.authenticators as authenticator>
+            <div>
+              <div class="font-medium">${kcSanitize(msg("${authenticator.label}"))?no_esc}</div>
+              <#if authenticator.transports?? && authenticator.transports.displayNameProperties?has_content>
+                <div>
+                  <#list authenticator.transports.displayNameProperties as nameProperty>
+                    <span>${kcSanitize(msg("${nameProperty!}"))?no_esc}</span>
+                    <#if nameProperty?has_next>
+                      <span>, </span>
+                    </#if>
+                  </#list>
+                </div>
+              </#if>
+              <div class="text-sm">
+                <span>${kcSanitize(msg("webauthn-createdAt-label"))?no_esc}</span>
+                <span>${kcSanitize(authenticator.createdAt)?no_esc}</span>
+              </div>
+            </div>
+          </#list>
         </#if>
-
-        <@buttonPrimary.kw type="button" onclick="webAuthnAuthenticate()" autofocus="autofocus">
-          ${msg("webauthn-doAuthenticate")}
-        </@buttonPrimary.kw>
+      </#if>
+      <@buttonGroup.kw>
+        <@button.kw @click="webAuthnAuthenticate" color="primary" type="button">
+          ${kcSanitize(msg("webauthn-doAuthenticate"))}
+        </@button.kw>
+      </@buttonGroup.kw>
     </div>
-
-<script type="text/javascript" src="${url.resourcesPath}/js/base64url.js"></script>
-<script type="text/javascript">
-    function webAuthnAuthenticate() {
-        let isUserIdentified = ${isUserIdentified};
-        if (!isUserIdentified) {
-            doAuthenticate([]);
-            return;
-        }
-        checkAllowCredentials();
-    }
-    function checkAllowCredentials() {
-        let allowCredentials = [];
-        let authn_use = document.forms['authn_select'].authn_use_chk;
-        if (authn_use !== undefined) {
-            if (authn_use.length === undefined) {
-                allowCredentials.push({
-                    id: base64url.decode(authn_use.value, {loose: true}),
-                    type: 'public-key',
-                });
-            } else {
-                for (let i = 0; i < authn_use.length; i++) {
-                    allowCredentials.push({
-                        id: base64url.decode(authn_use[i].value, {loose: true}),
-                        type: 'public-key',
-                    });
-                }
-            }
-        }
-        doAuthenticate(allowCredentials);
-    }
-function doAuthenticate(allowCredentials) {
-    // Check if WebAuthn is supported by this browser
-    if (!window.PublicKeyCredential) {
-        document.querySelector("#error").value = "${msg("webauthn-unsupported-browser-text")?no_esc}";
-        document.querySelector("#webauth").submit();
-        return;
-    }
-    let challenge = "${challenge}";
-    let userVerification = "${userVerification}";
-    let rpId = "${rpId}";
-    let publicKey = {
-        rpId : rpId,
-        challenge: base64url.decode(challenge, { loose: true })
-    };
-    let createTimeout = ${createTimeout};
-    if (createTimeout !== 0) publicKey.timeout = createTimeout * 1000;
-    if (allowCredentials.length) {
-        publicKey.allowCredentials = allowCredentials;
-    }
-    if (userVerification !== 'not specified') publicKey.userVerification = userVerification;
-    navigator.credentials.get({publicKey})
-        .then((result) => {
-            window.result = result;
-            let clientDataJSON = result.response.clientDataJSON;
-            let authenticatorData = result.response.authenticatorData;
-            let signature = result.response.signature;
-            document.querySelector("#clientDataJSON").value = base64url.encode(new Uint8Array(clientDataJSON), { pad: false });
-            document.querySelector("#authenticatorData").value = base64url.encode(new Uint8Array(authenticatorData), { pad: false });
-            document.querySelector("#signature").value = base64url.encode(new Uint8Array(signature), { pad: false });
-            document.querySelector("#credentialId").value = result.id;
-            if(result.response.userHandle) {
-                document.querySelector("#userHandle").value = base64url.encode(new Uint8Array(result.response.userHandle), { pad: false });
-            }
-            document.querySelector("#webauth").submit();
-        })
-        .catch((err) => {
-            document.querySelector("#error").value = err;
-            document.querySelector("#webauth").submit();
-        })
-    ;
-}
-</script>
-<#elseif section = "info">
-
-</#if>
+  </#if>
 </@layout.registrationLayout>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('webAuthnAuthenticate', {
+      challenge: '${challenge}',
+      createTimeout: '${createTimeout}',
+      isUserIdentified: '${isUserIdentified}',
+      rpId: '${rpId}',
+      unsupportedBrowserText: '${msg("webauthn-unsupported-browser-text")?no_esc}',
+      userVerification: '${userVerification}',
+    })
+  })
+</script>

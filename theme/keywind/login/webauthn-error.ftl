@@ -1,36 +1,34 @@
 <#import "template.ftl" as layout>
-<#import "components/button/primary.ftl" as buttonPrimary>
-<#import "components/button/secondary.ftl" as buttonSecondary>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
 
 <@layout.registrationLayout displayMessage=true; section>
-    <#if section = "header">
-        ${kcSanitize(msg("webauthn-error-title"))}
-    <#elseif section = "form">
-
-        <script type="text/javascript">
-            refreshPage = () => {
-                document.getElementById('isSetRetry').value = 'retry';
-                document.getElementById('executionValue').value = '${execution}';
-                document.getElementById('kc-error-credential-form').submit();
-            }
-        </script>
-
-        <form id="kc-error-credential-form" action="${url.loginAction}" method="post" class="m-0">
-            <input type="hidden" id="executionValue" name="authenticationExecution"/>
-            <input type="hidden" id="isSetRetry" name="isSetRetry"/>
-        </form>
-
-        <@buttonPrimary.kw type="button" tabindex="4" onclick="refreshPage()">
-          ${kcSanitize(msg("doTryAgain"))}
-        </@buttonPrimary.kw>
-
+  <#if section="header">
+    ${kcSanitize(msg("webauthn-error-title"))?no_esc}
+  <#elseif section="form">
+    <div x-data>
+      <form action="${url.loginAction}" method="post" x-ref="errorCredentialForm">
+        <input name="authenticationExecution" type="hidden" x-ref="executionValueInput" />
+        <input name="isSetRetry" type="hidden" x-ref="isSetRetryInput" />
+      </form>
+      <@buttonGroup.kw>
+        <@button.kw
+          @click="$refs.executionValueInput.value = '${execution}'; $refs.isSetRetryInput.value = 'retry'; $refs.errorCredentialForm.submit()"
+          color="primary"
+          name="try-again"
+          tabindex="4"
+          type="button"
+        >
+          ${kcSanitize(msg("doTryAgain"))?no_esc}
+        </@button.kw>
         <#if isAppInitiatedAction??>
-            <form action="${url.loginAction}" method="post" class="m-0">
-                <@buttonSecondary.kw name="cancel-aia" type="submit" value="true">
-                  ${kcSanitize(msg("doCancel"))}
-                </@buttonSecondary.kw>
-            </form>
+          <form action="${url.loginAction}" method="post">
+            <@button.kw color="secondary" name="cancel-aia" type="submit" value="true">
+              ${msg("doCancel")}
+            </@button.kw>
+          </form>
         </#if>
-
-    </#if>
+      </@buttonGroup.kw>
+    </div>
+  </#if>
 </@layout.registrationLayout>
