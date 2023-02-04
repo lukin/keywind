@@ -36,6 +36,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - OpenID
 - Red Hat OpenShift
 - PayPal
+- Slack
 - Stack Overflow
 - Twitter
 
@@ -51,7 +52,7 @@ Keywind has been designed with component-based architecture from the start, and 
 parent=keywind
 ```
 
-4. Brand and customize components with [FreeMaker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
+4. Brand and customize components with [FreeMarker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
 
 ## Customization
 
