@@ -31,7 +31,7 @@
       <#if mode?? && mode="manual">
         <li>
           <p>${msg("loginTotpManualStep2")}</p>
-          <p class="font-bold text-xl">${totp.totpSecretEncoded}</p>
+          <p class="font-medium text-xl">${totp.totpSecretEncoded}</p>
         </li>
         <li>
           <@link.kw color="primary" href=totp.qrUrl>
