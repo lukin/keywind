@@ -71,7 +71,7 @@
     </form>
   <#elseif section="nav">
     <@linkSecondary.kw href=url.loginUrl>
-      <span class="text-sm">${kcSanitize(msg("backToLogin"))?no_esc}</span>
+      <span class="text-sm py-5">${kcSanitize(msg("backToLogin"))?no_esc}</span>
     </@linkSecondary.kw>
   </#if>
 </@layout.registrationLayout>
