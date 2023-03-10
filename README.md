@@ -98,3 +98,9 @@ When you're ready to deploy your own theme, run the build command to generate a 
 pnpm install
 pnpm build
 ```
+
+To deploy a theme as an archive, create a JAR archive with the theme resources.
+
+```bash
+pnpm build:jar
+```
