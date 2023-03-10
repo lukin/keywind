@@ -1,4 +1,4 @@
-import{m as p}from"./assets/module.esm-90313d2c.js";document.addEventListener("alpine:init",()=>{p.data("recoveryCodes",function(){const{codeList:o}=this.$refs,{downloadFileDate:n,downloadFileDescription:i,downloadFileHeader:d,downloadFileName:s}=this.$store.recoveryCodes,a=new Date().toLocaleString(navigator.language),r=o.getElementsByTagName("li"),l=Array.from(r).map(t=>t.innerText).join(`
+import{m as p}from"./assets/module.esm-62c37d0d.js";document.addEventListener("alpine:init",()=>{p.data("recoveryCodes",function(){const{codeList:o}=this.$refs,{downloadFileDate:n,downloadFileDescription:i,downloadFileHeader:d,downloadFileName:s}=this.$store.recoveryCodes,a=new Date().toLocaleString(navigator.language),r=o.getElementsByTagName("li"),l=Array.from(r).map(t=>t.innerText).join(`
 `);return{copy:()=>navigator.clipboard.writeText(l),download:()=>{const t=document.createElement("a"),c=`${d}
 
 ${l}
