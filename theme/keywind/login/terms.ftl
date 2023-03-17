@@ -3,12 +3,11 @@
 <#import "components/atoms/button-group.ftl" as buttonGroup>
 <#import "components/atoms/form.ftl" as form>
 
-<@layout.registrationLayout displayInfo=true displayMessage=false; section>
+<@layout.registrationLayout displayMessage=false; section>
   <#if section="header">
     ${msg("termsTitle")}
   <#elseif section="form">
     ${kcSanitize(msg("termsText"))?no_esc}
-  <#elseif section="info">
     <@form.kw action=url.loginAction method="post">
       <@buttonGroup.kw>
         <@button.kw color="primary" name="accept" type="submit">
