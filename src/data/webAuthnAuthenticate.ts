@@ -8,7 +8,7 @@ type DataType = {
 
 type RefsType = {
   authenticatorDataInput: HTMLInputElement;
-  authnSelectForm: HTMLFormElement;
+  authnSelectForm?: HTMLFormElement;
   clientDataJSONInput: HTMLInputElement;
   credentialIdInput: HTMLInputElement;
   errorInput: HTMLInputElement;
@@ -114,17 +114,19 @@ document.addEventListener('alpine:init', () => {
     const checkAllowCredentials = () => {
       const allowCredentials: PublicKeyCredentialDescriptor[] = [];
 
-      const authnSelectFormElements = Array.from(authnSelectForm.elements);
+      if (authnSelectForm) {
+        const authnSelectFormElements = Array.from(authnSelectForm.elements);
 
-      if (authnSelectFormElements.length) {
-        authnSelectFormElements.forEach((element) => {
-          if (element instanceof HTMLInputElement) {
-            allowCredentials.push({
-              id: base64url.parse(element.value, { loose: true }),
-              type: 'public-key',
-            });
-          }
-        });
+        if (authnSelectFormElements.length) {
+          authnSelectFormElements.forEach((element) => {
+            if (element instanceof HTMLInputElement) {
+              allowCredentials.push({
+                id: base64url.parse(element.value, { loose: true }),
+                type: 'public-key',
+              });
+            }
+          });
+        }
       }
 
       doAuthenticate(allowCredentials);
