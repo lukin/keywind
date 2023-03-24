@@ -56,6 +56,7 @@
         </@button.kw>
       </form>
     </#if>
+    <#nested "socialProviders">
   </#assign>
 
   <#assign cardFooter>

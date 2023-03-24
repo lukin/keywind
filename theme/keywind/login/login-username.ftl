@@ -25,23 +25,20 @@
         method="post"
         onsubmit="login.disabled = true; return true;"
       >
-        <input
-          name="credentialId"
-          type="hidden"
-          value="<#if auth.selectedCredential?has_content>${auth.selectedCredential}</#if>"
-        >
-        <@input.kw
-          autocomplete=realm.loginWithEmailAllowed?string("email", "username")
-          autofocus=true
-          disabled=usernameEditDisabled??
-          invalid=messagesPerField.existsError("username")
-          label=usernameLabel
-          message=kcSanitize(messagesPerField.getFirstError("username"))
-          name="username"
-          type="text"
-          value=(login.username)!''
-        />
-        <#if realm.rememberMe && !usernameEditDisabled??>
+        <#if !usernameHidden??>
+          <@input.kw
+            autocomplete=realm.loginWithEmailAllowed?string("email", "username")
+            autofocus=true
+            disabled=usernameEditDisabled??
+            invalid=messagesPerField.existsError("username")
+            label=usernameLabel
+            message=kcSanitize(messagesPerField.get("username"))?no_esc
+            name="username"
+            type="text"
+            value=(login.username)!''
+          />
+        </#if>
+        <#if realm.rememberMe && !usernameHidden??>
           <div class="flex items-center justify-between">
             <@checkbox.kw
               checked=login.rememberMe??
@@ -57,9 +54,6 @@
         </@buttonGroup.kw>
       </@form.kw>
     </#if>
-    <#if realm.password && social.providers??>
-      <@identityProvider.kw providers=social.providers />
-    </#if>
   <#elseif section="info">
     <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
       <div class="text-center">
@@ -68,6 +62,10 @@
           ${msg("doRegister")}
         </@link.kw>
       </div>
+    </#if>
+  <#elseif section="socialProviders">
+    <#if realm.password && social.providers??>
+      <@identityProvider.kw providers=social.providers />
     </#if>
   </#if>
 </@layout.registrationLayout>
