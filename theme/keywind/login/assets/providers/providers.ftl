@@ -1,4 +1,5 @@
 <#import "./bitbucket.ftl" as bitbucketIcon>
+<#import "./discord.ftl" as discordIcon>
 <#import "./facebook.ftl" as facebookIcon>
 <#import "./github.ftl" as githubIcon>
 <#import "./gitlab.ftl" as gitlabIcon>
@@ -15,6 +16,10 @@
 
 <#macro bitbucket>
   <@bitbucketIcon.kw />
+</#macro>
+
+<#macro discord>
+  <@discordIcon.kw />
 </#macro>
 
 <#macro facebook>

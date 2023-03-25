@@ -10,6 +10,9 @@
         <#case "bitbucket">
           <#assign colorClass="hover:bg-provider-bitbucket/10">
           <#break>
+        <#case "discord">
+          <#assign colorClass="hover:bg-provider-discord/10">
+          <#break>
         <#case "facebook">
           <#assign colorClass="hover:bg-provider-facebook/10">
           <#break>
