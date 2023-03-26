@@ -6,20 +6,32 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 
 ### Styled Pages
 
+- Error
 - Login
 - Login Config TOTP
 - Login IDP Link Confirm
 - Login OAuth Grant
 - Login OTP
+- Login Page Expired
+- Login Password
+- Login Recovery Authn Code Config
+- Login Recovery Authn Code Input
 - Login Reset Password
 - Login Update Password
 - Login Update Profile
+- Login Username
 - Logout Confirm
 - Register
+- Select Authenticator
+- Terms and Conditions
+- WebAuthn Authenticate
+- WebAuthn Error
+- WebAuthn Register
 
 ### Identity Provider Icons
 
 - Bitbucket
+- Discord
 - Facebook
 - GitHub
 - GitLab
@@ -30,6 +42,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - OpenID
 - Red Hat OpenShift
 - PayPal
+- Slack
 - Stack Overflow
 - Twitter
 
@@ -45,7 +58,7 @@ Keywind has been designed with component-based architecture from the start, and 
 parent=keywind
 ```
 
-4. Brand and customize components with [FreeMaker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
+4. Brand and customize components with [FreeMarker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
 
 ## Customization
 
@@ -90,4 +103,10 @@ When you're ready to deploy your own theme, run the build command to generate a 
 ```bash
 pnpm install
 pnpm build
+```
+
+To deploy a theme as an archive, create a JAR archive with the theme resources.
+
+```bash
+pnpm build:jar
 ```

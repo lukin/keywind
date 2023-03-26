@@ -17,6 +17,7 @@ module.exports = {
 
         provider: {
           bitbucket: '#0052CC',
+          discord: '#5865F2',
           facebook: '#1877F2',
           github: '#181717',
           gitlab: '#FC6D26',
@@ -27,6 +28,7 @@ module.exports = {
           oidc: '#F78C40',
           openshift: '#EE0000',
           paypal: '#00457C',
+          slack: '#4A154B',
           stackoverflow: '#F58025',
           twitter: '#1DA1F2',
         },

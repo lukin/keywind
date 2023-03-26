@@ -12,7 +12,7 @@
 
 <@layout.registrationLayout
   displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??
-  displayMessage=!messagesPerField.existsError("username", "password")
+  displayMessage=!messagesPerField.existsError("username")
   ;
   section
 >
@@ -25,42 +25,26 @@
         method="post"
         onsubmit="login.disabled = true; return true;"
       >
-        <input
-          name="credentialId"
-          type="hidden"
-          value="<#if auth.selectedCredential?has_content>${auth.selectedCredential}</#if>"
-        >
-        <@input.kw
-          autocomplete=realm.loginWithEmailAllowed?string("email", "username")
-          autofocus=true
-          disabled=usernameEditDisabled??
-          invalid=messagesPerField.existsError("username", "password")
-          label=usernameLabel
-          message=kcSanitize(messagesPerField.getFirstError("username", "password"))
-          name="username"
-          type="text"
-          value=(login.username)!''
-        />
-        <@input.kw
-          invalid=messagesPerField.existsError("username", "password")
-          label=msg("password")
-          name="password"
-          type="password"
-        />
-        <#if realm.rememberMe && !usernameEditDisabled?? || realm.resetPasswordAllowed>
+        <#if !usernameHidden??>
+          <@input.kw
+            autocomplete=realm.loginWithEmailAllowed?string("email", "username")
+            autofocus=true
+            disabled=usernameEditDisabled??
+            invalid=messagesPerField.existsError("username")
+            label=usernameLabel
+            message=kcSanitize(messagesPerField.get("username"))?no_esc
+            name="username"
+            type="text"
+            value=(login.username)!''
+          />
+        </#if>
+        <#if realm.rememberMe && !usernameHidden??>
           <div class="flex items-center justify-between">
-            <#if realm.rememberMe && !usernameEditDisabled??>
-              <@checkbox.kw
-                checked=login.rememberMe??
-                label=msg("rememberMe")
-                name="rememberMe"
-              />
-            </#if>
-            <#if realm.resetPasswordAllowed>
-              <@link.kw color="primary" href=url.loginResetCredentialsUrl size="small">
-                ${msg("doForgotPassword")}
-              </@link.kw>
-            </#if>
+            <@checkbox.kw
+              checked=login.rememberMe??
+              label=msg("rememberMe")
+              name="rememberMe"
+            />
           </div>
         </#if>
         <@buttonGroup.kw>

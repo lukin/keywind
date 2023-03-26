@@ -10,6 +10,9 @@
         <#case "bitbucket">
           <#assign colorClass="hover:bg-provider-bitbucket/10">
           <#break>
+        <#case "discord">
+          <#assign colorClass="hover:bg-provider-discord/10">
+          <#break>
         <#case "facebook">
           <#assign colorClass="hover:bg-provider-facebook/10">
           <#break>
@@ -42,6 +45,9 @@
           <#break>
         <#case "paypal">
           <#assign colorClass="hover:bg-provider-paypal/10">
+          <#break>
+        <#case "slack">
+          <#assign colorClass="hover:bg-provider-slack/10">
           <#break>
         <#case "stackoverflow">
           <#assign colorClass="hover:bg-provider-stackoverflow/10">

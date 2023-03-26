@@ -1,4 +1,5 @@
 <#import "./bitbucket.ftl" as bitbucketIcon>
+<#import "./discord.ftl" as discordIcon>
 <#import "./facebook.ftl" as facebookIcon>
 <#import "./github.ftl" as githubIcon>
 <#import "./gitlab.ftl" as gitlabIcon>
@@ -9,11 +10,16 @@
 <#import "./oidc.ftl" as oidcIcon>
 <#import "./openshift.ftl" as openshiftIcon>
 <#import "./paypal.ftl" as paypalIcon>
+<#import "./slack.ftl" as slackIcon>
 <#import "./stackoverflow.ftl" as stackoverflowIcon>
 <#import "./twitter.ftl" as twitterIcon>
 
 <#macro bitbucket>
   <@bitbucketIcon.kw />
+</#macro>
+
+<#macro discord>
+  <@discordIcon.kw />
 </#macro>
 
 <#macro facebook>
@@ -58,6 +64,10 @@
 
 <#macro paypal>
   <@paypalIcon.kw />
+</#macro>
+
+<#macro slack>
+  <@slackIcon.kw />
 </#macro>
 
 <#macro stackoverflow>
