@@ -17,6 +17,7 @@ module.exports = {
 
         provider: {
           bitbucket: '#0052CC',
+          discord: '#5865F2',
           facebook: '#1877F2',
           github: '#181717',
           gitlab: '#FC6D26',
