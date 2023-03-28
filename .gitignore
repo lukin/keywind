@@ -4,7 +4,48 @@
 out/
 
 # dependencies
-node_modules/
+node_modules
+.pnp.*
+.pnp
+.pnpm-store
 
 # misc
 .DS_Store
+*.pem
+Thumbs.db
+
+# debug
+logs
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+**/.debug
+logs/
+*.log
+.turbo/
+**/.turbo/
+
+# local env files
+.env
+**/.env
+.env.local
+.env.*.local
+*.local
+
+# cache
+.eslintcache
+**/.eslintcache
+.stylelintcache
+.cache/*
+**/tsconfig.tsbuildinfo
+
+# editors
+.idea
+.vscode/
+
+# temp files
+tmp/
+*.tmp
+.netrc
