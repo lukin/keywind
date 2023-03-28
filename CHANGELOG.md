@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/wayofdev/keywind/compare/v1.0.0...v1.1.0) (2023-03-28)
+
+
+### Features
+
+* enable renovate with auto-merge ([68bc18d](https://github.com/wayofdev/keywind/commit/68bc18d5ffd659b9f2ecf1bab542d44ca00ce0d1))
+
 ## 1.0.0 (2023-03-28)
 
 
