@@ -1,0 +1,24 @@
+---
+# https://github.com/peter-evans/enable-pull-request-automerge
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+
+permissions:
+  pull-requests: write
+  contents: write
+
+name: 🤞 Auto merge release
+
+jobs:
+  auto-merge:
+    if: github.actor == 'lotyp' && startsWith(github.head_ref, 'release-please--')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🤞 Auto-merge pull request
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          pull-request-number: ${{ github.event.pull_request.number }}
+          merge-method: merge
+          # to trigger other workflows, pass PAT token instead of GITHUB_TOKEN
+          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}

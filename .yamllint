@@ -1,0 +1,64 @@
+---
+
+extends: "default"
+
+ignore: |
+  pnpm-lock.yaml
+  pnpm-workspace.yaml
+  node_modules/
+  .pnpm-store/
+
+# Overwrite above default rules
+rules:
+  braces:
+    # Defaults
+    # min-spaces-inside: 0
+    # max-spaces-inside: 0
+
+    # Keep 0 min-spaces to not error on empty {} collection definitions
+    min-spaces-inside: 0
+
+    # Allow one space inside braces to improve code readability
+    max-spaces-inside: 1
+
+  brackets:
+    # Defaults
+    # min-spaces-inside: 0
+    # max-spaces-inside: 0
+
+    # Keep 0 min-spaces to not error on empty [] collection definitions
+    min-spaces-inside: 0
+
+    # Allow one space inside braces to improve code readability
+    max-spaces-inside: 1
+
+  colons:
+    # Defaults
+    # min-spaces-before: 0
+    # max-spaces-after: 1
+
+    # Allow multiple spaces after a colon to allow indentation of YAML
+    # dictionary values
+    max-spaces-after: -1
+
+  commas:
+    # Defaults
+    # max-spaces-after: 1
+
+    # Allow multiple spaces after a comma to allow indentation of YAML
+    # dictionary values
+    max-spaces-after: -1
+
+  comments:
+    require-starting-space: true
+    min-spaces-from-content: 1
+
+  line-length:
+    max: 180
+    level: warning
+
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
+
+...
