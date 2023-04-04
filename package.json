@@ -59,7 +59,7 @@
     "@types/alpinejs": "3.7.1",
     "@types/archiver": "5.3.2",
     "@types/node": "18.15.11",
-    "@wayofdev/commitlint-config": "2.0.4",
+    "@wayofdev/commitlint-config": "2.0.6",
     "@wayofdev/lint-staged-config": "2.0.4",
     "@wayofdev/secretlint-config": "2.0.5",
     "archiver": "5.3.1",

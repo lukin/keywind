@@ -6,7 +6,7 @@ specifiers:
   '@types/alpinejs': 3.7.1
   '@types/archiver': 5.3.2
   '@types/node': 18.15.11
-  '@wayofdev/commitlint-config': 2.0.4
+  '@wayofdev/commitlint-config': 2.0.6
   '@wayofdev/lint-staged-config': 2.0.4
   '@wayofdev/secretlint-config': 2.0.5
   alpinejs: 3.12.0
@@ -38,7 +38,7 @@ devDependencies:
   '@types/alpinejs': 3.7.1
   '@types/archiver': 5.3.2
   '@types/node': 18.15.11
-  '@wayofdev/commitlint-config': 2.0.4_3hcnoy52e6vn54fvxrtsfu2v4u
+  '@wayofdev/commitlint-config': 2.0.6_3hcnoy52e6vn54fvxrtsfu2v4u
   '@wayofdev/lint-staged-config': 2.0.4_lint-staged@13.2.0
   '@wayofdev/secretlint-config': 2.0.5_v2mofv3ctsnv24btlsgrq57otm
   archiver: 5.3.1
@@ -792,11 +792,11 @@ packages:
     resolution: {integrity: sha512-dTyhTIRmGXBjxJE+skC8tTWCGLCVc4wQgRRLt8+O9p5ewBAjoBwtCAkLPrtToSr1xltoe3st21Pv953aOZ7alg==}
     dev: true
 
-  /@wayofdev/commitlint-config/2.0.4_3hcnoy52e6vn54fvxrtsfu2v4u:
-    resolution: {integrity: sha512-i7BeJCLZEEss87Tlwyvb4ZIncRCHKRelJ4+AkNj0vScN5hbDnjSP/aqFrSLI3fDztM/DIohw+XqE4C+/7F4TNQ==}
+  /@wayofdev/commitlint-config/2.0.6_3hcnoy52e6vn54fvxrtsfu2v4u:
+    resolution: {integrity: sha512-Zi12cFrVT5MjxX6MQauFV1F4mKIH5oMartedVWv9EkAxrtped1iaLOccWHPRKn59JVyIu+/5jHF27EFousK57Q==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
-      '@wayofdev/lint-staged-config': ^2.0.4
+      '@wayofdev/lint-staged-config': ^2.0.6
     dependencies:
       '@commitlint/cli': 17.5.1
       '@commitlint/config-conventional': 17.4.4
