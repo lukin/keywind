@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/wayofdev/keywind/compare/v1.1.3...v1.1.4) (2023-04-04)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @wayofdev/commitlint-config to v2.0.6 ([9d3606a](https://github.com/wayofdev/keywind/commit/9d3606a4b39bd3cd6448f3f35b91467614f68a91))
+
 ## [1.1.3](https://github.com/wayofdev/keywind/compare/v1.1.2...v1.1.3) (2023-04-04)
 
 
