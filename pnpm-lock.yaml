@@ -8,7 +8,7 @@ specifiers:
   '@types/node': 18.15.11
   '@wayofdev/commitlint-config': 2.0.6
   '@wayofdev/lint-staged-config': 2.0.6
-  '@wayofdev/secretlint-config': 2.0.5
+  '@wayofdev/secretlint-config': 2.0.7
   alpinejs: 3.12.0
   archiver: 5.3.1
   autoprefixer: 10.4.14
@@ -40,7 +40,7 @@ devDependencies:
   '@types/node': 18.15.11
   '@wayofdev/commitlint-config': 2.0.6_sonjexqyntb4mpi4xyh6vgooe4
   '@wayofdev/lint-staged-config': 2.0.6_lint-staged@13.2.0
-  '@wayofdev/secretlint-config': 2.0.5_k5xd4n725y23yhqowcbvxmtlmq
+  '@wayofdev/secretlint-config': 2.0.7_k5xd4n725y23yhqowcbvxmtlmq
   archiver: 5.3.1
   autoprefixer: 10.4.14_postcss@8.4.21
   commitizen: 4.3.0
@@ -811,10 +811,10 @@ packages:
       lint-staged: 13.2.0
     dev: true
 
-  /@wayofdev/secretlint-config/2.0.5_k5xd4n725y23yhqowcbvxmtlmq:
-    resolution: {integrity: sha512-0u+7BtOXDxBjyjj77fPM7s2mCHraRSICqrnOhEbEjMcWjdPf9O8wRXweQu5Yzds+YyAWBuX/OfnawnoF8K6Tmg==}
+  /@wayofdev/secretlint-config/2.0.7_k5xd4n725y23yhqowcbvxmtlmq:
+    resolution: {integrity: sha512-N397imxrcw8lL9swTjvJRkGmTitAZeWZJf02IjBcL1bA4sOkhV85rqU3ciTgYVpWV55GLLQYqmIE3ag0Mss5Jg==}
     peerDependencies:
-      '@wayofdev/lint-staged-config': ^2.0.4
+      '@wayofdev/lint-staged-config': ^2.0.6
       secretlint: '>= 6'
     dependencies:
       '@secretlint/secretlint-rule-preset-recommend': 6.2.3
