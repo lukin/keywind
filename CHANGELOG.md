@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/wayofdev/keywind/compare/v1.1.4...v1.1.5) (2023-04-05)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @wayofdev/lint-staged-config to v2.0.6 ([0b709ac](https://github.com/wayofdev/keywind/commit/0b709acff340effba606359f3220c7580e59f3fd))
+
 ## [1.1.4](https://github.com/wayofdev/keywind/compare/v1.1.3...v1.1.4) (2023-04-04)
 
 
