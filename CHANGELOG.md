@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.12](https://github.com/wayofdev/keywind/compare/v1.1.11...v1.1.12) (2023-04-07)
+
+
+### Miscellaneous
+
+* **deps:** update dependency typescript to v5.0.4 ([9c054a5](https://github.com/wayofdev/keywind/commit/9c054a5ba522b3c156776b8d4a986dad98c6cb42))
+
 ## [1.1.11](https://github.com/wayofdev/keywind/compare/v1.1.10...v1.1.11) (2023-04-07)
 
 
