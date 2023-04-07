@@ -29,7 +29,7 @@ devDependencies:
     version: 2.0.6(@commitlint/cli@17.5.1)(@wayofdev/lint-staged-config@2.0.6)
   '@wayofdev/lint-staged-config':
     specifier: 2.0.6
-    version: 2.0.6(lint-staged@13.2.0)
+    version: 2.0.6(lint-staged@13.2.1)
   '@wayofdev/secretlint-config':
     specifier: 2.0.7
     version: 2.0.7(@wayofdev/lint-staged-config@2.0.6)(secretlint@6.2.3)
@@ -52,8 +52,8 @@ devDependencies:
     specifier: 3.0.1
     version: 3.0.1
   lint-staged:
-    specifier: 13.2.0
-    version: 13.2.0
+    specifier: 13.2.1
+    version: 13.2.1
   npm-run-all:
     specifier: 4.1.5
     version: 4.1.5
@@ -824,15 +824,15 @@ packages:
     dependencies:
       '@commitlint/cli': 17.5.1
       '@commitlint/config-conventional': 17.4.4
-      '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.0)
+      '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.1)
     dev: true
 
-  /@wayofdev/lint-staged-config@2.0.6(lint-staged@13.2.0):
+  /@wayofdev/lint-staged-config@2.0.6(lint-staged@13.2.1):
     resolution: {integrity: sha512-mWFRmHuZU5Eit515YaDJbU06LQy3DlktFRxCotGM0CaUmWEqaKN0it/+pVrt/KliaSpVfMUe5/0Ne2rRS7Ciug==}
     peerDependencies:
       lint-staged: '>= 13'
     dependencies:
-      lint-staged: 13.2.0
+      lint-staged: 13.2.1
     dev: true
 
   /@wayofdev/secretlint-config@2.0.7(@wayofdev/lint-staged-config@2.0.6)(secretlint@6.2.3):
@@ -842,7 +842,7 @@ packages:
       secretlint: '>= 6'
     dependencies:
       '@secretlint/secretlint-rule-preset-recommend': 6.2.3
-      '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.0)
+      '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.1)
       secretlint: 6.2.3
     dev: true
 
@@ -2482,8 +2482,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged@13.2.0:
-    resolution: {integrity: sha512-GbyK5iWinax5Dfw5obm2g2ccUiZXNGtAS4mCbJ0Lv4rq6iEtfBSjOYdcbOtAIFtM114t0vdpViDDetjVTSd8Vw==}
+  /lint-staged@13.2.1:
+    resolution: {integrity: sha512-8gfzinVXoPfga5Dz/ZOn8I2GOhf81Wvs+KwbEXQn/oWZAvCVS2PivrXfVbFJc93zD16uC0neS47RXHIjXKYZQw==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
