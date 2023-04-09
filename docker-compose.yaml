@@ -16,7 +16,7 @@ services:
       - '5432'
 
   keycloak:
-    image: quay.io/keycloak/keycloak:21.0.1
+    image: quay.io/keycloak/keycloak:21.0.2
     container_name: keywind_keycloak
     restart: on-failure
     volumes:
