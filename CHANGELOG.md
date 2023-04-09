@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.14](https://github.com/wayofdev/keywind/compare/v1.1.13...v1.1.14) (2023-04-09)
+
+
+### Miscellaneous
+
+* **deps:** update quay.io/keycloak/keycloak docker tag to v21.0.2 ([45ffe5e](https://github.com/wayofdev/keywind/commit/45ffe5e8a0fed23481c25c56c91e595c6265c34f))
+
 ## [1.1.13](https://github.com/wayofdev/keywind/compare/v1.1.12...v1.1.13) (2023-04-09)
 
 
