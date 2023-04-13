@@ -10,8 +10,8 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 17.5.1
-    version: 17.5.1
+    specifier: 17.6.0
+    version: 17.6.0
   '@tailwindcss/forms':
     specifier: 0.5.3
     version: 0.5.3(tailwindcss@3.3.1)
@@ -26,7 +26,7 @@ devDependencies:
     version: 18.15.11
   '@wayofdev/commitlint-config':
     specifier: 2.0.6
-    version: 2.0.6(@commitlint/cli@17.5.1)(@wayofdev/lint-staged-config@2.0.6)
+    version: 2.0.6(@commitlint/cli@17.6.0)(@wayofdev/lint-staged-config@2.0.6)
   '@wayofdev/lint-staged-config':
     specifier: 2.0.6
     version: 2.0.6(lint-staged@13.2.1)
@@ -115,13 +115,13 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@commitlint/cli@17.5.1:
-    resolution: {integrity: sha512-pRRgGSzdHQHehxZbGA3qF6wVPyl+EEQgTe/t321rtMLFbuJ7nRj2waS17s/v5oEbyZtiY5S8PGB6XtEIm0I+Sg==}
+  /@commitlint/cli@17.6.0:
+    resolution: {integrity: sha512-JaZeZ1p6kfkSiZlDoQjK09AuiI9zYQMiIUJzTOM8qNRHFOXOPmiTM56nI67yzeUSNTFu6M/DRqjmdjtA5q3hEg==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.4
-      '@commitlint/lint': 17.4.4
+      '@commitlint/lint': 17.6.0
       '@commitlint/load': 17.5.0
       '@commitlint/read': 17.5.1
       '@commitlint/types': 17.4.4
@@ -183,13 +183,13 @@ packages:
       semver: 7.3.8
     dev: true
 
-  /@commitlint/lint@17.4.4:
-    resolution: {integrity: sha512-qgkCRRFjyhbMDWsti/5jRYVJkgYZj4r+ZmweZObnbYqPUl5UKLWMf9a/ZZisOI4JfiPmRktYRZ2JmqlSvg+ccw==}
+  /@commitlint/lint@17.6.0:
+    resolution: {integrity: sha512-6cEXxpxZd7fbtYMxeosOum/Nnwu3VdSuZcrFSqP9lWNsrHRv4ijVsnLeomvo6WHPchGOeEWAazAI7Q6Ap22fJw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/is-ignored': 17.4.4
       '@commitlint/parse': 17.4.4
-      '@commitlint/rules': 17.4.4
+      '@commitlint/rules': 17.6.0
       '@commitlint/types': 17.4.4
     dev: true
 
@@ -253,8 +253,8 @@ packages:
       resolve-global: 1.0.0
     dev: true
 
-  /@commitlint/rules@17.4.4:
-    resolution: {integrity: sha512-0tgvXnHi/mVcyR8Y8mjTFZIa/FEQXA4uEutXS/imH2v1UNkYDSEMsK/68wiXRpfW1euSgEdwRkvE1z23+yhNrQ==}
+  /@commitlint/rules@17.6.0:
+    resolution: {integrity: sha512-Ka7AsRFvkKMYYE7itgo7hddRGCiV+0BgbTIAq4PWmnkHAECxYpdqMVzW5jaATmXZfwfRRTB57e7KZWj6EPmK1A==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/ensure': 17.4.4
@@ -846,13 +846,13 @@ packages:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
     dev: true
 
-  /@wayofdev/commitlint-config@2.0.6(@commitlint/cli@17.5.1)(@wayofdev/lint-staged-config@2.0.6):
+  /@wayofdev/commitlint-config@2.0.6(@commitlint/cli@17.6.0)(@wayofdev/lint-staged-config@2.0.6):
     resolution: {integrity: sha512-Zi12cFrVT5MjxX6MQauFV1F4mKIH5oMartedVWv9EkAxrtped1iaLOccWHPRKn59JVyIu+/5jHF27EFousK57Q==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
       '@wayofdev/lint-staged-config': ^2.0.6
     dependencies:
-      '@commitlint/cli': 17.5.1
+      '@commitlint/cli': 17.6.0
       '@commitlint/config-conventional': 17.4.4
       '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.1)
     dev: true
