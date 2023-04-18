@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.24](https://github.com/wayofdev/keywind/compare/v1.1.23...v1.1.24) (2023-04-18)
+
+
+### Miscellaneous
+
+* **deps:** update dependency vite to v4.2.2 ([48885af](https://github.com/wayofdev/keywind/commit/48885afa88f9b46f76536df30ea9773ac71f0567))
+* **deps:** update pnpm to v8.3.0 ([35af18b](https://github.com/wayofdev/keywind/commit/35af18bf00849a73582b11022fd816755b92972e))
+
 ## [1.1.23](https://github.com/wayofdev/keywind/compare/v1.1.22...v1.1.23) (2023-04-18)
 
 
