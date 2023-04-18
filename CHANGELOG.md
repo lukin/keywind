@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.23](https://github.com/wayofdev/keywind/compare/v1.1.22...v1.1.23) (2023-04-18)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @wayofdev/secretlint-config to v2.0.8 ([10835a3](https://github.com/wayofdev/keywind/commit/10835a3d0e01804322dde4838503eacf3353fd71))
+
 ## [1.1.22](https://github.com/wayofdev/keywind/compare/v1.1.21...v1.1.22) (2023-04-18)
 
 
