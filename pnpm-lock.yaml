@@ -26,13 +26,13 @@ devDependencies:
     version: 18.15.11
   '@wayofdev/commitlint-config':
     specifier: 2.0.7
-    version: 2.0.7(@commitlint/cli@17.6.1)(@wayofdev/lint-staged-config@2.0.6)
+    version: 2.0.7(@commitlint/cli@17.6.1)(@wayofdev/lint-staged-config@2.0.7)
   '@wayofdev/lint-staged-config':
-    specifier: 2.0.6
-    version: 2.0.6(lint-staged@13.2.1)
+    specifier: 2.0.7
+    version: 2.0.7(lint-staged@13.2.1)
   '@wayofdev/secretlint-config':
     specifier: 2.0.7
-    version: 2.0.7(@wayofdev/lint-staged-config@2.0.6)(secretlint@6.2.3)
+    version: 2.0.7(@wayofdev/lint-staged-config@2.0.7)(secretlint@6.2.3)
   archiver:
     specifier: 5.3.1
     version: 5.3.1
@@ -846,7 +846,7 @@ packages:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
     dev: true
 
-  /@wayofdev/commitlint-config@2.0.7(@commitlint/cli@17.6.1)(@wayofdev/lint-staged-config@2.0.6):
+  /@wayofdev/commitlint-config@2.0.7(@commitlint/cli@17.6.1)(@wayofdev/lint-staged-config@2.0.7):
     resolution: {integrity: sha512-jndfJf2dC7+M4HLRis7qsfTWbsb+7ZnLoRAqyHEUYlqizzn3MpgaO6ipsfOqYAEI+PR8lg776W40Zofc//o6RA==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
@@ -854,25 +854,25 @@ packages:
     dependencies:
       '@commitlint/cli': 17.6.1
       '@commitlint/config-conventional': 17.6.1
-      '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.1)
+      '@wayofdev/lint-staged-config': 2.0.7(lint-staged@13.2.1)
     dev: true
 
-  /@wayofdev/lint-staged-config@2.0.6(lint-staged@13.2.1):
-    resolution: {integrity: sha512-mWFRmHuZU5Eit515YaDJbU06LQy3DlktFRxCotGM0CaUmWEqaKN0it/+pVrt/KliaSpVfMUe5/0Ne2rRS7Ciug==}
+  /@wayofdev/lint-staged-config@2.0.7(lint-staged@13.2.1):
+    resolution: {integrity: sha512-ilQzV4QvvGsWZ5wPayaCByaEoBC+vTN/84qHOFmVJ4+bxqRk+/Pt3wM7/iYxwwil7ICfiaxLxY6IPtl5fLd1bw==}
     peerDependencies:
       lint-staged: '>= 13'
     dependencies:
       lint-staged: 13.2.1
     dev: true
 
-  /@wayofdev/secretlint-config@2.0.7(@wayofdev/lint-staged-config@2.0.6)(secretlint@6.2.3):
+  /@wayofdev/secretlint-config@2.0.7(@wayofdev/lint-staged-config@2.0.7)(secretlint@6.2.3):
     resolution: {integrity: sha512-N397imxrcw8lL9swTjvJRkGmTitAZeWZJf02IjBcL1bA4sOkhV85rqU3ciTgYVpWV55GLLQYqmIE3ag0Mss5Jg==}
     peerDependencies:
       '@wayofdev/lint-staged-config': ^2.0.6
       secretlint: '>= 6'
     dependencies:
       '@secretlint/secretlint-rule-preset-recommend': 6.2.3
-      '@wayofdev/lint-staged-config': 2.0.6(lint-staged@13.2.1)
+      '@wayofdev/lint-staged-config': 2.0.7(lint-staged@13.2.1)
       secretlint: 6.2.3
     dev: true
 
