@@ -61,7 +61,7 @@
     "@types/node": "18.15.11",
     "@wayofdev/commitlint-config": "2.0.7",
     "@wayofdev/lint-staged-config": "2.0.7",
-    "@wayofdev/secretlint-config": "2.0.7",
+    "@wayofdev/secretlint-config": "2.0.8",
     "archiver": "5.3.1",
     "autoprefixer": "10.4.14",
     "commitizen": "4.3.0",
