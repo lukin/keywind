@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.22](https://github.com/wayofdev/keywind/compare/v1.1.21...v1.1.22) (2023-04-18)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @wayofdev/commitlint-config to v2.0.7 ([15a959a](https://github.com/wayofdev/keywind/commit/15a959abdc5ceef6a989e6fb49dd2e7387ec63a8))
+* **deps:** update dependency @wayofdev/lint-staged-config to v2.0.7 ([1b3ac5f](https://github.com/wayofdev/keywind/commit/1b3ac5f4c866a7a7a0a155159df562c111302b52))
+
 ## [1.1.21](https://github.com/wayofdev/keywind/compare/v1.1.20...v1.1.21) (2023-04-17)
 
 
