@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.27](https://github.com/wayofdev/keywind/compare/v1.1.26...v1.1.27) (2023-04-20)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @types/node to v18.15.12 ([a77052b](https://github.com/wayofdev/keywind/commit/a77052b109fc88d4076af3b070b0313b70cbe2ba))
+
 ## [1.1.26](https://github.com/wayofdev/keywind/compare/v1.1.25...v1.1.26) (2023-04-19)
 
 
