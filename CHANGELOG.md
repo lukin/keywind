@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.28](https://github.com/wayofdev/keywind/compare/v1.1.27...v1.1.28) (2023-04-20)
+
+
+### Miscellaneous
+
+* **deps:** update dependency vite to v4.3.0 ([85769c0](https://github.com/wayofdev/keywind/commit/85769c0dcd3db903f6418c1d219aa5534844f2ba))
+
 ## [1.1.27](https://github.com/wayofdev/keywind/compare/v1.1.26...v1.1.27) (2023-04-20)
 
 
