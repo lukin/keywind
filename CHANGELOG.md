@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.36](https://github.com/wayofdev/keywind/compare/v1.1.35...v1.1.36) (2023-04-26)
+
+
+### Miscellaneous
+
+* **deps:** update dependency lint-staged to v13.2.2 ([8c9dfb0](https://github.com/wayofdev/keywind/commit/8c9dfb0a62d05c8dbc3d3ffa71938e601f29fca3))
+
 ## [1.1.35](https://github.com/wayofdev/keywind/compare/v1.1.34...v1.1.35) (2023-04-26)
 
 
