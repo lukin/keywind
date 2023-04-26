@@ -74,7 +74,7 @@
     "prettier": "^2.8.7",
     "secretlint": "6.2.3",
     "sort-package-json": "2.4.1",
-    "tailwindcss": "3.3.1",
+    "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "vite": "4.3.2",
     "vite-node": "0.30.1"
