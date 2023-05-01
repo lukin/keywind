@@ -14,29 +14,6 @@
     <form action="${url.registrationAction}" class="m-0 space-y-4" method="post">
       <div>
         <@inputPrimary.kw
-          autocomplete="given-name"
-          autofocus=true
-          invalid=["firstName"]
-          name="firstName"
-          type="text"
-          value=(register.formData.firstName)!''
-        >
-          ${msg("firstName")}
-        </@inputPrimary.kw>
-      </div>
-      <div>
-        <@inputPrimary.kw
-          autocomplete="family-name"
-          invalid=["lastName"]
-          name="lastName"
-          type="text"
-          value=(register.formData.lastName)!''
-        >
-          ${msg("lastName")}
-        </@inputPrimary.kw>
-      </div>
-      <div>
-        <@inputPrimary.kw
           autocomplete="email"
           invalid=["email"]
           name="email"
@@ -94,7 +71,7 @@
     </form>
   <#elseif section="nav">
     <@linkSecondary.kw href=url.loginUrl>
-      <span class="text-sm">${kcSanitize(msg("backToLogin"))?no_esc}</span>
+      <span class="text-sm py-5">${kcSanitize(msg("backToLogin"))?no_esc}</span>
     </@linkSecondary.kw>
   </#if>
 </@layout.registrationLayout>
