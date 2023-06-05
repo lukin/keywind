@@ -79,7 +79,7 @@
     "vite": "4.3.9",
     "vite-node": "0.31.4"
   },
-  "packageManager": "pnpm@8.6.0",
+  "packageManager": "pnpm@8.6.1",
   "engines": {
     "node": ">=18.0.0"
   }
