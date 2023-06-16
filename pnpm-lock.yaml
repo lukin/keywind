@@ -83,8 +83,8 @@ devDependencies:
     specifier: 4.3.9
     version: 4.3.9(@types/node@18.16.18)
   vite-node:
-    specifier: 0.32.1
-    version: 0.32.1(@types/node@18.16.18)
+    specifier: 0.32.2
+    version: 0.32.2(@types/node@18.16.18)
 
 packages:
 
@@ -4067,8 +4067,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node@0.32.1(@types/node@18.16.18):
-    resolution: {integrity: sha512-YfZ+8aDHjsAKCVGky6DB1pb3v25aMCXuXncdSUm1kZALdnHMH+k179el+fCRmSocHqzClvBfc4zlOiZ1sCyfQA==}
+  /vite-node@0.32.2(@types/node@18.16.18):
+    resolution: {integrity: sha512-dTQ1DCLwl2aEseov7cfQ+kDMNJpM1ebpyMMMwWzBvLbis8Nla/6c9WQcqpPssTwS6Rp/+U6KwlIj8Eapw4bLdA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
     dependencies:
