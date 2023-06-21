@@ -20,8 +20,8 @@ devDependencies:
     specifier: 0.5.3
     version: 0.5.3(tailwindcss@3.3.2)
   '@types/alpinejs':
-    specifier: 3.7.1
-    version: 3.7.1
+    specifier: 3.7.2
+    version: 3.7.2
   '@types/archiver':
     specifier: 5.3.2
     version: 5.3.2
@@ -805,8 +805,8 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@types/alpinejs@3.7.1:
-    resolution: {integrity: sha512-gzwyuHXH/meGQQhurMGWlZgMQxe18lMOoSPd7X6CvGoDelHte9EsU7SpTIoRu8yYir0tbHDeaSMdX9LeQz/QtA==}
+  /@types/alpinejs@3.7.2:
+    resolution: {integrity: sha512-M/PAVysvGxOlhifP/6XmO8bj5HW9w+Ygr03PdryM3tCb1KuQEaAAvVcyeZc5T75PbjH3dCzy/M/w/nJEE0FTSg==}
     dependencies:
       '@vue/reactivity': 3.3.4
     dev: true
