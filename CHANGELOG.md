@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.91](https://github.com/wayofdev/keywind/compare/v1.1.90...v1.1.91) (2023-06-26)
+
+
+### Miscellaneous
+
+* **deps:** update pnpm to v8.6.4 ([429bf72](https://github.com/wayofdev/keywind/commit/429bf7213af4ddec43567f287f71c00df63ce24b))
+
 ## [1.1.90](https://github.com/wayofdev/keywind/compare/v1.1.89...v1.1.90) (2023-06-24)
 
 
