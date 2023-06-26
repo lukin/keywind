@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.92](https://github.com/wayofdev/keywind/compare/v1.1.91...v1.1.92) (2023-06-26)
+
+
+### Miscellaneous
+
+* **deps:** lock file maintenance ([7bd51d4](https://github.com/wayofdev/keywind/commit/7bd51d4b247ec5e85280a4d13d9ffbe023251bec))
+
 ## [1.1.91](https://github.com/wayofdev/keywind/compare/v1.1.90...v1.1.91) (2023-06-26)
 
 
