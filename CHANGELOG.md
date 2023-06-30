@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.97](https://github.com/wayofdev/keywind/compare/v1.1.96...v1.1.97) (2023-06-30)
+
+
+### Miscellaneous
+
+* **deps:** update dependency secretlint to v6.2.4 ([b6caec7](https://github.com/wayofdev/keywind/commit/b6caec70a0302e3790d8266bae757bae50391b3a))
+
 ## [1.1.96](https://github.com/wayofdev/keywind/compare/v1.1.95...v1.1.96) (2023-06-29)
 
 
