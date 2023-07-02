@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.100](https://github.com/wayofdev/keywind/compare/v1.1.99...v1.1.100) (2023-07-02)
+
+
+### Miscellaneous
+
+* **deps:** update dependency sort-package-json to v2.5.0 ([c337ed6](https://github.com/wayofdev/keywind/commit/c337ed6eb09ae97f2cd4c28204d3a192dfb3b724))
+
 ## [1.1.99](https://github.com/wayofdev/keywind/compare/v1.1.98...v1.1.99) (2023-07-02)
 
 
