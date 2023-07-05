@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.107](https://github.com/wayofdev/keywind/compare/v1.1.106...v1.1.107) (2023-07-05)
+
+
+### Miscellaneous
+
+* **deps:** update dependency prettier to v3 ([a3ddf34](https://github.com/wayofdev/keywind/commit/a3ddf3423e18ea9cc24a248d35b90df9eca09fb7))
+
 ## [1.1.106](https://github.com/wayofdev/keywind/compare/v1.1.105...v1.1.106) (2023-07-03)
 
 
