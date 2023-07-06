@@ -80,8 +80,8 @@ devDependencies:
     specifier: 5.1.6
     version: 5.1.6
   vite:
-    specifier: 4.4.0
-    version: 4.4.0(@types/node@18.16.19)
+    specifier: 4.4.1
+    version: 4.4.1(@types/node@18.16.19)
   vite-node:
     specifier: 0.32.4
     version: 0.32.4(@types/node@18.16.19)
@@ -4254,7 +4254,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.0(@types/node@18.16.19)
+      vite: 4.4.1(@types/node@18.16.19)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4266,8 +4266,8 @@ packages:
       - terser
     dev: true
 
-  /vite@4.4.0(@types/node@18.16.19):
-    resolution: {integrity: sha512-Wf+DCEjuM8aGavEYiF77hnbxEZ+0+/jC9nABR46sh5Xi+GYeSvkeEFRiVuI3x+tPjxgZeS91h1jTAQTPFgePpA==}
+  /vite@4.4.1(@types/node@18.16.19):
+    resolution: {integrity: sha512-8mmwPlsy7t+ZcTme7vdbVGuZ3Tri+lrLXr6hsF5UHdyYyARPPPMtM16QlqC9TZuCd5j3NmWs1rwka3cVSRHZTw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
