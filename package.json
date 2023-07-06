@@ -77,7 +77,7 @@
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6",
     "vite": "4.4.1",
-    "vite-node": "0.32.4"
+    "vite-node": "0.33.0"
   },
   "packageManager": "pnpm@8.6.6",
   "engines": {
