@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.122](https://github.com/wayofdev/keywind/compare/v1.1.121...v1.1.122) (2023-07-15)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @wayofdev/commitlint-config to v3 ([3fc4337](https://github.com/wayofdev/keywind/commit/3fc4337eb3c4d81f9e9a816c8ea83761aa53ec31))
+
 ## [1.1.121](https://github.com/wayofdev/keywind/compare/v1.1.120...v1.1.121) (2023-07-15)
 
 
