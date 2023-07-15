@@ -29,8 +29,8 @@ devDependencies:
     specifier: 18.16.19
     version: 18.16.19
   '@wayofdev/commitlint-config':
-    specifier: 2.0.7
-    version: 2.0.7(@commitlint/cli@17.6.6)(@wayofdev/lint-staged-config@2.1.1)
+    specifier: 3.0.1
+    version: 3.0.1(@commitlint/cli@17.6.6)(@wayofdev/lint-staged-config@2.1.1)
   '@wayofdev/lint-staged-config':
     specifier: 2.1.1
     version: 2.1.1(lint-staged@13.2.3)
@@ -149,8 +149,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.6.1:
-    resolution: {integrity: sha512-ng/ybaSLuTCH9F+7uavSOnEQ9EFMl7lHEjfAEgRh1hwmEe8SpLKpQeMo2aT1IWvHaGMuTb+gjfbzoRf2IR23NQ==}
+  /@commitlint/config-conventional@17.6.6:
+    resolution: {integrity: sha512-phqPz3BDhfj49FUYuuZIuDiw+7T6gNAEy7Yew1IBHqSohVUCWOK2FXMSAExzS2/9X+ET93g0Uz83KjiHDOOFag==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
@@ -872,14 +872,14 @@ packages:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
     dev: true
 
-  /@wayofdev/commitlint-config@2.0.7(@commitlint/cli@17.6.6)(@wayofdev/lint-staged-config@2.1.1):
-    resolution: {integrity: sha512-jndfJf2dC7+M4HLRis7qsfTWbsb+7ZnLoRAqyHEUYlqizzn3MpgaO6ipsfOqYAEI+PR8lg776W40Zofc//o6RA==}
+  /@wayofdev/commitlint-config@3.0.1(@commitlint/cli@17.6.6)(@wayofdev/lint-staged-config@2.1.1):
+    resolution: {integrity: sha512-6zExcvAH/BqleYMV2XHnRalrZH7MNFGr4zkCIthyu91Z3GrCiq4aGQuTxLcOyrTtIjmZgWe7sBS23dhsPTaiWw==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
-      '@wayofdev/lint-staged-config': ^2.0.7
+      '@wayofdev/lint-staged-config': ^2.1.1
     dependencies:
       '@commitlint/cli': 17.6.6
-      '@commitlint/config-conventional': 17.6.1
+      '@commitlint/config-conventional': 17.6.6
       '@wayofdev/lint-staged-config': 2.1.1(lint-staged@13.2.3)
     dev: true
 
