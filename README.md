@@ -30,6 +30,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 
 ### Identity Provider Icons
 
+- Apple
 - Bitbucket
 - Discord
 - Facebook
