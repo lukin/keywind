@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.139](https://github.com/wayofdev/keywind/compare/v1.1.138...v1.1.139) (2023-08-01)
+
+
+### Miscellaneous
+
+* **deps:** update dependency vite-node to v0.34.1 ([98b9d43](https://github.com/wayofdev/keywind/commit/98b9d43a7374877643153b5604d54bf89c2e4b34))
+
 ## [1.1.138](https://github.com/wayofdev/keywind/compare/v1.1.137...v1.1.138) (2023-08-01)
 
 
