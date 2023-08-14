@@ -33,7 +33,7 @@ devDependencies:
     version: 3.0.2(@commitlint/cli@17.7.1)(@wayofdev/lint-staged-config@2.1.2)
   '@wayofdev/lint-staged-config':
     specifier: 2.1.2
-    version: 2.1.2(lint-staged@13.3.0)
+    version: 2.1.2(lint-staged@14.0.0)
   '@wayofdev/secretlint-config':
     specifier: 3.0.2
     version: 3.0.2(@wayofdev/lint-staged-config@2.1.2)(secretlint@7.0.7)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: 3.0.1
     version: 3.0.1
   lint-staged:
-    specifier: 13.3.0
-    version: 13.3.0
+    specifier: 14.0.0
+    version: 14.0.0
   npm-run-all:
     specifier: 4.1.5
     version: 4.1.5
@@ -789,15 +789,15 @@ packages:
     dependencies:
       '@commitlint/cli': 17.7.1
       '@commitlint/config-conventional': 17.6.7
-      '@wayofdev/lint-staged-config': 2.1.2(lint-staged@13.3.0)
+      '@wayofdev/lint-staged-config': 2.1.2(lint-staged@14.0.0)
     dev: true
 
-  /@wayofdev/lint-staged-config@2.1.2(lint-staged@13.3.0):
+  /@wayofdev/lint-staged-config@2.1.2(lint-staged@14.0.0):
     resolution: {integrity: sha512-no9GVdezPMdcLsy06jgBB0EG/5HNtolYE4vGrGUHIYu/H89riZEmRe5JoNXMEYzxXeCEbDWOeTayFh7GmB6p9A==}
     peerDependencies:
       lint-staged: '>= 13'
     dependencies:
-      lint-staged: 13.3.0
+      lint-staged: 14.0.0
     dev: true
 
   /@wayofdev/secretlint-config@3.0.2(@wayofdev/lint-staged-config@2.1.2)(secretlint@7.0.7):
@@ -807,7 +807,7 @@ packages:
       secretlint: '>= 6'
     dependencies:
       '@secretlint/secretlint-rule-preset-recommend': 7.0.6
-      '@wayofdev/lint-staged-config': 2.1.2(lint-staged@13.3.0)
+      '@wayofdev/lint-staged-config': 2.1.2(lint-staged@14.0.0)
       secretlint: 7.0.7
     dev: true
 
@@ -2515,8 +2515,8 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
-  /lint-staged@13.3.0:
-    resolution: {integrity: sha512-mPRtrYnipYYv1FEE134ufbWpeggNTo+O/UPzngoaKzbzHAthvR55am+8GfHTnqNRQVRRrYQLGW9ZyUoD7DsBHQ==}
+  /lint-staged@14.0.0:
+    resolution: {integrity: sha512-0tLf0pqZYkar/wu3nTctk4rVIG+d7PanDYv4/IQR4qwdqfQkTDziLRFnqMcLuLBTuUqmcLwsHPD2EjQ18d/oaA==}
     engines: {node: ^16.14.0 || >=18.0.0}
     hasBin: true
     dependencies:
