@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.152](https://github.com/wayofdev/keywind/compare/v1.1.151...v1.1.152) (2023-08-14)
+
+
+### Miscellaneous
+
+* **deps:** update dependency autoprefixer to v10.4.15 ([d6bba62](https://github.com/wayofdev/keywind/commit/d6bba6223a4c3735edb93b19f79d247c4f1ef97c))
+
 ## [1.1.151](https://github.com/wayofdev/keywind/compare/v1.1.150...v1.1.151) (2023-08-11)
 
 
