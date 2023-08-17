@@ -38,8 +38,8 @@ devDependencies:
     specifier: 3.0.2
     version: 3.0.2(@wayofdev/lint-staged-config@2.1.2)(secretlint@7.0.7)
   archiver:
-    specifier: 5.3.1
-    version: 5.3.1
+    specifier: 5.3.2
+    version: 5.3.2
   autoprefixer:
     specifier: 10.4.15
     version: 10.4.15(postcss@8.4.28)
@@ -924,8 +924,8 @@ packages:
       readable-stream: 2.3.8
     dev: true
 
-  /archiver@5.3.1:
-    resolution: {integrity: sha512-8KyabkmbYrH+9ibcTScQ1xCJC/CGcugdVIwB+53f5sZziXgwUh3iXlAlANMxcZyDEfTHMe6+Z5FofV8nopXP7w==}
+  /archiver@5.3.2:
+    resolution: {integrity: sha512-+25nxyyznAXF7Nef3y0EbBeqmGZgeN/BxHX29Rs39djAfaFalmQ89SE6CWyDCHzGL0yt/ycBtNOmGTW0FyGWNw==}
     engines: {node: '>= 10'}
     dependencies:
       archiver-utils: 2.1.0
