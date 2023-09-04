@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.178](https://github.com/wayofdev/keywind/compare/v1.1.177...v1.1.178) (2023-09-04)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout action to v4 ([4ac2bd4](https://github.com/wayofdev/keywind/commit/4ac2bd4d33612d6342894db015d03d1fe027b2dc))
+
 ## [1.1.177](https://github.com/wayofdev/keywind/compare/v1.1.176...v1.1.177) (2023-09-04)
 
 
