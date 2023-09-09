@@ -49,11 +49,11 @@
       </p>
     </#if>
     <#if auth?has_content && auth.showTryAnotherWayLink() && showAnotherWayIfPresent>
-      <form action="${url.loginAction}" method="post">
+      <form class="text-center" action="${url.loginAction}" method="post">
         <input name="tryAnotherWay" type="hidden" value="on" />
-        <@button.kw color="primary" type="submit">
+        <@link.kw component="button" color="primary" type="submit">
           ${msg("doTryAnotherWay")}
-        </@button.kw>
+        </@link.kw>
       </form>
     </#if>
     <#nested "socialProviders">
