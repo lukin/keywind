@@ -16,6 +16,7 @@ module.exports = {
         secondary: colors.gray,
 
         provider: {
+          apple: '#000000',
           bitbucket: '#0052CC',
           discord: '#5865F2',
           facebook: '#1877F2',
