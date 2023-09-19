@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.187](https://github.com/wayofdev/keywind/compare/v1.1.186...v1.1.187) (2023-09-19)
+
+
+### Miscellaneous
+
+* **deps:** update dependency postcss to v8.4.30 ([677499c](https://github.com/wayofdev/keywind/commit/677499c82a9578d4b23f8b4775816a47ca56b7fb))
+
 ## [1.1.186](https://github.com/wayofdev/keywind/compare/v1.1.185...v1.1.186) (2023-09-18)
 
 
