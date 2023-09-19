@@ -1,0 +1,40 @@
+---
+name: ⚙️ Monorepo install (pnpm)
+description: 'Run pnpm install'
+
+runs:
+  using: 'composite'
+
+  steps:
+    - name: ⚙️ Install pnpm
+      uses: pnpm/action-setup@v2
+      id: pnpm-install
+      with:
+        run_install: false
+
+    - name: 🌎 Expose pnpm config(s) through "$GITHUB_OUTPUT"
+      id: pnpm-config
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - name: ♻️ Cache rotation keys
+      id: cache-rotation
+      shell: bash
+      run: |
+        echo "YEAR_WEEK=$(/bin/date -u "+%Y%W")" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      name: 🗄️ Setup pnpm cache
+      id: pnpm-store-cache
+      with:
+        path: ${{ steps.pnpm-config.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-cache-${{ steps.cache-rotation.outputs.YEAR_WEEK }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-cache-${{ steps.cache-rotation.outputs.YEAR_WEEK }}-
+
+    - name: 📦 Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile --strict-peer-dependencies --prefer-offline
+      env:
+        HUSKY: '0'

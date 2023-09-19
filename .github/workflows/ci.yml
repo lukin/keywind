@@ -1,0 +1,70 @@
+---
+on: # yamllint disable-line rule:truthy
+  merge_group:
+  push:
+    branches:
+      - master
+      - develop
+    # Only consider those paths to trigger the action
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - 'pnpm*'
+      - '.github/**'
+      - 'tsconfig.json'
+      - 'tsconfig.node.json'
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    # Only consider those paths to trigger the action
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - 'pnpm*'
+      - '.github/**'
+      - 'tsconfig.json'
+      - 'tsconfig.node.json'
+
+name: 🔍 Continuous integration
+
+jobs:
+  integration:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ['ubuntu-22.04']
+        node: ['18']
+
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Setup node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/pnpm-install
+
+      - name: ♻️ Restore packages cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/.cache
+            ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          key: ${{ runner.os }}-packages-cache-${{ hashFiles('**/pnpm*.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-packages-cache-${{ hashFiles('**/pnpm*.yaml') }}
+
+      # Lint packages that have changed (--include & --since)
+      - name: 🚨 Linter
+        run: |
+          pnpm --filter "...[origin/master]" run lint

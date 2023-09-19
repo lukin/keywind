@@ -1,0 +1,49 @@
+---
+version: '3.9'
+
+services:
+  keycloak-database:
+    image: postgres:15-alpine
+    container_name: keywind_keycloak_db
+    restart: on-failure
+    volumes:
+      - keycloak_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${KC_DB_URL_DATABASE}
+      POSTGRES_USER: ${KC_DB_USERNAME}
+      POSTGRES_PASSWORD: ${KC_DB_PASSWORD}
+    ports:
+      - '5432'
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.0.2
+    container_name: keywind_keycloak
+    restart: on-failure
+    volumes:
+      - ./out/keywind.jar:/opt/keycloak/providers/keywind.jar
+      - ./docker/keycloak/certs/cert.pem:/opt/keycloak/conf/cert.pem
+      - ./docker/keycloak/certs/key.pem:/opt/keycloak/conf/key.pem
+      - ./docker/keycloak/setup:/tmp/setup:ro
+    networks:
+      default:
+        aliases:
+          - keycloak.keywind.alias
+    depends_on:
+      - keycloak-database
+    env_file:
+      - .env
+    environment:
+      KC_FEATURES_DISABLED: 'jdbc-h2,jdbc-mariadb,jdbc-mssql,jdbc-mysql,jdbc-oracle'
+    ports:
+      - '8777:8080'
+    links:
+      - keycloak-database
+    entrypoint: ['/opt/keycloak/bin/kc.sh', 'start-dev']
+
+volumes:
+  rabbitmq_data:
+  keycloak_data:
+
+networks:
+  default:
+    name: project.keywind

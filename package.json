@@ -1,27 +1,86 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "keywind",
+  "version": "1.1.187",
+  "private": true,
+  "description": "Keywind is a component-based Keycloak Login Theme built with Tailwind CSS.",
+  "keywords": [
+    "keycloak",
+    "keycloak-theme",
+    "keywind",
+    "tailwind",
+    "tailwindcss",
+    "theme"
+  ],
+  "homepage": "https://github.com/lukin/keywind",
+  "bugs": {
+    "url": "https://github.com/lukin/keywind/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wayofdev/keywind"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Anthony Lukin",
+    "email": "anthony@lukin.dev",
+    "url": "https://github.com/lukin"
+  },
+  "contributors": [
+    {
+      "name": "Andrij Orlenko",
+      "email": "the@wayof.dev",
+      "url": "https://github.com/lotyp"
+    }
+  ],
   "scripts": {
     "build": "tsc && vite build",
     "build:jar": "vite-node scripts/build",
+    "commit": "git-cz",
+    "deps:check": "pnpm dlx npm-check-updates@latest --configFileName .ncurc.yml --deep --mergeConfig",
+    "deps:update": "pnpm dlx npm-check-updates@latest --configFileName .ncurc.yml -u --deep --mergeConfig && pnpm install",
     "dev": "vite build --watch",
+    "preinstall": "pnpm dlx only-allow pnpm",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write . && pnpm lint:package-json",
+    "lint:commits": "pnpm commitlint --from HEAD~1 --to HEAD --verbose",
+    "lint:package-json": "sort-package-json package.json",
+    "lint:secrets": "secretlint **/*",
+    "prepare": "is-ci || husky install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "alpinejs": "^3.12.0",
-    "rfc4648": "^1.5.2"
+    "alpinejs": "3.13.0",
+    "rfc4648": "1.5.2"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3",
-    "@types/alpinejs": "^3.7.1",
-    "@types/archiver": "^5.3.1",
-    "@types/node": "^18.15.0",
-    "archiver": "^5.3.1",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4",
-    "vite-node": "^0.29.2"
+    "@commitlint/cli": "17.7.1",
+    "@tailwindcss/forms": "0.5.6",
+    "@types/alpinejs": "3.13.0",
+    "@types/archiver": "5.3.2",
+    "@types/node": "18.17.17",
+    "@wayofdev/commitlint-config": "3.0.2",
+    "@wayofdev/lint-staged-config": "2.1.2",
+    "@wayofdev/secretlint-config": "3.0.2",
+    "archiver": "6.0.1",
+    "autoprefixer": "10.4.15",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "8.0.3",
+    "is-ci": "3.0.1",
+    "lint-staged": "14.0.1",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.4.30",
+    "prettier": "^3.0.0",
+    "secretlint": "7.0.7",
+    "sort-package-json": "2.5.1",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2",
+    "vite": "4.4.9",
+    "vite-node": "0.34.4"
+  },
+  "packageManager": "pnpm@8.6.6",
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
