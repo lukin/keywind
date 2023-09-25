@@ -13,23 +13,22 @@ const files = [
   ...readdirSync(directoryPathComponents).map((e) => `components/atoms/${e}`),
 ];
 
-await Promise.all(
-  files.map(async function (file) {
-    if (file.includes('.ftl')) {
-      // Build using mailwind
-      await exec(
-        `mailwind --input-html ${path.join(
-          __dirname,
-          `../theme/keywind/email/html-src/${file}`
-        )} --output-html ${path.join(__dirname, `../theme/keywind/email/html/${file}`)}`
-      );
-      // fix: wrong build result for ftl-file exception
-      const data = readFileSync(path.join(__dirname, `../theme/keywind/email/html/${file}`));
-      const result = data.toString()
-        .replaceAll("<!--@", '</@')
-        .replaceAll("<!--#", '</#')
-        .replaceAll("-->", '>')
-      writeFileSync(path.join(__dirname, `../theme/keywind/email/html/${file}`), result);
-    }
-  })
-);
+for (let file of files) {
+  if (file.includes('.ftl')) {
+    // Build using mailwind
+    await exec(
+      `mailwind --input-html ${path.join(
+        __dirname,
+        `../theme/keywind/email/html-src/${file}`
+      )} --output-html ${path.join(__dirname, `../theme/keywind/email/html/${file}`)}`
+    );
+    // fix: wrong build result for ftl-file exception
+    const data = readFileSync(path.join(__dirname, `../theme/keywind/email/html/${file}`));
+    const result = data
+      .toString()
+      .replaceAll('<!--@', '</@')
+      .replaceAll('<!--#', '</#')
+      .replaceAll('-->', '>');
+    writeFileSync(path.join(__dirname, `../theme/keywind/email/html/${file}`), result);
+  }
+}
