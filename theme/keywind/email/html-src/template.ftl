@@ -1,6 +1,5 @@
 <#import "document.ftl" as document>
 <#import "components/atoms/background.ftl" as background>
-<#import "components/atoms/body.ftl" as body>
 <#import "components/atoms/card.ftl" as card>
 <#import "components/atoms/container.ftl" as container>
 <#import "components/atoms/footer.ftl" as footer>
@@ -9,11 +8,11 @@
 
 <#macro emailLayout>
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
   <head>
     <@document.kw script=script />
   </head>
-  <@body.kw>
+  <body style="background-color: #ecf9ff;">
     <@background.kw />
     <@container.kw>
       <@card.kw>
@@ -22,8 +21,8 @@
           <#nested>
         </@main.kw>
       </@card.kw>
+      <@footer.kw />
     </@container.kw>
-    <@footer.kw />
-  </@body.kw>
+  </body>
 </html>
 </#macro>

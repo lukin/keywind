@@ -1,5 +1,5 @@
 <#macro kw>
-  <div class="py-10 px-4 max-w-[512px] relative z-20 mx-auto">
+  <div class="relative z-20 py-10 px-4 max-w-[512px] mx-auto">
     <#nested>
   </div>
 </#macro>
