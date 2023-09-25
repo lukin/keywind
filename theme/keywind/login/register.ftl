@@ -6,6 +6,7 @@
 <#import "components/atoms/link.ftl" as link>
 
 <@layout.registrationLayout
+  script="dist/passwordVisibility.js"
   displayMessage=!messagesPerField.existsError("firstName", "lastName", "email", "username", "password", "password-confirm")
   ;
   section

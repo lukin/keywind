@@ -6,6 +6,7 @@
 <#import "components/atoms/input.ftl" as input>
 
 <@layout.registrationLayout
+  script="dist/passwordVisibility.js"
   displayMessage=!messagesPerField.existsError("password", "password-confirm")
   ;
   section
