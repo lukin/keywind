@@ -51,7 +51,7 @@
     <#if auth?has_content && auth.showTryAnotherWayLink() && showAnotherWayIfPresent>
       <form action="${url.loginAction}" method="post">
         <input name="tryAnotherWay" type="hidden" value="on" />
-        <@button.kw color="primary" type="submit">
+        <@button.kw color="secondary" type="submit">
           ${msg("doTryAnotherWay")}
         </@button.kw>
       </form>
