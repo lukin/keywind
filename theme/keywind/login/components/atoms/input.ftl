@@ -40,6 +40,7 @@
           <@iconEyeSlash.kw style="display: none;" />
         </button>
       </div>
+      <script type="module" src="${url.resourcesPath}/dist/passwordVisibility.js" defer></script>
     <#else>
       <input
         <#if autofocus>autofocus</#if>
