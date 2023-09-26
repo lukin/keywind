@@ -4,6 +4,7 @@
 <#import "components/atoms/form.ftl" as form>
 <#import "components/atoms/input.ftl" as input>
 <#import "components/atoms/link.ftl" as link>
+<#import "components/molecules/register-commons.ftl" as registerCommons>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("firstName", "lastName", "email", "username", "password", "password-confirm")
@@ -71,6 +72,7 @@
           type="password"
         />
       </#if>
+      <@registerCommons.termsAcceptance/>
       <#if recaptchaRequired??>
         <div class="g-recaptcha" data-sitekey="${recaptchaSiteKey}" data-size="compact"></div>
       </#if>
