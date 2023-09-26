@@ -1,6 +1,7 @@
 # :wind_face: Keywind
 
-Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpine.js](https://github.com/alpinejs/alpine).
+Keywind is a component-based Keycloak Login Theme with build-in customization options.
+Built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpine.js](https://github.com/alpinejs/alpine).
 
 ![Preview](./preview.png)
 
@@ -27,6 +28,11 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - WebAuthn Authenticate
 - WebAuthn Error
 - WebAuthn Register
+
+### Customization Options
+
+- Background Video / Image
+- Company Logo in Background
 
 ### Identity Provider Icons
 
@@ -82,6 +88,11 @@ module.exports = {
 ```
 
 Read more about Tailwind CSS configuration in the [documentation](https://tailwindcss.com/docs/configuration).
+
+### Build-In Customizations
+
+Keywind ships with a few easy to use customization options. Customize these settings by editing the theme properties before deployment:
+`theme/mytheme/login/theme.properties`
 
 ### Components
 
