@@ -8,7 +8,7 @@
 
 <#macro emailLayout>
 <!DOCTYPE html>
-<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<html lang="${locale}" xmlns:v="urn:schemas-microsoft-com:vml">
   <head>
     <@document.kw script=script />
   </head>
