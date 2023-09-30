@@ -7,6 +7,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 ### Styled Pages
 
 - Error
+- Info
 - Login
 - Login Config TOTP
 - Login IDP Link Confirm
