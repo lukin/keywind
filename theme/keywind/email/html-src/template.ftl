@@ -12,7 +12,7 @@
   <head>
     <@document.kw script=script />
   </head>
-  <body style="background-color: #ecf9ff;">
+  <body style="background-color: #ecf9ff; background-image: url('https://mailwind.blob.core.windows.net/website/blurred-background-transparency.jpg');">
     <@background.kw />
     <@container.kw>
       <@card.kw>
