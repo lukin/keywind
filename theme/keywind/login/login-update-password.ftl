@@ -4,7 +4,7 @@
 <#import "components/atoms/checkbox.ftl" as checkbox>
 <#import "components/atoms/form.ftl" as form>
 <#import "components/atoms/input.ftl" as input>
-<#import "components/molucules/password-commons.ftl" as passwordCommons>
+<#import "components/molecules/password-commons.ftl" as passwordCommons>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("password", "password-confirm")

@@ -4,7 +4,7 @@
 <#import "components/atoms/button-group.ftl" as buttonGroup>
 <#import "components/atoms/checkbox.ftl" as checkbox>
 <#import "components/atoms/form.ftl" as form>
-<#import "components/molucules/password-commons.ftl" as passwordCommons>
+<#import "components/molecules/password-commons.ftl" as passwordCommons>
 
 <@layout.registrationLayout script="dist/recoveryCodes.js"; section>
   <#if section="header">

@@ -6,7 +6,7 @@
 <#import "components/atoms/link.ftl" as link>
 <#import "features/labels/totp.ftl" as totpLabel>
 <#import "features/labels/totp-device.ftl" as totpDeviceLabel>
-<#import "components/molucules/password-commons.ftl" as passwordCommons>
+<#import "components/molecules/password-commons.ftl" as passwordCommons>
 
 <#assign totpLabel><@totpLabel.kw /></#assign>
 <#assign totpDeviceLabel><@totpDeviceLabel.kw /></#assign>
@@ -92,7 +92,7 @@
         required=false
         type="text"
       />
-      
+
       <@passwordCommons.logoutOtherSessions/>
 
       <@buttonGroup.kw>

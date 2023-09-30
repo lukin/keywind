@@ -1,45 +1,43 @@
 <#import "template.ftl" as layout>
+<#import "components/atoms/button.ftl" as button>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
+<#import "components/atoms/form.ftl" as form>
+<#import "components/atoms/input.ftl" as input>
 <#import "components/molecules/password-commons.ftl" as passwordCommons>
+
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('email'); section>
     <#if section = "header">
         ${msg("updateEmailTitle")}
     <#elseif section = "form">
-        <form id="kc-update-email-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="email" name="email" value="${(email.value!'')}"
-                           class="${properties.kcInputClass!}"
-                           aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"
-                    />
+        <@form.kw action="${url.loginAction}" method="post">
+            <@input.kw
+              autocomplete="off"
+              autofocus=true
+              invalid=messagesPerField.existsError("email")
+              label=msg("email")
+              message=kcSanitize(messagesPerField.get("email"))?no_esc
+              name="email"
+              required=true
+              type="text"
+              value=email.value!''
+            />
 
-                    <#if messagesPerField.existsError('email')>
-                        <span id="input-error-email" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                            ${kcSanitize(messagesPerField.get('email'))?no_esc}
-                        </span>
-                    </#if>
-                </div>
-            </div>
+            <@passwordCommons.logoutOtherSessions/>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                    </div>
-                </div>
-
-                <@passwordCommons.logoutOtherSessions/>
-
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <#if isAppInitiatedAction??>
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}" />
-                        <button class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" type="submit" name="cancel-aia" value="true" />${msg("doCancel")}</button>
-                    <#else>
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}" />
-                    </#if>
-                </div>
-            </div>
-        </form>
+            <@buttonGroup.kw>
+              <#if isAppInitiatedAction??>
+                <@button.kw color="primary" type="submit">
+                  ${msg("doSubmit")}
+                </@button.kw>
+                <@button.kw color="secondary" name="cancel-aia" type="submit" value="true">
+                  ${msg("doCancel")}
+                </@button.kw>
+              <#else>
+                <@button.kw color="primary" type="submit">
+                  ${msg("doSubmit")}
+                </@button.kw>
+              </#if>
+            </@buttonGroup.kw>
+        </@form.kw>
     </#if>
 </@layout.registrationLayout>

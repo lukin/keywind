@@ -1,7 +1,7 @@
 <#import "template.ftl" as layout>
 <#import "components/atoms/button.ftl" as button>
 <#import "components/atoms/button-group.ftl" as buttonGroup>
-<#import "components/molucules/password-commons.ftl" as passwordCommons>
+<#import "components/molecules/password-commons.ftl" as passwordCommons>
 
 <@layout.registrationLayout script="dist/webAuthnRegister.js"; section>
   <#if section="title">
