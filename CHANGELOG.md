@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.188](https://github.com/wayofdev/keywind/compare/v1.1.187...v1.1.188) (2023-10-01)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout digest to 8ade135 ([056c718](https://github.com/wayofdev/keywind/commit/056c718c9a9b6fae91794a69cea59ff60b464fd3))
+
 ## [1.1.187](https://github.com/wayofdev/keywind/compare/v1.1.186...v1.1.187) (2023-09-19)
 
 
