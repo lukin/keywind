@@ -63,7 +63,7 @@
     "@wayofdev/lint-staged-config": "2.1.2",
     "@wayofdev/secretlint-config": "3.0.2",
     "archiver": "6.0.1",
-    "autoprefixer": "10.4.15",
+    "autoprefixer": "10.4.16",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "husky": "8.0.3",
