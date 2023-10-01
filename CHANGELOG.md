@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.191](https://github.com/wayofdev/keywind/compare/v1.1.190...v1.1.191) (2023-10-01)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @types/alpinejs to v3.13.2 ([27ccc18](https://github.com/wayofdev/keywind/commit/27ccc18eee0c134fe71ba438fdabbbc0c7f68b3b))
+
 ## [1.1.190](https://github.com/wayofdev/keywind/compare/v1.1.189...v1.1.190) (2023-10-01)
 
 
