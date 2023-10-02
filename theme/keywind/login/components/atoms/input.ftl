@@ -53,13 +53,15 @@
 
         aria-invalid="${invalid?c}"
         class="block border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
-        id="${name}"
+        id="<#if id=="">${name}<#else>${id}</#if>"
         name="${name}"
         placeholder="${label}"
         type="${type}"
 
         <#list rest as attrName, attrValue>
-          ${attrName}="${attrValue}"
+          <#if attrValue!="">
+            ${attrName}="${attrValue}"
+          </#if>
         </#list>
       >
     </#if>
