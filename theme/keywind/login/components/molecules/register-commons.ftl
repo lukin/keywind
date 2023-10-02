@@ -14,6 +14,7 @@
         label=msg("acceptTerms")
         invalid=messagesPerField.existsError('termsAccepted')
         message=kcSanitize(messagesPerField.get('termsAccepted'))?no_esc
+        required=true
         />
     </#if>
 </#macro>

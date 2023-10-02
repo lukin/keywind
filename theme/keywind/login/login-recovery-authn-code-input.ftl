@@ -14,6 +14,7 @@
         autofocus=true
         label=msg("auth-recovery-code-prompt", recoveryAuthnCodesInputBean.codeNumber?c)
         name="recoveryCodeInput"
+        required=true
         type="text"
       />
       <@buttonGroup.kw>

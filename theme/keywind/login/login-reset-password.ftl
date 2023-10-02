@@ -25,6 +25,7 @@
         label=usernameLabel
         message=kcSanitize(messagesPerField.get("username"))
         name="username"
+        required=true
         type="text"
         value=(auth?has_content && auth.showUsername())?then(auth.attemptedUsername, '')
       />
