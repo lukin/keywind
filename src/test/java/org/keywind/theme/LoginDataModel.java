@@ -78,6 +78,7 @@ public class LoginDataModel {
 
     Map<String, Object> locale = new HashMap<>();
     locale.put("current", "English");
+    locale.put("currentLanguageTag", "en");
     locale.put("supported", supported);
 
     return locale;
