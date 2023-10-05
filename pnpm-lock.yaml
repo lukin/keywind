@@ -29,8 +29,8 @@ devDependencies:
     specifier: 18.18.3
     version: 18.18.3
   '@wayofdev/commitlint-config':
-    specifier: 3.0.2
-    version: 3.0.2(@commitlint/cli@17.7.2)(@wayofdev/lint-staged-config@2.1.2)
+    specifier: 3.0.3
+    version: 3.0.3(@commitlint/cli@17.7.2)(@wayofdev/lint-staged-config@2.1.2)
   '@wayofdev/lint-staged-config':
     specifier: 2.1.2
     version: 2.1.2(lint-staged@14.0.1)
@@ -150,11 +150,11 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.6.7:
-    resolution: {integrity: sha512-4oTpEUC0HRM54QRHBPMOJW1pETp7usxXn9RuNYNWHcmu8wi1mpws95hvS20u2n6HtIkTn0jfn7vHioCm4AGUTw==}
+  /@commitlint/config-conventional@17.7.0:
+    resolution: {integrity: sha512-iicqh2o6et+9kWaqsQiEYZzfLbtoWv9uZl8kbI8EGfnc0HeGafQBF7AJ0ylN9D/2kj6txltsdyQs8+2fTMwWEw==}
     engines: {node: '>=v14'}
     dependencies:
-      conventional-changelog-conventionalcommits: 5.0.0
+      conventional-changelog-conventionalcommits: 6.1.0
     dev: true
 
   /@commitlint/config-validator@17.6.7:
@@ -224,7 +224,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@20.5.1)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.3)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -760,14 +760,14 @@ packages:
     resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
     dev: false
 
-  /@wayofdev/commitlint-config@3.0.2(@commitlint/cli@17.7.2)(@wayofdev/lint-staged-config@2.1.2):
-    resolution: {integrity: sha512-1AYbtHfbvZTeoU0+4s90uwUTfMEyMSNcZsVIrsqBbfBzx1tVoHTswnvz3IdZ9R2eD2/4y+N/mdRzVxGAB5q8XA==}
+  /@wayofdev/commitlint-config@3.0.3(@commitlint/cli@17.7.2)(@wayofdev/lint-staged-config@2.1.2):
+    resolution: {integrity: sha512-wQf44cSqVm3d8okAmhL65DvGFgFC7tlFPvj1Q1Q7eEsrQDHnM8Vu+qllzIsOSAa+AwqAP/rypV3L96OKPMwD1A==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
-      '@wayofdev/lint-staged-config': ^2.1.2
+      '@wayofdev/lint-staged-config': ^2.1.3
     dependencies:
       '@commitlint/cli': 17.7.2
-      '@commitlint/config-conventional': 17.6.7
+      '@commitlint/config-conventional': 17.7.0
       '@wayofdev/lint-staged-config': 2.1.2(lint-staged@14.0.1)
     dev: true
 
@@ -1299,13 +1299,11 @@ packages:
       compare-func: 2.0.0
     dev: true
 
-  /conventional-changelog-conventionalcommits@5.0.0:
-    resolution: {integrity: sha512-lCDbA+ZqVFQGUj7h9QBKoIpLhl8iihkO0nCTyRNzuXtcd7ubODpYB04IFy31JloiJgG0Uovu8ot8oxRzn7Nwtw==}
-    engines: {node: '>=10'}
+  /conventional-changelog-conventionalcommits@6.1.0:
+    resolution: {integrity: sha512-3cS3GEtR78zTfMzk0AizXKKIdN4OvSh7ibNz6/DPbhWWQu7LqE/8+/GqSodV+sywUR2gpJAdP/1JFf4XtN7Zpw==}
+    engines: {node: '>=14'}
     dependencies:
       compare-func: 2.0.0
-      lodash: 4.17.21
-      q: 1.5.1
     dev: true
 
   /conventional-commit-types@3.0.0:
@@ -1338,7 +1336,7 @@ packages:
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.2.2)
-      ts-node: 10.9.1(@types/node@20.5.1)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.3)(typescript@5.2.2)
       typescript: 5.2.2
     dev: true
 
@@ -3193,11 +3191,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /q@1.5.1:
-    resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
-    engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
-    dev: true
-
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
@@ -3911,37 +3904,6 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 18.18.3
-      acorn: 8.10.0
-      acorn-walk: 8.2.0
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 5.2.2
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: true
-
-  /ts-node@10.9.1(@types/node@20.5.1)(typescript@5.2.2):
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
-    hasBin: true
-    peerDependencies:
-      '@swc/core': '>=1.2.50'
-      '@swc/wasm': '>=1.2.50'
-      '@types/node': '*'
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      '@swc/wasm':
-        optional: true
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.9
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 20.5.1
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
