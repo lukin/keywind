@@ -73,7 +73,7 @@
         />
       </#if>
 
-      <@recaptcha.kw recaptchaRequired=recaptchaRequired?? />
+      <@recaptcha.kw recaptchaRequired=recaptchaRequired?? recaptchaSiteKey=recaptchaSiteKey />
 
       <@buttonGroup.kw>
         <@button.kw color="primary" type="submit">
