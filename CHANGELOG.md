@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.207](https://github.com/wayofdev/keywind/compare/v1.1.206...v1.1.207) (2023-10-14)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @commitlint/cli to v17.8.0 ([d506489](https://github.com/wayofdev/keywind/commit/d506489b488c29765f5052639903c982eae8b5be))
+
 ## [1.1.206](https://github.com/wayofdev/keywind/compare/v1.1.205...v1.1.206) (2023-10-12)
 
 
