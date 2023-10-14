@@ -54,7 +54,7 @@
     "rfc4648": "1.5.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.2",
+    "@commitlint/cli": "17.8.0",
     "@tailwindcss/forms": "0.5.6",
     "@types/alpinejs": "3.13.2",
     "@types/archiver": "5.3.3",
