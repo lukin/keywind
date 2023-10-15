@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.209](https://github.com/wayofdev/keywind/compare/v1.1.208...v1.1.209) (2023-10-15)
+
+
+### Miscellaneous
+
+* **deps:** update dependency lint-staged to v15.0.1 ([a67f7cf](https://github.com/wayofdev/keywind/commit/a67f7cf4834bac77c0d6a4710a178846d1a672f4))
+
 ## [1.1.208](https://github.com/wayofdev/keywind/compare/v1.1.207...v1.1.208) (2023-10-14)
 
 
