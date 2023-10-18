@@ -20,8 +20,8 @@ devDependencies:
     specifier: 0.5.6
     version: 0.5.6(tailwindcss@3.3.3)
   '@types/alpinejs':
-    specifier: 3.13.2
-    version: 3.13.2
+    specifier: 3.13.3
+    version: 3.13.3
   '@types/archiver':
     specifier: 5.3.4
     version: 5.3.4
@@ -718,8 +718,8 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@types/alpinejs@3.13.2:
-    resolution: {integrity: sha512-kRGGjngGMCw8H4BIDbaDLwuGNIsrzdvt54kKqLe6O8ZLTNW5swEMr6j2ByH/vUo46ajqf2Qbxh6fcxPDrfEU+Q==}
+  /@types/alpinejs@3.13.3:
+    resolution: {integrity: sha512-ZMxJlDxDDqn94gBWOkeGulVw3nUOy/rPGXlyQksnlzwzuipl4kW0E/tFzAiU4uKSu6UXZL94wReRorln+2FStg==}
     dev: true
 
   /@types/archiver@5.3.4:
