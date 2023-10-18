@@ -50,7 +50,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "alpinejs": "3.13.1",
+    "alpinejs": "3.13.2",
     "rfc4648": "1.5.2"
   },
   "devDependencies": {
