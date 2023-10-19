@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.216](https://github.com/wayofdev/keywind/compare/v1.1.215...v1.1.216) (2023-10-19)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout digest to b4ffde6 ([7d7c21f](https://github.com/wayofdev/keywind/commit/7d7c21f47ab17be9f84b3aca95c49961065463ee))
+
 ## [1.1.215](https://github.com/wayofdev/keywind/compare/v1.1.214...v1.1.215) (2023-10-18)
 
 
