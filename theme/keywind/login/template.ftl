@@ -51,9 +51,9 @@
     <#if auth?has_content && auth.showTryAnotherWayLink() && showAnotherWayIfPresent>
       <form class="text-center" action="${url.loginAction}" method="post">
         <input name="tryAnotherWay" type="hidden" value="on" />
-        <@link.kw component="button" color="primary" type="submit">
+        <@button.kw color="secondary" type="submit">
           ${msg("doTryAnotherWay")}
-        </@link.kw>
+        </@button.kw>
       </form>
     </#if>
     <#nested "socialProviders">
@@ -65,7 +65,7 @@
     </#if>
   </#assign>
 
-  <html>
+  <html<#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"</#if>>
     <head>
       <@document.kw script=script />
     </head>
