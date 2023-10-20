@@ -49,7 +49,7 @@
       </p>
     </#if>
     <#if auth?has_content && auth.showTryAnotherWayLink() && showAnotherWayIfPresent>
-      <form class="text-center" action="${url.loginAction}" method="post">
+      <form action="${url.loginAction}" method="post">
         <input name="tryAnotherWay" type="hidden" value="on" />
         <@button.kw color="secondary" type="submit">
           ${msg("doTryAnotherWay")}
