@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.221](https://github.com/wayofdev/keywind/compare/v1.1.220...v1.1.221) (2023-10-23)
+
+
+### Miscellaneous
+
+* **deps:** update actions/setup-node action to v4 ([e96123d](https://github.com/wayofdev/keywind/commit/e96123d4a1747c51199bacdb7344c96c783a0f98))
+
 ## [1.1.220](https://github.com/wayofdev/keywind/compare/v1.1.219...v1.1.220) (2023-10-23)
 
 
