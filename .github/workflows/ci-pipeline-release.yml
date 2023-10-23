@@ -1,0 +1,31 @@
+name: CI Pipeline Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-lib:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run build
+
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.7.0
+        with:
+          type: 'zip'
+          filename: 'keywind-release-${{github.ref_name}}.zip'
+          path: 'theme/keywind'
+          
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: 'keywind-release-${{github.ref_name}}.zip'
+          token: ${{ secrets.GITHUB_TOKEN }}   
+          allowUpdates: true
+          
