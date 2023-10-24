@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.224](https://github.com/wayofdev/keywind/compare/v1.1.223...v1.1.224) (2023-10-24)
+
+
+### Miscellaneous
+
+* **deps:** update dependency tailwindcss to v3.3.4 ([092b6c1](https://github.com/wayofdev/keywind/commit/092b6c13986d8f66c13858ef225fed3b715b11d0))
+
 ## [1.1.223](https://github.com/wayofdev/keywind/compare/v1.1.222...v1.1.223) (2023-10-24)
 
 
