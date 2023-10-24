@@ -21,6 +21,7 @@ Built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpi
 - Login Update Password
 - Login Update Profile
 - Login Username
+- Login X.509 Info
 - Logout Confirm
 - Register
 - Select Authenticator
