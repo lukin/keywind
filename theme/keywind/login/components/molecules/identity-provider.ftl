@@ -31,7 +31,7 @@
         <#case "instagram">
           <#assign colorClass="hover:bg-provider-instagram/10">
           <#break>
-        <#case "linkedin">
+        <#case "linkedin-openid-connect">
           <#assign colorClass="hover:bg-provider-linkedin/10">
           <#break>
         <#case "microsoft">
