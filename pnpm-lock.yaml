@@ -18,7 +18,7 @@ devDependencies:
     version: 18.0.0
   '@tailwindcss/forms':
     specifier: 0.5.6
-    version: 0.5.6(tailwindcss@3.3.3)
+    version: 0.5.6(tailwindcss@3.3.4)
   '@types/alpinejs':
     specifier: 3.13.3
     version: 3.13.3
@@ -74,8 +74,8 @@ devDependencies:
     specifier: 2.6.0
     version: 2.6.0
   tailwindcss:
-    specifier: 3.3.3
-    version: 3.3.3(ts-node@10.9.1)
+    specifier: 3.3.4
+    version: 3.3.4(ts-node@10.9.1)
   typescript:
     specifier: 5.2.2
     version: 5.2.2
@@ -652,13 +652,13 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0}
     dev: true
 
-  /@tailwindcss/forms@0.5.6(tailwindcss@3.3.3):
+  /@tailwindcss/forms@0.5.6(tailwindcss@3.3.4):
     resolution: {integrity: sha512-Fw+2BJ0tmAwK/w01tEFL5TiaJBX1NLT1/YbWgvm7ws3Qcn11kiXxzNTEQDMs5V3mQemhB56l3u0i9dwdzSQldA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.3.3(ts-node@10.9.1)
+      tailwindcss: 3.3.4(ts-node@10.9.1)
     dev: true
 
   /@textlint/ast-node-types@12.6.1:
@@ -3795,8 +3795,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss@3.3.3(ts-node@10.9.1):
-    resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
+  /tailwindcss@3.3.4(ts-node@10.9.1):
+    resolution: {integrity: sha512-JXZNOkggUAc9T5E7nCrimoXHcSf9h3NWFe5sh36CGD/3M5TRLuQeFnQoDsit2uVTqgoOZHLx5rTykLUu16vsMQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
