@@ -49,6 +49,50 @@ Keywind is a component-based Keycloak Login & E-Mail Theme built with [Tailwind 
 - Stack Overflow
 - Twitter
 
+### Styled Pages
+
+- Error
+- Login
+- Login Config TOTP
+- Login IDP Link Confirm
+- Login OAuth Grant
+- Login OTP
+- Login Page Expired
+- Login Password
+- Login Recovery Authn Code Config
+- Login Recovery Authn Code Input
+- Login Reset Password
+- Login Update Password
+- Login Update Profile
+- Login Username
+- Login X.509 Info
+- Logout Confirm
+- Register
+- Select Authenticator
+- Terms and Conditions
+- WebAuthn Authenticate
+- WebAuthn Error
+- WebAuthn Register
+
+### Identity Provider Icons
+
+- Apple
+- Bitbucket
+- Discord
+- Facebook
+- GitHub
+- GitLab
+- Google
+- Instagram
+- LinkedIn
+- Microsoft
+- OpenID
+- Red Hat OpenShift
+- PayPal
+- Slack
+- Stack Overflow
+- Twitter
+
 ## Installation
 
 Keywind has been designed with component-based architecture from the start, and **you can customize as little or as much Keywind as you need**:
