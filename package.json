@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "alpinejs": "3.13.2",
-    "rfc4648": "1.5.2"
+    "rfc4648": "1.5.3"
   },
   "devDependencies": {
     "@commitlint/cli": "18.2.0",
