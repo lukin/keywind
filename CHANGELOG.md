@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.229](https://github.com/wayofdev/keywind/compare/v1.1.228...v1.1.229) (2023-10-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rfc4648 to v1.5.3 ([e99b994](https://github.com/wayofdev/keywind/commit/e99b9945dd01af1671e6d39494ee33558a2cf334))
+
 ## [1.1.228](https://github.com/wayofdev/keywind/compare/v1.1.227...v1.1.228) (2023-10-26)
 
 
