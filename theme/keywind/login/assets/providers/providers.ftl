@@ -47,7 +47,7 @@
   <@instagramIcon.kw />
 </#macro>
 
-<#macro linkedin>
+<#macro "linkedin-openid-connect">
   <@linkedinIcon.kw />
 </#macro>
 
