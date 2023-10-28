@@ -130,8 +130,8 @@ public class LoginDataModel {
 
   private static Map<String, Object> createPropertiesModel() {
     Map<String, Object> properties = new HashMap<>();
-    properties.put("scripts", "dist/index.js");
-    properties.put("styles", "dist/index.css");
+    properties.put("scripts", "src/index.ts");
+    properties.put("styles", "src/index.css");
 
     return properties;
   }
@@ -227,7 +227,7 @@ public class LoginDataModel {
     url.put("oauthAction", "oauthAction");
     url.put("registrationAction", "registrationAction");
     url.put("registrationUrl", "registrationUrl");
-    url.put("resourcesPath", "../../theme/keywind/login/resources");
+    url.put("resourcesPath", "http://localhost:5173");
 
     return url;
   }
