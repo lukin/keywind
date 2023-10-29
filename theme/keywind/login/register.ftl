@@ -4,6 +4,7 @@
 <#import "components/atoms/form.ftl" as form>
 <#import "components/atoms/input.ftl" as input>
 <#import "components/atoms/link.ftl" as link>
+<#import "components/molecules/register-commons.ftl" as registerCommons>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("firstName", "lastName", "email", "username", "password", "password-confirm")
@@ -18,27 +19,30 @@
         autocomplete="given-name"
         autofocus=true
         invalid=messagesPerField.existsError("firstName")
-        label=msg("firstName")
+        label=msg("firstName") + " *"
         message=kcSanitize(messagesPerField.get("firstName"))
         name="firstName"
+        required=true
         type="text"
         value=(register.formData.firstName)!''
       />
       <@input.kw
         autocomplete="family-name"
         invalid=messagesPerField.existsError("lastName")
-        label=msg("lastName")
+        label=msg("lastName") + " *"
         message=kcSanitize(messagesPerField.get("lastName"))
         name="lastName"
+        required=true
         type="text"
         value=(register.formData.lastName)!''
       />
       <@input.kw
         autocomplete="email"
         invalid=messagesPerField.existsError("email")
-        label=msg("email")
+        label=msg("email") + " *"
         message=kcSanitize(messagesPerField.get("email"))
         name="email"
+        required=true
         type="email"
         value=(register.formData.email)!''
       />
@@ -46,9 +50,10 @@
         <@input.kw
           autocomplete="username"
           invalid=messagesPerField.existsError("username")
-          label=msg("username")
+          label=msg("username") + " *"
           message=kcSanitize(messagesPerField.get("username"))
           name="username"
+          required=true
           type="text"
           value=(register.formData.username)!''
         />
@@ -57,20 +62,23 @@
         <@input.kw
           autocomplete="new-password"
           invalid=messagesPerField.existsError("password", "password-confirm")
-          label=msg("password")
+          label=msg("password") + " *"
           message=kcSanitize(messagesPerField.getFirstError("password", "password-confirm"))
           name="password"
+          required=true
           type="password"
         />
         <@input.kw
           autocomplete="new-password"
           invalid=messagesPerField.existsError("password-confirm")
-          label=msg("passwordConfirm")
+          label=msg("passwordConfirm") + " *"
           message=kcSanitize(messagesPerField.get("password-confirm"))
           name="password-confirm"
+          required=true
           type="password"
         />
       </#if>
+      <@registerCommons.termsAcceptance/>
       <#if recaptchaRequired??>
         <div class="g-recaptcha" data-sitekey="${recaptchaSiteKey}" data-size="compact"></div>
       </#if>

@@ -21,6 +21,7 @@
           label=msg("username")
           message=kcSanitize(messagesPerField.get("username"))
           name="username"
+          required=true
           type="text"
           value=(user.username)!''
         />
@@ -31,6 +32,7 @@
         label=msg("email")
         message=kcSanitize(messagesPerField.get("email"))
         name="email"
+        required=true
         type="email"
         value=(user.email)!''
       />
@@ -40,6 +42,7 @@
         label=msg("firstName")
         message=kcSanitize(messagesPerField.get("firstName"))
         name="firstName"
+        required=true
         type="text"
         value=(user.firstName)!''
       />
@@ -49,6 +52,7 @@
         label=msg("lastName")
         message=kcSanitize(messagesPerField.get("lastName"))
         name="lastName"
+        required=true
         type="text"
         value=(user.lastName)!''
       />
