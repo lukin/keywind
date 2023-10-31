@@ -58,7 +58,7 @@
     "@tailwindcss/forms": "0.5.6",
     "@types/alpinejs": "3.13.3",
     "@types/archiver": "6.0.0",
-    "@types/node": "20.8.9",
+    "@types/node": "20.8.10",
     "@wayofdev/commitlint-config": "3.0.3",
     "@wayofdev/lint-staged-config": "2.1.3",
     "@wayofdev/secretlint-config": "3.0.3",
