@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.236](https://github.com/wayofdev/keywind/compare/v1.1.235...v1.1.236) (2023-11-07)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @types/archiver to v6.0.1 ([a5551ae](https://github.com/wayofdev/keywind/commit/a5551aedf3f7c793127a6c8cfc5680288e939a87))
+
 ## [1.1.235](https://github.com/wayofdev/keywind/compare/v1.1.234...v1.1.235) (2023-11-07)
 
 
