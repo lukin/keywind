@@ -20,8 +20,8 @@ devDependencies:
     specifier: 0.5.6
     version: 0.5.6(tailwindcss@3.3.5)
   '@types/alpinejs':
-    specifier: 3.13.4
-    version: 3.13.4
+    specifier: 3.13.5
+    version: 3.13.5
   '@types/archiver':
     specifier: 6.0.0
     version: 6.0.0
@@ -684,8 +684,8 @@ packages:
       '@textlint/ast-node-types': 12.6.1
     dev: true
 
-  /@types/alpinejs@3.13.4:
-    resolution: {integrity: sha512-u3RSEofiafwaUDxVX5gugEJAYETFmMxxzgfkKXdJmH82N2tVgRv3Zf7CwpFxreUjoVZ9O7WbV2Dk6/ZCW0KywA==}
+  /@types/alpinejs@3.13.5:
+    resolution: {integrity: sha512-BSNTroRhmBkNiyd7ELK/5Boja92hnQMST6H4z1BqXKeMVzHjp9o1j5poqd5Tyhjd8oMFwxYC4I00eghfg2xrTA==}
     dev: true
 
   /@types/archiver@6.0.0:
