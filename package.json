@@ -57,7 +57,7 @@
     "@commitlint/cli": "18.2.0",
     "@tailwindcss/forms": "0.5.6",
     "@types/alpinejs": "3.13.5",
-    "@types/archiver": "6.0.0",
+    "@types/archiver": "6.0.1",
     "@types/node": "20.8.10",
     "@wayofdev/commitlint-config": "3.0.3",
     "@wayofdev/lint-staged-config": "2.1.3",
