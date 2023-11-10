@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.239](https://github.com/wayofdev/keywind/compare/v1.1.238...v1.1.239) (2023-11-10)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @tailwindcss/forms to v0.5.7 ([117112d](https://github.com/wayofdev/keywind/commit/117112dd4ad6a761defc200adef657b7ec1d9de2))
+
 ## [1.1.238](https://github.com/wayofdev/keywind/compare/v1.1.237...v1.1.238) (2023-11-10)
 
 
