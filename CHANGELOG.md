@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.242](https://github.com/wayofdev/keywind/compare/v1.1.241...v1.1.242) (2023-11-12)
+
+
+### Miscellaneous
+
+* **deps:** update dependency secretlint to v7.1.0 ([af92fb5](https://github.com/wayofdev/keywind/commit/af92fb5497cc457e5544ffac64c6f60eb8736264))
+
 ## [1.1.241](https://github.com/wayofdev/keywind/compare/v1.1.240...v1.1.241) (2023-11-12)
 
 
