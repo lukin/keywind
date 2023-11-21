@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.255](https://github.com/wayofdev/keywind/compare/v1.1.254...v1.1.255) (2023-11-21)
+
+
+### Miscellaneous
+
+* **deps:** update dependency vite to v5.0.2 ([75f1fe6](https://github.com/wayofdev/keywind/commit/75f1fe6a4feb13a9624ddd77d7092d5a40d8c232))
+
 ## [1.1.254](https://github.com/wayofdev/keywind/compare/v1.1.253...v1.1.254) (2023-11-21)
 
 
