@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.258](https://github.com/wayofdev/keywind/compare/v1.1.257...v1.1.258) (2023-11-24)
+
+
+### Miscellaneous
+
+* **deps:** update dependency @types/node to v20.10.0 ([4db369b](https://github.com/wayofdev/keywind/commit/4db369b4af381c9c2529c0ad04141597656c9f45))
+
 ## [1.1.257](https://github.com/wayofdev/keywind/compare/v1.1.256...v1.1.257) (2023-11-24)
 
 
