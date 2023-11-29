@@ -76,7 +76,7 @@
     "sort-package-json": "2.6.0",
     "tailwindcss": "3.3.5",
     "typescript": "5.3.2",
-    "vite": "5.0.3",
+    "vite": "5.0.4",
     "vite-node": "0.34.7"
   },
   "packageManager": "pnpm@8.6.6",
