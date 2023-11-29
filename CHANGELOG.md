@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.263](https://github.com/wayofdev/keywind/compare/v1.1.262...v1.1.263) (2023-11-29)
+
+
+### Miscellaneous
+
+* **deps:** update dependency secretlint to v8 ([da0023a](https://github.com/wayofdev/keywind/commit/da0023a359d4b319303861d672a60c9521d8b69a))
+
 ## [1.1.262](https://github.com/wayofdev/keywind/compare/v1.1.261...v1.1.262) (2023-11-29)
 
 
