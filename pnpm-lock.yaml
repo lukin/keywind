@@ -26,8 +26,8 @@ devDependencies:
     specifier: 6.0.2
     version: 6.0.2
   '@types/node':
-    specifier: 20.10.0
-    version: 20.10.0
+    specifier: 20.10.1
+    version: 20.10.1
   '@wayofdev/commitlint-config':
     specifier: 3.0.3
     version: 3.0.3(@commitlint/cli@18.4.3)(@wayofdev/lint-staged-config@2.1.3)
@@ -81,10 +81,10 @@ devDependencies:
     version: 5.3.2
   vite:
     specifier: 5.0.4
-    version: 5.0.4(@types/node@20.10.0)
+    version: 5.0.4(@types/node@20.10.1)
   vite-node:
     specifier: 0.34.7
-    version: 0.34.7(@types/node@20.10.0)
+    version: 0.34.7(@types/node@20.10.1)
 
 packages:
 
@@ -805,8 +805,8 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /@types/node@20.10.0:
-    resolution: {integrity: sha512-D0WfRmU9TQ8I9PFx9Yc+EBHw+vSpIub4IDvQivcp26PtPrdMGAq5SDcpXEo/epqa/DXotVpekHiLNTg3iaKXBQ==}
+  /@types/node@20.10.1:
+    resolution: {integrity: sha512-T2qwhjWwGH81vUEx4EXmBKsTJRXFXNZTL4v0gi01+zyBmCwzE6TyHszqX01m+QHTEq+EZNo13NeJIdEqf+Myrg==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -818,7 +818,7 @@ packages:
   /@types/readdir-glob@1.1.5:
     resolution: {integrity: sha512-raiuEPUYqXu+nvtY2Pe8s8FEmZ3x5yAH4VkLdihcPdalvsHltomrRC9BzuStrJ9yk06470hS0Crw0f1pXqD+Hg==}
     dependencies:
-      '@types/node': 20.10.0
+      '@types/node': 20.10.1
     dev: true
 
   /@vue/reactivity@3.1.5:
@@ -4133,7 +4133,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node@0.34.7(@types/node@20.10.0):
+  /vite-node@0.34.7(@types/node@20.10.1):
     resolution: {integrity: sha512-0Yzb96QzHmqIKIs/x2q/sqG750V/EF6yDkS2p1WjJc1W2bgRSuQjf5vB9HY8h2nVb5j4pO5paS5Npcv3s69YUg==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -4143,7 +4143,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.4(@types/node@20.10.0)
+      vite: 5.0.4(@types/node@20.10.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4155,7 +4155,7 @@ packages:
       - terser
     dev: true
 
-  /vite@5.0.4(@types/node@20.10.0):
+  /vite@5.0.4(@types/node@20.10.1):
     resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4183,7 +4183,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.10.0
+      '@types/node': 20.10.1
       esbuild: 0.19.8
       postcss: 8.4.31
       rollup: 4.6.0
