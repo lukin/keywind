@@ -4,7 +4,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "build:jar": "vite-node scripts/build",
-    "dev": "vite build --watch",
+    "dev": "vite dev",
     "test": "mvn test"
   },
   "dependencies": {
