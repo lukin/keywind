@@ -4,6 +4,7 @@
 <#import "components/atoms/checkbox.ftl" as checkbox>
 <#import "components/atoms/form.ftl" as form>
 <#import "components/atoms/input.ftl" as input>
+<#import "components/molecules/password-commons.ftl" as passwordCommons>
 
 <@layout.registrationLayout
   displayMessage=!messagesPerField.existsError("password", "password-confirm")
@@ -37,6 +38,7 @@
         name="password-confirm"
         type="password"
       />
+      <@passwordCommons.logoutOtherSessions/>
       <#if isAppInitiatedAction??>
         <@checkbox.kw
           checked=true

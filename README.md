@@ -25,6 +25,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - Register
 - Select Authenticator
 - Terms and Conditions
+- Update E-Mail
 - WebAuthn Authenticate
 - WebAuthn Error
 - WebAuthn Register
