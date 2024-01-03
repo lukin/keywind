@@ -6,14 +6,14 @@
 
 <#macro userProfileFormFields>
 	<#assign currentGroup="">
-	
+
 	<#list profile.attributes as attribute>
 
 		<#assign groupName = attribute.group!"">
 		<#if groupName != currentGroup>
 			<#assign currentGroup=groupName>
 			<#if currentGroup != "" >
-				<div>	
+				<div>
 					<#assign groupDisplayHeader=attribute.groupDisplayHeader!"">
 					<#if groupDisplayHeader != "">
 						<#assign groupHeaderText=advancedMsg(attribute.groupDisplayHeader)!groupName>
@@ -23,7 +23,7 @@
 					<div class="font-bold">
 						<label id="header-${groupName}">${groupHeaderText}</label>
 					</div>
-	
+
 					<#assign groupDisplayDescription=attribute.groupDisplayDescription!"">
 					<#if groupDisplayDescription != "">
 						<#assign groupDescriptionText=advancedMsg(attribute.groupDisplayDescription)!"">
@@ -72,24 +72,24 @@
   <#assign label>
     <@labelText attribute=attribute />
   </#assign>
-	<@input.kw 
+	<@input.kw
     type=type?markup_string
     name=attribute.name
     value=attribute.value!''
+    required=attribute.required
 		disabled=attribute.readOnly
     label=label?markup_string
 		invalid=messagesPerField.existsError('${attribute.name}')
     message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-		autocomplete=(attribute.autocomplete)!""
-		placeholder=(attribute.annotations.inputTypePlaceholder)!""
-		pattern=(attribute.annotations.inputTypePattern)!""
-		size=(attribute.annotations.inputTypeSize)!""
-		maxlength=(attribute.annotations.inputTypeMaxlength)!""
-		minlength=(attribute.annotations.inputTypeMinlength)!""
-		max=(attribute.annotations.inputTypeMax)!""
-		min=(attribute.annotations.inputTypeMin)!""
-		step=(attribute.annotations.inputTypeStep)!""
-    required=attribute.required
+		<#if attribute.autocomplete??>autocomplete="${attribute.autocomplete}"</#if>
+		<#if attribute.annotations.inputTypePlaceholder??>placeholder="${attribute.annotations.inputTypePlaceholder}"</#if>
+		<#if attribute.annotations.inputTypePattern??>pattern="${attribute.annotations.inputTypePattern}"</#if>
+		<#if attribute.annotations.inputTypeSize??>size="${attribute.annotations.inputTypeSize}"</#if>
+		<#if attribute.annotations.inputTypeMaxlength??>maxlength="${attribute.annotations.inputTypeMaxlength}"</#if>
+		<#if attribute.annotations.inputTypeMinlength??>minlength="${attribute.annotations.inputTypeMinlength}"</#if>
+		<#if attribute.annotations.inputTypeMax??>max="${attribute.annotations.inputTypeMax}"</#if>
+		<#if attribute.annotations.inputTypeMin??>min="${attribute.annotations.inputTypeMin}"</#if>
+		<#if attribute.annotations.inputTypeStep??>step="${attribute.annotations.inputTypeStep}"</#if>
 	/>
 </#macro>
 
@@ -111,16 +111,16 @@
   <#assign label>
     <@labelText attribute=attribute />
   </#assign>
-	<@textarea.kw 
+	<@textarea.kw
     name=attribute.name
+    required=attribute.required
 		disabled=attribute.readOnly
     label=label?markup_string
 		invalid=messagesPerField.existsError('${attribute.name}')
     message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-		cols=(attribute.annotations.inputTypeCols)!""
-		rows=(attribute.annotations.inputTypeRows)!""
-		maxlength=(attribute.annotations.inputTypeMaxlength)!""
-    required=attribute.required
+		<#if attribute.annotations.inputTypeCols??>cols="${attribute.annotations.inputTypeCols}"</#if>
+		<#if attribute.annotations.inputTypeRows??>rows="${attribute.annotations.inputTypeRows}"</#if>
+		<#if attribute.annotations.inputTypeMaxlength??>maxlength="${attribute.annotations.inputTypeMaxlength}"</#if>
 	>${(attribute.value!'')}</@textarea.kw>
 </#macro>
 
@@ -128,15 +128,15 @@
   <#assign label>
     <@labelText attribute=attribute />
   </#assign>
-	<@select.kw 
+	<@select.kw
     name=attribute.name
+    required=attribute.required
 		disabled=attribute.readOnly
     label=label?markup_string
 		invalid=messagesPerField.existsError('${attribute.name}')
     message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-		multiple=attribute.annotations.inputType=='multiselect'
-		size=(attribute.annotations.inputTypeSize)!""
-    required=attribute.required
+		<#if attribute.annotations.inputType=='multiselect'>multiple</#if>
+		<#if attribute.annotations.inputTypeSize??>size="${attribute.annotations.inputTypeSize}"</#if>
 	>
 	<#if attribute.annotations.inputType=='select'>
 		<option value="">${label?markup_string}</option>
@@ -152,7 +152,7 @@
 		<#list options as option>
 		<option value="${option}" <#if attribute.values?seq_contains(option)>selected</#if>><@selectOptionLabelText attribute=attribute option=option/></option>
 		</#list>
-	</#if>	
+	</#if>
 	</@select.kw>
 </#macro>
 
@@ -173,30 +173,30 @@
         <@selectOptionLabelText attribute=attribute option=option/>
       </#assign>
       <#if attribute.annotations.inputType=='select-radiobuttons'>
-        <@radio.kw 
-          id="${attribute.name}-${option}" 
+        <@radio.kw
+          id="${attribute.name}-${option}"
           name=attribute.name
           value=option
+          disabled=attribute.readOnly
           label=optionLabel?markup_string
           invalid=messagesPerField.existsError('${attribute.name}')
           message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-          disabled=attribute.readOnly
           checked=attribute.values?seq_contains(option)
         />
-      <#else>	
-        <@checkbox.kw 
-          id="${attribute.name}-${option}" 
+      <#else>
+        <@checkbox.kw
+          id="${attribute.name}-${option}"
           name=attribute.name
           value=option
+          disabled=attribute.readOnly
           label=optionLabel?markup_string
           invalid=messagesPerField.existsError('${attribute.name}')
           message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-          disabled=attribute.readOnly
           checked=attribute.values?seq_contains(option)
         />
       </#if>
 		</#list>
-	</#if>	
+	</#if>
 </#macro>
 
 <#macro selectOptionLabelText attribute option>
