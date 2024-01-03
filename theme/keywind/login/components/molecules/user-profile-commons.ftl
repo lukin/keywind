@@ -76,20 +76,20 @@
     type=type?markup_string
     name=attribute.name
     value=attribute.value!''
-    required=attribute.required
 		disabled=attribute.readOnly
     label=label?markup_string
 		invalid=messagesPerField.existsError('${attribute.name}')
     message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-		<#if attribute.autocomplete??>autocomplete="${attribute.autocomplete}"</#if>
-		<#if attribute.annotations.inputTypePlaceholder??>placeholder="${attribute.annotations.inputTypePlaceholder}"</#if>
-		<#if attribute.annotations.inputTypePattern??>pattern="${attribute.annotations.inputTypePattern}"</#if>
-		<#if attribute.annotations.inputTypeSize??>size="${attribute.annotations.inputTypeSize}"</#if>
-		<#if attribute.annotations.inputTypeMaxlength??>maxlength="${attribute.annotations.inputTypeMaxlength}"</#if>
-		<#if attribute.annotations.inputTypeMinlength??>minlength="${attribute.annotations.inputTypeMinlength}"</#if>
-		<#if attribute.annotations.inputTypeMax??>max="${attribute.annotations.inputTypeMax}"</#if>
-		<#if attribute.annotations.inputTypeMin??>min="${attribute.annotations.inputTypeMin}"</#if>
-		<#if attribute.annotations.inputTypeStep??>step="${attribute.annotations.inputTypeStep}"</#if>
+		autocomplete=(attribute.autocomplete)!""
+		placeholder=(attribute.annotations.inputTypePlaceholder)!""
+		pattern=(attribute.annotations.inputTypePattern)!""
+		size=(attribute.annotations.inputTypeSize)!""
+		maxlength=(attribute.annotations.inputTypeMaxlength)!""
+		minlength=(attribute.annotations.inputTypeMinlength)!""
+		max=(attribute.annotations.inputTypeMax)!""
+		min=(attribute.annotations.inputTypeMin)!""
+		step=(attribute.annotations.inputTypeStep)!""
+    required=attribute.required
 	/>
 </#macro>
 
@@ -113,14 +113,14 @@
   </#assign>
 	<@textarea.kw
     name=attribute.name
-    required=attribute.required
 		disabled=attribute.readOnly
     label=label?markup_string
 		invalid=messagesPerField.existsError('${attribute.name}')
     message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-		<#if attribute.annotations.inputTypeCols??>cols="${attribute.annotations.inputTypeCols}"</#if>
-		<#if attribute.annotations.inputTypeRows??>rows="${attribute.annotations.inputTypeRows}"</#if>
-		<#if attribute.annotations.inputTypeMaxlength??>maxlength="${attribute.annotations.inputTypeMaxlength}"</#if>
+		cols=(attribute.annotations.inputTypeCols)!""
+		rows=(attribute.annotations.inputTypeRows)!""
+		maxlength=(attribute.annotations.inputTypeMaxlength)!""
+    required=attribute.required
 	>${(attribute.value!'')}</@textarea.kw>
 </#macro>
 
@@ -130,13 +130,13 @@
   </#assign>
 	<@select.kw
     name=attribute.name
-    required=attribute.required
 		disabled=attribute.readOnly
     label=label?markup_string
 		invalid=messagesPerField.existsError('${attribute.name}')
     message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
-		<#if attribute.annotations.inputType=='multiselect'>multiple</#if>
-		<#if attribute.annotations.inputTypeSize??>size="${attribute.annotations.inputTypeSize}"</#if>
+		multiple=attribute.annotations.inputType=='multiselect'
+		size=(attribute.annotations.inputTypeSize)!""
+    required=attribute.required
 	>
 	<#if attribute.annotations.inputType=='select'>
 		<option value="">${label?markup_string}</option>
@@ -177,10 +177,10 @@
           id="${attribute.name}-${option}"
           name=attribute.name
           value=option
-          disabled=attribute.readOnly
           label=optionLabel?markup_string
           invalid=messagesPerField.existsError('${attribute.name}')
           message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
+          disabled=attribute.readOnly
           checked=attribute.values?seq_contains(option)
         />
       <#else>
@@ -188,10 +188,10 @@
           id="${attribute.name}-${option}"
           name=attribute.name
           value=option
-          disabled=attribute.readOnly
           label=optionLabel?markup_string
           invalid=messagesPerField.existsError('${attribute.name}')
           message=kcSanitize(messagesPerField.getFirstError('${attribute.name}'))
+          disabled=attribute.readOnly
           checked=attribute.values?seq_contains(option)
         />
       </#if>
