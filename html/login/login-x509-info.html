@@ -14,23 +14,28 @@
           <div class="font-bold text-center text-2xl">
             Keywind
           </div>
-          <h1 class="text-center text-xl">Select login method</h1>
+          <h1 class="text-center text-xl">Sign In</h1>
         </div>
         <div class="space-y-4">
           <div class="bg-red-100 text-red-600 p-4 rounded-lg text-sm" role="alert">
             Example of an error message
           </div>
-          <div x-data>
-            <form class="m-0 space-y-4" method="post" action="loginAction" x-ref="selectCredentialForm">
-              <input name="authenticationExecution" type="hidden" x-ref="authExecInput">
-              <div>
-                <button class="text-primary-600 hover:text-primary-500 inline-flex" @click="$refs.authExecInput.value = 'authExecId'; $refs.selectCredentialForm.submit()" type="button"> Security Key </button>
-                <div class="text-sm">
-                  Use your security key to sign in.
-                </div>
-              </div>
-            </form>
+          <div>
+            <div>
+              X509 client certificate:
+            </div>
+            <div class="text-secondary-600">
+              CN=User, C=US, O=Keywind
+            </div>
           </div>
+          <div>
+            <span>You will be logged in as:</span> <b>Username</b>
+          </div>
+          <form class="m-0 space-y-4" method="post" action="loginAction">
+            <div class="flex flex-col pt-4 space-y-2">
+              <button class="bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2" name="login" type="submit"> Continue </button> <button class="bg-secondary-100 text-secondary-600 focus:ring-secondary-600 hover:bg-secondary-200 hover:text-secondary-900 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2" name="cancel" type="submit"> Ignore </button>
+            </div>
+          </form>
           <form action="loginAction" method="post">
             <input name="tryAnotherWay" type="hidden" value="on"> <button class="bg-secondary-100 text-secondary-600 focus:ring-secondary-600 hover:bg-secondary-200 hover:text-secondary-900 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2" type="submit"> Try Another Way </button>
           </form>

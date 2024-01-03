@@ -25,6 +25,7 @@ public class LoginDataModel {
     dataModel.put("url", createUrlModel());
     dataModel.put("user", createUserModel());
     dataModel.put("username", "Username");
+    dataModel.put("x509", createX509Model());
     dataModel.putAll(createWebAuthnModel());
 
     return dataModel;
@@ -78,6 +79,7 @@ public class LoginDataModel {
 
     Map<String, Object> locale = new HashMap<>();
     locale.put("current", "English");
+    locale.put("currentLanguageTag", "en");
     locale.put("supported", supported);
 
     return locale;
@@ -247,5 +249,17 @@ public class LoginDataModel {
     webAuthn.put("userVerification", "preferred");
 
     return webAuthn;
+  }
+
+  private static Map<String, Object> createX509Model() {
+    Map<String, Object> formData = new HashMap<>();
+    formData.put("isUserEnabled", "true");
+    formData.put("subjectDN", "CN=User, C=US, O=Keywind");
+    formData.put("username", "Username");
+
+    Map<String, Object> x509 = new HashMap<>();
+    x509.put("formData", formData);
+
+    return x509;
   }
 }
