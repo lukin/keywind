@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
 export default {
   content: ['./theme/**/*.ftl'],
@@ -8,37 +9,9 @@ export default {
   plugins: [require('@tailwindcss/forms')],
   theme: {
     extend: {
-      fontFamily: {
-        sans: '"Noto Sans", ui-sans-serif, system-ui, sans-serif',
-        serif: '"Noto Serif", ui-serif, Georgia, Cambria, "Times New Roman", serif',
-      },
       colors: {
-        primary: {
-          50: 'rgb(var(--color-sta-primary-50) / <alpha-value>)',
-          100: 'rgb(var(--color-sta-primary-100) / <alpha-value>)',
-          200: 'rgb(var(--color-sta-primary-200) / <alpha-value>)',
-          300: 'rgb(var(--color-sta-primary-300) / <alpha-value>)',
-          400: 'rgb(var(--color-sta-primary-400) / <alpha-value>)',
-          500: 'rgb(var(--color-sta-primary-500) / <alpha-value>)',
-          600: 'rgb(var(--color-sta-primary-600) / <alpha-value>)',
-          700: 'rgb(var(--color-sta-primary-700) / <alpha-value>)',
-          800: 'rgb(var(--color-sta-primary-800) / <alpha-value>)',
-          900: 'rgb(var(--color-sta-primary-900) / <alpha-value>)',
-          950: 'rgb(var(--color-sta-primary-950) / <alpha-value>)'
-        },
-        secondary: {
-          50: 'rgb(var(--color-sta-secondary-50) / <alpha-value>)',
-          100: 'rgb(var(--color-sta-secondary-100) / <alpha-value>)',
-          200: 'rgb(var(--color-sta-secondary-200) / <alpha-value>)',
-          300: 'rgb(var(--color-sta-secondary-300) / <alpha-value>)',
-          400: 'rgb(var(--color-sta-secondary-400) / <alpha-value>)',
-          500: 'rgb(var(--color-sta-secondary-500) / <alpha-value>)',
-          600: 'rgb(var(--color-sta-secondary-600) / <alpha-value>)',
-          700: 'rgb(var(--color-sta-secondary-700) / <alpha-value>)',
-          800: 'rgb(var(--color-sta-secondary-800) / <alpha-value>)',
-          900: 'rgb(var(--color-sta-secondary-900) / <alpha-value>)',
-          950: 'rgb(var(--color-sta-secondary-950) / <alpha-value>)'
-        },
+        primary: colors.blue,
+        secondary: colors.gray,
 
         provider: {
           apple: 'rgb(var(--color-provider-apple) / <alpha-value>)',
