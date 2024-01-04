@@ -11,7 +11,7 @@
         ${attrName}="${attrValue}"
       </#list>
     >
-    <label class="ml-2 text-secondary-600 text-sm" for="${id}">
+    <label class="ml-2 text-secondary-600 dark:text-secondary-200 text-sm" for="${id}">
       ${label}
     </label>
   </div>
