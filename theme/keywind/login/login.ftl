@@ -73,7 +73,7 @@
   <#elseif section="info">
     <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
       <div class="text-center">
-        ${msg("noAccount")}
+        ${kcSanitize(msg("noAccount"))?no_esc}
         <@link.kw color="primary" href=url.registrationUrl>
           ${msg("doRegister")}
         </@link.kw>
