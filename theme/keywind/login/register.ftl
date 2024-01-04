@@ -63,7 +63,7 @@
           type="password"
         />
         <@input.kw
-          autocomplete="new-password"
+          autocomplete="password-confirm"
           invalid=messagesPerField.existsError("password-confirm")
           label=msg("passwordConfirm")
           message=kcSanitize(messagesPerField.get("password-confirm"))
