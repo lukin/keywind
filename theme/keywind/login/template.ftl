@@ -20,9 +20,7 @@
 >
   <#assign cardHeader>
     <@logo.kw>
-      <#--${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}-->
-      <img src="https://fm.nrw.adventisten.de/img/logo_nrw_black.png" alt="Logo" class="w-full dark:hidden">
-      <img src="https://fm.nrw.adventisten.de/img/logo_nrw_white.png" alt="Logo" class="w-full hidden dark:block" loading="lazy">
+      ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
     </@logo.kw>
     <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
       <@heading.kw>
