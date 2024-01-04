@@ -16,7 +16,7 @@
       <#assign colorClass="bg-blue-100 text-blue-600 dark:bg-blue-200 dark:text-blue-700">
   </#switch>
 
-  <div class="${colorClass} px-4 py-3 rounded-lg text-sm" role="alert">
+  <div class="${colorClass} p-4 rounded-lg text-sm" role="alert">
     <#nested>
   </div>
 </#macro>
