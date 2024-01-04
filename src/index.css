@@ -1,6 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  @import url("https://fm.nrw.adventisten.de/fonts/main.css");
+
+  :root {
+    --color-sta-primary-50: 238 246 233;
+    --color-sta-primary-100: 217 236 208;
+    --color-sta-primary-200: 182 218 165;
+    --color-sta-primary-300: 145 198 118;
+    --color-sta-primary-400: 108 177 73;
+    --color-sta-primary-500: 81 134 55;
+    --color-sta-primary-600: 53 87 36;
+    --color-sta-primary-700: 40 65 27;
+    --color-sta-primary-800: 26 43 18;
+    --color-sta-primary-900: 13 22 9;
+    --color-sta-primary-950: 7 11 4;
+
+    --color-sta-secondary-50: 240 240 240;
+    --color-sta-secondary-100: 224 224 224;
+    --color-sta-secondary-200: 194 194 194;
+    --color-sta-secondary-300: 166 166 166;
+    --color-sta-secondary-400: 135 135 135;
+    --color-sta-secondary-500: 105 105 105;
+    --color-sta-secondary-600: 74 74 74;
+    --color-sta-secondary-700: 56 56 56;
+    --color-sta-secondary-800: 38 38 38;
+    --color-sta-secondary-900: 18 18 18;
+    --color-sta-secondary-950: 10 10 10;
+
+    --color-provider-apple: 0 0 0;
+    --color-provider-bitbucket: 0 82 204;
+    --color-provider-discord: 88 101 242;
+    --color-provider-facebook: 24 119 242;
+    --color-provider-github: 24 23 23;
+    --color-provider-gitlab: 252 109 38;
+    --color-provider-google: 66 133 244;
+    --color-provider-instagram: 228 64 95;
+    --color-provider-linkedin: 10 102 194;
+    --color-provider-microsoft: 94 94 94;
+    --color-provider-oidc: 247 140 64;
+    --color-provider-openshift: 238 0 0;
+    --color-provider-paypal: 0 69 124;
+    --color-provider-slack: 74 21 75;
+    --color-provider-stackoverflow: 245 128 37;
+    --color-provider-twitter: 29 161 242;
+  }
+
+  .dark {
+    --color-sta-primary-50: 234 255 224;
+    --color-sta-primary-100: 213 255 194;
+    --color-sta-primary-200: 168 255 128;
+    --color-sta-primary-300: 126 255 66;
+    --color-sta-primary-400: 84 255 5;
+    --color-sta-primary-500: 61 194 0;
+    --color-sta-primary-600: 43 133 0;
+    --color-sta-primary-700: 32 102 0;
+    --color-sta-primary-800: 21 66 0;
+    --color-sta-primary-900: 11 36 0;
+    --color-sta-primary-950: 5 15 0;
+
+    --color-sta-secondary-50: 242 242 242;
+    --color-sta-secondary-100: 232 232 232;
+    --color-sta-secondary-200: 207 207 207;
+    --color-sta-secondary-300: 184 184 184;
+    --color-sta-secondary-400: 161 161 161;
+    --color-sta-secondary-500: 138 138 138;
+    --color-sta-secondary-600: 113 113 113;
+    --color-sta-secondary-700: 84 84 84;
+    --color-sta-secondary-800: 56 56 56;
+    --color-sta-secondary-900: 28 28 28;
+    --color-sta-secondary-950: 15 15 15;
+  }
+}
 
 @layer components {
   /* Alpine.js
