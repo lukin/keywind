@@ -1,6 +1,6 @@
 <#import "template.ftl" as layout>
 <#import "components/atoms/button.ftl" as button>
-<#import "components/atoms/buttonGroup.ftl" as buttonGroup>
+<#import "components/atoms/button-group.ftl" as buttonGroup>
 <#import "components/atoms/form.ftl" as form>
 <#import "components/molecules/user-profile-commons.ftl" as userProfileCommons>
 
