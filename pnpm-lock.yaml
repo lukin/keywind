@@ -35,8 +35,8 @@ devDependencies:
     specifier: 2.1.5
     version: 2.1.5(lint-staged@15.2.0)
   '@wayofdev/secretlint-config':
-    specifier: 3.0.4
-    version: 3.0.4(@wayofdev/lint-staged-config@2.1.5)(secretlint@8.1.0)
+    specifier: 3.0.5
+    version: 3.0.5(@wayofdev/lint-staged-config@2.1.5)(secretlint@8.1.0)
   archiver:
     specifier: 6.0.1
     version: 6.0.1
@@ -884,10 +884,10 @@ packages:
       lint-staged: 15.2.0
     dev: true
 
-  /@wayofdev/secretlint-config@3.0.4(@wayofdev/lint-staged-config@2.1.5)(secretlint@8.1.0):
-    resolution: {integrity: sha512-rr4ksRppXXleDOkJJKwe4cd+A1ldoSYyF565y/XcDoovkIXbXrZvQBjYfB8Qb1Bn8EGvVz7mc/JmYZrsKPz5Vw==}
+  /@wayofdev/secretlint-config@3.0.5(@wayofdev/lint-staged-config@2.1.5)(secretlint@8.1.0):
+    resolution: {integrity: sha512-YoIyH4IDDmeHlkxOz6SXDES5PGmU7UqZ4SYdh029pJ9p9jj380P6Zm09i0lTUCNVVkRLbwDt4t5tQ6af5buYPg==}
     peerDependencies:
-      '@wayofdev/lint-staged-config': ^2.1.4
+      '@wayofdev/lint-staged-config': ^2.1.5
       secretlint: '>= 6'
     dependencies:
       '@secretlint/secretlint-rule-preset-recommend': 8.1.0
