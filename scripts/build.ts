@@ -10,6 +10,7 @@ const path = `${dir}/${file}`;
 !existsSync(dir) && mkdirSync(dir);
 
 const output = createWriteStream(`${__dirname}/../${path}`);
+
 const archive = archiver('zip');
 
 archive.on('error', (error) => {
