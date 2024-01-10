@@ -63,7 +63,7 @@
           type="password"
         />
         <@input.kw
-          autocomplete="new-password"
+          autocomplete="password-confirm"
           invalid=messagesPerField.existsError("password-confirm")
           label=msg("passwordConfirm")
           message=kcSanitize(messagesPerField.get("password-confirm"))
@@ -81,7 +81,7 @@
       </@buttonGroup.kw>
     </@form.kw>
   <#elseif section="nav">
-    <@link.kw color="secondary" href=url.loginUrl size="small">
+    <@link.kw color="secondary-2" href=url.loginUrl size="small">
       ${kcSanitize(msg("backToLogin"))?no_esc}
     </@link.kw>
   </#if>

@@ -37,7 +37,7 @@
   <#elseif section="info">
     ${msg("emailInstruction")}
   <#elseif section="nav">
-    <@link.kw color="secondary" href=url.loginUrl size="small">
+    <@link.kw color="secondary-2" href=url.loginUrl size="small">
       ${kcSanitize(msg("backToLogin"))?no_esc}
     </@link.kw>
   </#if>

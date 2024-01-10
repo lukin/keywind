@@ -1,6 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  :root {
+    --color-provider-apple: 0 0 0;
+    --color-provider-bitbucket: 0 82 204;
+    --color-provider-discord: 88 101 242;
+    --color-provider-facebook: 24 119 242;
+    --color-provider-github: 24 23 23;
+    --color-provider-gitlab: 252 109 38;
+    --color-provider-google: 66 133 244;
+    --color-provider-instagram: 228 64 95;
+    --color-provider-linkedin: 10 102 194;
+    --color-provider-microsoft: 94 94 94;
+    --color-provider-oidc: 247 140 64;
+    --color-provider-openshift: 238 0 0;
+    --color-provider-paypal: 0 69 124;
+    --color-provider-slack: 74 21 75;
+    --color-provider-stackoverflow: 245 128 37;
+    --color-provider-twitter: 29 161 242;
+  }
+}
 
 @layer components {
   /* Alpine.js
