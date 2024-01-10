@@ -3,7 +3,7 @@ import { createWriteStream, existsSync, mkdirSync } from 'fs';
 
 import { name } from '../package.json';
 
-const dir = 'dist';
+const dir = 'out';
 const file = `${name}.jar`;
 const path = `${dir}/${file}`;
 
