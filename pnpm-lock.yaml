@@ -29,8 +29,8 @@ devDependencies:
     specifier: 20.11.0
     version: 20.11.0
   '@wayofdev/commitlint-config':
-    specifier: 3.0.5
-    version: 3.0.5(@commitlint/cli@18.4.4)(@wayofdev/lint-staged-config@2.2.0)
+    specifier: 4.0.0
+    version: 4.0.0(@commitlint/cli@18.4.4)(@wayofdev/lint-staged-config@2.2.0)
   '@wayofdev/lint-staged-config':
     specifier: 2.2.0
     version: 2.2.0(lint-staged@15.2.0)
@@ -865,11 +865,11 @@ packages:
     resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
     dev: false
 
-  /@wayofdev/commitlint-config@3.0.5(@commitlint/cli@18.4.4)(@wayofdev/lint-staged-config@2.2.0):
-    resolution: {integrity: sha512-ZMfrT6YMhAtp5eOtclNfn6fr+3AMbwqh0qPpCx+upQU7TNjNcfnIa3MWBceSvr4v9FZsLp4UiPwbJYm+uadiJQ==}
+  /@wayofdev/commitlint-config@4.0.0(@commitlint/cli@18.4.4)(@wayofdev/lint-staged-config@2.2.0):
+    resolution: {integrity: sha512-X9d+WSlzb2AHkctF4Nx08Wnamb1UnNiU5Hsvd3z8Wea9pWwEszAOLE7Ep3iYK+vqLI1TzLgTXm09rnm2W/y6UQ==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
-      '@wayofdev/lint-staged-config': ^2.1.5
+      '@wayofdev/lint-staged-config': ^2.2.0
     dependencies:
       '@commitlint/cli': 18.4.4(@types/node@20.11.0)(typescript@5.3.3)
       '@commitlint/config-conventional': 18.4.4
