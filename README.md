@@ -20,6 +20,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 - Login Update Password
 - Login Update Profile
 - Login Username
+- Login X.509 Info
 - Logout Confirm
 - Register
 - Select Authenticator
@@ -30,6 +31,7 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 
 ### Identity Provider Icons
 
+- Apple
 - Bitbucket
 - Discord
 - Facebook

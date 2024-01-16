@@ -7,6 +7,9 @@
   <div class="gap-4 grid grid-cols-3">
     <#list providers as provider>
       <#switch provider.alias>
+        <#case "apple">
+          <#assign colorClass="hover:bg-provider-apple/10">
+          <#break>
         <#case "bitbucket">
           <#assign colorClass="hover:bg-provider-bitbucket/10">
           <#break>
@@ -28,7 +31,7 @@
         <#case "instagram">
           <#assign colorClass="hover:bg-provider-instagram/10">
           <#break>
-        <#case "linkedin">
+        <#case "linkedin-openid-connect">
           <#assign colorClass="hover:bg-provider-linkedin/10">
           <#break>
         <#case "microsoft">

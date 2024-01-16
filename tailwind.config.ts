@@ -1,9 +1,7 @@
-const colors = require('tailwindcss/colors');
+import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
-/**
- * @type { import('tailwindcss').Config }
- */
-module.exports = {
+export default {
   content: ['./theme/**/*.ftl'],
   experimental: {
     optimizeUniversalDefaults: true,
@@ -16,6 +14,7 @@ module.exports = {
         secondary: colors.gray,
 
         provider: {
+          apple: '#000000',
           bitbucket: '#0052CC',
           discord: '#5865F2',
           facebook: '#1877F2',
@@ -35,4 +34,4 @@ module.exports = {
       },
     },
   },
-};
+} satisfies Config;

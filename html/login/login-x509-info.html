@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <title>Sign in to </title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://localhost:5173/src/index.css" rel="stylesheet">
+    <script defer src="http://localhost:5173/src/index.ts" type="module"></script>
+  </head>
+  <body class="bg-secondary-100 flex flex-col items-center justify-center min-h-screen sm:py-16">
+    <div class="max-w-md space-y-6 w-full">
+      <div class="bg-white p-8 rounded-lg space-y-6">
+        <div class="space-y-4">
+          <div class="font-bold text-center text-2xl">
+            Keywind
+          </div>
+          <h1 class="text-center text-xl">Sign In</h1>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-red-100 text-red-600 p-4 rounded-lg text-sm" role="alert">
+            Example of an error message
+          </div>
+          <div>
+            <div>
+              X509 client certificate:
+            </div>
+            <div class="text-secondary-600">
+              CN=User, C=US, O=Keywind
+            </div>
+          </div>
+          <div>
+            <span>You will be logged in as:</span> <b>Username</b>
+          </div>
+          <form class="m-0 space-y-4" method="post" action="loginAction">
+            <div class="flex flex-col pt-4 space-y-2">
+              <button class="bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2" name="login" type="submit"> Continue </button> <button class="bg-secondary-100 text-secondary-600 focus:ring-secondary-600 hover:bg-secondary-200 hover:text-secondary-900 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2" name="cancel" type="submit"> Ignore </button>
+            </div>
+          </form>
+          <form action="loginAction" method="post">
+            <input name="tryAnotherWay" type="hidden" value="on"> <button class="bg-secondary-100 text-secondary-600 focus:ring-secondary-600 hover:bg-secondary-200 hover:text-secondary-900 px-4 py-2 text-sm flex justify-center relative rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-offset-2" type="submit"> Try Another Way </button>
+          </form>
+        </div>
+      </div>
+      <div class="flex justify-around">
+        <div class="relative" x-data="{ open: false }">
+          <button class="text-secondary-600 hover:text-secondary-900 inline-flex" @click="open = true" type="button">
+            <div class="flex items-center">
+              <span class="mr-1 text-sm">English</span>
+              <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M5.23017 7.20938C5.52875 6.92228 6.00353 6.93159 6.29063 7.23017L10 11.1679L13.7094 7.23017C13.9965 6.93159 14.4713 6.92228 14.7698 7.20938C15.0684 7.49647 15.0777 7.97125 14.7906 8.26983L10.5406 12.7698C10.3992 12.9169 10.204 13 10 13C9.79599 13 9.60078 12.9169 9.45938 12.7698L5.20938 8.26983C4.92228 7.97125 4.93159 7.49647 5.23017 7.20938Z" fill-rule="evenodd" />
+              </svg>
+            </div></button>
+          <div @click.away="open = false" class="absolute bg-white bottom-0 -left-4 max-h-80 mb-6 overflow-y-scroll rounded-lg shadow-lg" x-cloak x-show="open">
+            <div class="px-4 py-2">
+              <a class="text-secondary-600 hover:text-secondary-900 text-sm inline-flex" href="url"> Deutsch </a>
+            </div>
+            <div class="px-4 py-2">
+              <a class="text-secondary-600 hover:text-secondary-900 text-sm inline-flex" href="url"> Français </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
