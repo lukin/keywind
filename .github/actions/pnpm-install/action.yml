@@ -24,7 +24,7 @@ runs:
       run: |
         echo "YEAR_WEEK=$(/bin/date -u "+%Y%W")" >> $GITHUB_OUTPUT
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       name: 🗄️ Setup pnpm cache
       id: pnpm-store-cache
       with:
