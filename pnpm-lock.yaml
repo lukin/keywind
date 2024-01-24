@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   alpinejs:
-    specifier: 3.13.4
-    version: 3.13.4
+    specifier: 3.13.5
+    version: 3.13.5
   rfc4648:
     specifier: 1.5.3
     version: 1.5.3
@@ -921,8 +921,8 @@ packages:
       uri-js: 4.4.1
     dev: true
 
-  /alpinejs@3.13.4:
-    resolution: {integrity: sha512-+miZp8LXMfZKqi6L0m5TA2fk5Tr2dvxFJ3I0dL78Dz90gTXpdHu4Qhv7PJsRmTGRUWjbYh2e+3DYrB4it2DEHQ==}
+  /alpinejs@3.13.5:
+    resolution: {integrity: sha512-1d2XeNGN+Zn7j4mUAKXtAgdc4/rLeadyTMWeJGXF5DzwawPBxwTiBhFFm6w/Ei8eJxUZeyNWWSD9zknfdz1kEw==}
     dependencies:
       '@vue/reactivity': 3.1.5
     dev: false
