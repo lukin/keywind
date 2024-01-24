@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.266](https://github.com/wayofdev/keywind/compare/v1.1.265...v1.1.266) (2024-01-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpinejs to v3.13.5 ([8dc02de](https://github.com/wayofdev/keywind/commit/8dc02de00725ed738bfc3c8bf2e74ac021669310))
+
 ## [1.1.265](https://github.com/wayofdev/keywind/compare/v1.1.264...v1.1.265) (2024-01-22)
 
 
