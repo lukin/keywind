@@ -2,7 +2,7 @@
   "themes": [
     {
       "name": "keywind",
-      "types": ["login"]
+      "types": ["login", "welcome"]
     }
   ]
 }
