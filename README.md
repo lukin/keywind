@@ -112,3 +112,13 @@ To deploy a theme as an archive, create a JAR archive with the theme resources.
 ```bash
 pnpm build:jar
 ```
+
+### Override Keycloak welcome page
+
+If you don't want to expose your Keycloak welcome page to the public, after deploying keywind to your Keycloak server, setting `KC_SPI_THEME_WELCOME_THEME=keywind` (or `--spi-theme-welcome-theme` in cli) in the environment variables will override the default welcome page.
+
+By default, when this feature is enabled, visiting `yourkeycloak.domain` will no longer display the welcome page, but will be redirected to `yourkeycloak.domain/admin/master/console`. To adjust this behavior or completely customize the welcome page, you can modify the `welcome/index.ftl` file.
+
+Technical reference:
+- [discussion by nicolas-goudry](https://github.com/keycloak/keycloak/discussions/10467).
+- [Keycloak - Configuring a theme](https://www.keycloak.org/docs/23.0.4/server_development/index.html#configuring-a-theme)
