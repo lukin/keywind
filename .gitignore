@@ -2,9 +2,12 @@
 
 # build
 out/
+target/
 
 # dependencies
 node_modules/
 
 # misc
 .DS_Store
+dev-compose.yaml
+.vscode
