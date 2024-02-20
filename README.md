@@ -64,6 +64,33 @@ parent=keywind
 
 ## Customization
 
+### Local development
+
+Use docker-compose to initialize Keycloak locally, making it easy to check the results when you edit Keywind.
+
+```bash
+docker compose up -d // start keycloak for testing
+```
+
+Then, select the login theme for the client in Keycloak as Keywind.
+
+Finally, let Vite do its job.
+
+```bash
+pnpm run dev // watch *.ftl changes and regenerate css
+```
+
+You can go to the client's login page to see. The key point here is that for realms with the display name `Keycloak` (by default),
+CSS and JS will use the Vite link, while for other cases, they will still use the built link.
+In `document.ftl`, this trick to enable hot reload when developing the theme and it work.
+
+```
+  <#if realm.displayName == 'Keycloak'>
+    <link href="http://localhost:5173/src/index.css" rel="stylesheet">
+    <script defer src="http://localhost:5173/src/index.ts" type="module"></script>
+  </#if>
+```
+
 ### Theme
 
 When you do need to customize a palette, you can configure your colors under the `colors` key in the `theme` section of Tailwind config file:

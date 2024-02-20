@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:latest
+    volumes:
+      - ./theme:/opt/keycloak/themes:ro
+      - db-data:/opt/keycloak/data
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
+    command:
+      - start-dev
+      - --spi-theme-static-max-age=-1
+      - --spi-theme-cache-themes=false
+      - --spi-theme-cache-templates=false
+    ports:
+      - 8080:8080
+
+volumes:
+  db-data: {}
