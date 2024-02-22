@@ -50,7 +50,7 @@
           <@button.kw color="primary" type="submit">
             ${msg("doSubmit")}
           </@button.kw>
-          <@button.kw color="secondary" name="cancel-aia" type="submit" value="true">
+          <@button.kw color="secondary" name="cancel-aia" type="submit" value="true" formnovalidate="formnovalidate">
             ${msg("doCancel")}
           </@button.kw>
         <#else>
