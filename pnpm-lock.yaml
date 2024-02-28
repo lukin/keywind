@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 19.0.1
-    version: 19.0.1(@types/node@20.11.21)(typescript@5.3.3)
+    specifier: 19.0.2
+    version: 19.0.2(@types/node@20.11.21)(typescript@5.3.3)
   '@tailwindcss/forms':
     specifier: 0.5.7
     version: 0.5.7(tailwindcss@3.4.1)
@@ -30,7 +30,7 @@ devDependencies:
     version: 20.11.21
   '@wayofdev/commitlint-config':
     specifier: 4.0.0
-    version: 4.0.0(@commitlint/cli@19.0.1)(@wayofdev/lint-staged-config@2.2.0)
+    version: 4.0.0(@commitlint/cli@19.0.2)(@wayofdev/lint-staged-config@2.2.0)
   '@wayofdev/lint-staged-config':
     specifier: 2.2.0
     version: 2.2.0(lint-staged@15.2.2)
@@ -130,14 +130,14 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@commitlint/cli@19.0.1(@types/node@20.11.21)(typescript@5.3.3):
-    resolution: {integrity: sha512-6D+KT/RasFPF92M549I3lABSBWXAdmKvBfxtYWlWO5JdYFSK+B6jY6XyE/hN/DNSYvwwcuNk+CzbqQcy+EbrCw==}
+  /@commitlint/cli@19.0.2(@types/node@20.11.21)(typescript@5.3.3):
+    resolution: {integrity: sha512-oaFHcjOASFFdtei/EF0lPg9ubnqVJsAjEmiDPeBQqk8wO7qppO7vp595SP7vOjTyDJlPVc2jUxCJSKxdq5temQ==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 19.0.0
       '@commitlint/lint': 19.0.0
-      '@commitlint/load': 19.0.1(@types/node@20.11.21)(typescript@5.3.3)
+      '@commitlint/load': 19.0.2(@types/node@20.11.21)(typescript@5.3.3)
       '@commitlint/read': 19.0.0
       '@commitlint/types': 19.0.0
       execa: 8.0.1
@@ -208,10 +208,31 @@ packages:
   /@commitlint/load@19.0.1(@types/node@20.11.21)(typescript@5.3.3):
     resolution: {integrity: sha512-5w5RHhtidRPMRm8ktph+NKypt1Wu5Z2jbU1Lc+1IS9Azy83JWRBQ9xKBbW9gF66R/TwHF0v6Jy8KOqRS8I/GgA==}
     engines: {node: '>=v18'}
+    requiresBuild: true
     dependencies:
       '@commitlint/config-validator': 19.0.0
       '@commitlint/execute-rule': 19.0.0
       '@commitlint/resolve-extends': 19.0.1
+      '@commitlint/types': 19.0.0
+      chalk: 5.3.0
+      cosmiconfig: 8.3.6(typescript@5.3.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.21)(cosmiconfig@8.3.6)(typescript@5.3.3)
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+    dev: true
+    optional: true
+
+  /@commitlint/load@19.0.2(@types/node@20.11.21)(typescript@5.3.3):
+    resolution: {integrity: sha512-ZbSQ8+vMsGHuZ/YxyDBz3i5zacQuAvON37xQGshGew/KwBmPfrF/sGEHNsD/znm3j2H6+iF5xslfkH1D382gbg==}
+    engines: {node: '>=v18'}
+    dependencies:
+      '@commitlint/config-validator': 19.0.0
+      '@commitlint/execute-rule': 19.0.0
+      '@commitlint/resolve-extends': 19.0.2
       '@commitlint/types': 19.0.0
       chalk: 5.3.0
       cosmiconfig: 8.3.6(typescript@5.3.3)
@@ -257,6 +278,19 @@ packages:
       global-directory: 4.0.1
       import-meta-resolve: 4.0.0
       lodash.mergewith: 4.6.2
+    dev: true
+    optional: true
+
+  /@commitlint/resolve-extends@19.0.2:
+    resolution: {integrity: sha512-yCdY4+JZpKPwnR6/YZAs9Ukpr3oqHbjYmwszEH2djYjprczg8j2okIeZyNM4dzD6+BqlSu/y0Eou2vE+wP+KnA==}
+    engines: {node: '>=v18'}
+    dependencies:
+      '@commitlint/config-validator': 19.0.0
+      '@commitlint/types': 19.0.0
+      global-directory: 4.0.1
+      import-meta-resolve: 4.0.0
+      lodash.mergewith: 4.6.2
+      resolve-from: 5.0.0
     dev: true
 
   /@commitlint/rules@19.0.0:
@@ -856,13 +890,13 @@ packages:
     resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
     dev: false
 
-  /@wayofdev/commitlint-config@4.0.0(@commitlint/cli@19.0.1)(@wayofdev/lint-staged-config@2.2.0):
+  /@wayofdev/commitlint-config@4.0.0(@commitlint/cli@19.0.2)(@wayofdev/lint-staged-config@2.2.0):
     resolution: {integrity: sha512-X9d+WSlzb2AHkctF4Nx08Wnamb1UnNiU5Hsvd3z8Wea9pWwEszAOLE7Ep3iYK+vqLI1TzLgTXm09rnm2W/y6UQ==}
     peerDependencies:
       '@commitlint/cli': '>= 17'
       '@wayofdev/lint-staged-config': ^2.2.0
     dependencies:
-      '@commitlint/cli': 19.0.1(@types/node@20.11.21)(typescript@5.3.3)
+      '@commitlint/cli': 19.0.2(@types/node@20.11.21)(typescript@5.3.3)
       '@commitlint/config-conventional': 18.4.4
       '@wayofdev/lint-staged-config': 2.2.0(lint-staged@15.2.2)
     dev: true
@@ -2861,6 +2895,11 @@ packages:
   /resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
+    dev: true
+
+  /resolve-from@5.0.0:
+    resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
+    engines: {node: '>=8'}
     dev: true
 
   /resolve@1.22.8:
