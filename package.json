@@ -56,7 +56,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.2.1",
     "@tailwindcss/forms": "0.5.7",
-    "@types/alpinejs": "3.13.9",
+    "@types/alpinejs": "3.13.10",
     "@types/archiver": "6.0.2",
     "@types/node": "20.11.30",
     "@wayofdev/commitlint-config": "4.0.0",
