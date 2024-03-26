@@ -71,8 +71,8 @@ devDependencies:
     specifier: 8.1.2
     version: 8.1.2
   sort-package-json:
-    specifier: 2.8.0
-    version: 2.8.0
+    specifier: 2.9.0
+    version: 2.9.0
   tailwindcss:
     specifier: 3.4.1
     version: 3.4.1
@@ -3097,8 +3097,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json@2.8.0:
-    resolution: {integrity: sha512-PxeNg93bTJWmDGnu0HADDucoxfFiKkIr73Kv85EBThlI1YQPdc0XovBgg2llD0iABZbu2SlKo8ntGmOP9wOj/g==}
+  /sort-package-json@2.9.0:
+    resolution: {integrity: sha512-vlEd6i57Eb9+ruta1+hID+emmAmGzWKraEX1kk5LAQ0k1glgDHOENeieqzfir0m8MHcebzDH4FEwqjPnMEjy2g==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
