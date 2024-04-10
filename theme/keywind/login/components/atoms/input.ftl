@@ -4,7 +4,7 @@
 <#macro
   kw
   autofocus=false
-  class="block border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+  class="dark:bg-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:border-zinc-700 block border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
   disabled=false
   invalid=false
   label=""

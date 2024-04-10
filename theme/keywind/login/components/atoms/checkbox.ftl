@@ -3,7 +3,7 @@
     <input
       <#if checked>checked</#if>
 
-      class="border-secondary-200 h-4 rounded text-primary-600 w-4 focus:ring-primary-200 focus:ring-opacity-50"
+      class="dark:bg-zinc-700 border-secondary-200 h-4 rounded text-primary-600 w-4 focus:ring-primary-200 focus:ring-opacity-50"
       id="${name}"
       name="${name}"
       type="checkbox"

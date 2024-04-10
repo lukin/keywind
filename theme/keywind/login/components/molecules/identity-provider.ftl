@@ -1,8 +1,10 @@
 <#import "/assets/providers/providers.ftl" as providerIcons>
 
 <#macro kw providers=[]>
-  <div class="pt-4 separate text-secondary-600 text-sm">
-    ${msg("identity-provider-login-label")}
+  <div class="relative flex py-4 text-gray-400 text-sm items-center">
+      <div class="flex-grow border-t dark:border-zinc-700"></div>
+      <span class="flex-shrink mx-4">${msg("identity-provider-login-label")}</span>
+      <div class="flex-grow border-t dark:border-zinc-700"></div>
   </div>
   <div class="gap-4 grid grid-cols-3">
     <#list providers as provider>
@@ -62,20 +64,22 @@
           <#assign colorClass="hover:bg-secondary-100">
       </#switch>
 
-      <a
-        class="${colorClass} border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-transparent"
-        data-provider="${provider.alias}"
-        href="${provider.loginUrl}"
-        type="button"
-      >
-        <#if providerIcons[provider.alias]??>
-          <div class="h-6 w-6">
-            <@providerIcons[provider.alias] />
-          </div>
-        <#else>
-          ${provider.displayName!}
-        </#if>
-      </a>
+      <div class="dark:bg-zinc-600 rounded-lg">
+        <a
+          class="${colorClass} dark:border-zinc-700 border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-transparent"
+          data-provider="${provider.alias}"
+          href="${provider.loginUrl}"
+          type="button"
+        >
+          <#if providerIcons[provider.alias]??>
+            <div class="h-6 w-6">
+              <@providerIcons[provider.alias] />
+            </div>
+          <#else>
+            ${provider.displayName!}
+          </#if>
+        </a>
+      </div>
     </#list>
   </div>
 </#macro>

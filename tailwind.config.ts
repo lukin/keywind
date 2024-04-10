@@ -6,6 +6,7 @@ export default {
   experimental: {
     optimizeUniversalDefaults: true,
   },
+  darkMode: "class",
   plugins: [require('@tailwindcss/forms')],
   theme: {
     extend: {
