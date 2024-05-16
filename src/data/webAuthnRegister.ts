@@ -171,8 +171,6 @@ document.addEventListener('alpine:init', () => {
               result instanceof PublicKeyCredential &&
               result.response instanceof AuthenticatorAttestationResponse
             ) {
-              const { getTransports } = result.response;
-
               window.result = result;
 
               const publicKeyCredentialId = result.rawId;
@@ -192,8 +190,8 @@ document.addEventListener('alpine:init', () => {
                 { pad: false }
               );
 
-              if (typeof getTransports === 'function') {
-                const transports = getTransports();
+              if (typeof result.response.getTransports === 'function') {
+                const transports = result.response.getTransports();
 
                 if (transports) {
                   transportsInput.value = getTransportsAsString(transports);
@@ -216,7 +214,7 @@ document.addEventListener('alpine:init', () => {
             }
           })
           .catch(function (error) {
-            error.value = error;
+            errorInput.value = error;
             registerForm.submit();
           });
       },

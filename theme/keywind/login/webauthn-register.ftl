@@ -44,7 +44,7 @@
       requireResidentKey: '${requireResidentKey}',
       rpEntityName: '${rpEntityName}',
       rpId: '${rpId}',
-      signatureAlgorithms: '${signatureAlgorithms}',
+      signatureAlgorithms: '<#list signatureAlgorithms as sigAlg>${sigAlg?c},</#list>',
       unsupportedBrowserText: '${msg("webauthn-unsupported-browser-text")?no_esc}',
       userId: '${userid}',
       userVerificationRequirement: '${userVerificationRequirement}',
