@@ -68,7 +68,7 @@ parent=keywind
 
 When you do need to customize a palette, you can configure your colors under the `colors` key in the `theme` section of Tailwind config file:
 
-`tailwind.config.js`
+`tailwind.config.ts`
 
 ```js
 module.exports = {
