@@ -1,8 +1,53 @@
 # :wind_face: Keywind
 
-Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpine.js](https://github.com/alpinejs/alpine).
+Keywind is a component-based Keycloak Login & E-Mail Theme built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss), [Mailwind](https://www.mailwind.io/) and [Alpine.js](https://github.com/alpinejs/alpine).
 
-![Preview](./preview.png)
+![Preview Login](./preview-login.png)
+
+![Preview Login](./preview-email.png)
+
+### Styled Pages
+
+- Error
+- Login
+- Login Config TOTP
+- Login IDP Link Confirm
+- Login OAuth Grant
+- Login OTP
+- Login Page Expired
+- Login Password
+- Login Recovery Authn Code Config
+- Login Recovery Authn Code Input
+- Login Reset Password
+- Login Update Password
+- Login Update Profile
+- Login Username
+- Logout Confirm
+- Register
+- Select Authenticator
+- Terms and Conditions
+- WebAuthn Authenticate
+- WebAuthn Error
+- WebAuthn Register
+
+### Identity Provider Icons
+
+- Apple
+- Bitbucket
+- Discord
+- Facebook
+- GitHub
+- GitLab
+- Google
+- Instagram
+- LinkedIn
+- Microsoft
+- OpenID
+- Red Hat OpenShift
+- PayPal
+- Slack
+- Stack Overflow
+- Twitter
 
 ### Styled Pages
 
@@ -52,8 +97,8 @@ Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](http
 
 Keywind has been designed with component-based architecture from the start, and **you can customize as little or as much Keywind as you need**:
 
-1. [Deploy Keywind Login Theme](https://www.keycloak.org/docs/latest/server_development/#deploying-themes)
-2. [Create your own Login Theme](https://www.keycloak.org/docs/latest/server_development/#creating-a-theme)
+1. [Deploy Keywind Themes](https://www.keycloak.org/docs/latest/server_development/#deploying-themes)
+2. [Create your own Themes](https://www.keycloak.org/docs/latest/server_development/#creating-a-theme)
 3. Specify parent theme in [theme properties](https://www.keycloak.org/docs/latest/server_development/#theme-properties):
 
 ```
@@ -97,6 +142,10 @@ You can update Keywind components in your own child theme. For example, create a
   </body>
 </#macro>
 ```
+
+If you want to customize your own email components, update the files located in:
+
+`theme/mytheme/email/html-src`
 
 ## Build
 
