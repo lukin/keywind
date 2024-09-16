@@ -26,7 +26,7 @@ type StoreType = {
     requireResidentKey: string;
     rpEntityName: string;
     rpId: string;
-    signatureAlgorithms: string;
+    signatureAlgorithms: string[];
     unsupportedBrowserText: string;
     userId: string;
     userVerificationRequirement: UserVerificationRequirement | 'not specified';
@@ -61,16 +61,16 @@ document.addEventListener('alpine:init', () => {
       username,
     } = this.$store.webAuthnRegister;
 
-    const getPubKeyCredParams = (signatureAlgorithms: string) => {
+    const getPubKeyCredParams = (signatureAlgorithms: string[]) => {
       const pubKeyCredParams: PublicKeyCredentialParameters[] = [];
 
-      if (signatureAlgorithms === '') {
+      if (signatureAlgorithms.length == 0) {
         pubKeyCredParams.push({ alg: -7, type: 'public-key' });
 
         return pubKeyCredParams;
       }
 
-      const signatureAlgorithmsList = signatureAlgorithms.split(',');
+      const signatureAlgorithmsList = signatureAlgorithms;
 
       signatureAlgorithmsList.forEach((value) => {
         pubKeyCredParams.push({
