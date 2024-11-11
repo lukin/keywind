@@ -22,7 +22,9 @@
     class="<#compress>${colorClass} ${sizeClass} inline-flex</#compress>"
 
     <#list rest as attrName, attrValue>
-      ${attrName}="${attrValue}"
+      <#if attrValue!="">
+        ${attrName}="${attrValue}"
+      </#if>
     </#list>
   >
     <#nested>

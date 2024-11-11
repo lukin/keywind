@@ -3,8 +3,8 @@
   "name": "keywind",
   "scripts": {
     "build": "tsc && vite build",
-    "build:jar": "vite-node scripts/build",
-    "dev": "vite dev",
+    "build:jar": "pnpm run build && vite-node scripts/build",
+    "dev": "vite build --watch",
     "test": "mvn test"
   },
   "dependencies": {

@@ -34,6 +34,7 @@
             label=usernameLabel
             message=kcSanitize(messagesPerField.get("username"))?no_esc
             name="username"
+            required=true
             type="text"
             value=(login.username)!''
           />
