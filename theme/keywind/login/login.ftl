@@ -80,7 +80,7 @@
       </div>
     </#if>
   <#elseif section="socialProviders">
-    <#if realm.password && social.providers??>
+    <#if realm.password && social.providers?? && social.providers?has_content>
       <@identityProvider.kw providers=social.providers />
     </#if>
   </#if>
