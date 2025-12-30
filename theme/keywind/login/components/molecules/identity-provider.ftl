@@ -1,7 +1,7 @@
 <#import "/assets/providers/providers.ftl" as providerIcons>
 
 <#macro kw providers=[]>
-  <div class="pt-4 separate text-secondary-600 text-sm">
+  <div class="pt-4 separate text-secondary-600 dark:text-gray-400 text-sm">
     ${msg("identity-provider-login-label")}
   </div>
   <div class="gap-4 grid grid-cols-3">
@@ -63,7 +63,7 @@
       </#switch>
 
       <a
-        class="${colorClass} border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-transparent"
+        class="${colorClass} border border-secondary-200 dark:border-gray-600 flex justify-center py-2 rounded-lg hover:border-transparent dark:hover:border-gray-500"
         data-provider="${provider.alias}"
         href="${provider.loginUrl}"
         type="button"

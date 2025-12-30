@@ -44,7 +44,7 @@
     </#if>
     <#nested "form">
     <#if displayRequiredFields>
-      <p class="text-secondary-600 text-sm">
+      <p class="text-secondary-600 dark:text-gray-400 text-sm">
         * ${msg("requiredFields")}
       </p>
     </#if>

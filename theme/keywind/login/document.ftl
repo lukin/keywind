@@ -4,6 +4,23 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script>
+    // Dark mode detection - runs immediately to prevent flash
+    (function() {
+      const htmlElement = document.documentElement;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      // Only add class if Keycloak hasn't already set it
+      if (!htmlElement.classList.contains('dark') && !htmlElement.classList.contains('light')) {
+        if (prefersDark) {
+          htmlElement.classList.add('dark');
+        } else {
+          htmlElement.classList.add('light');
+        }
+      }
+    })();
+  </script>
 
   <#if properties.meta?has_content>
     <#list properties.meta?split(" ") as meta>

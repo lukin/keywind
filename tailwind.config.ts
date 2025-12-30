@@ -3,6 +3,7 @@ import colors from 'tailwindcss/colors';
 
 export default {
   content: ['./theme/**/*.ftl'],
+  darkMode: 'class',
   experimental: {
     optimizeUniversalDefaults: true,
   },
