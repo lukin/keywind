@@ -58,7 +58,7 @@ document.addEventListener('alpine:init', () => {
       }
 
       const publicKey: PublicKeyCredentialRequestOptions = {
-        challenge: base64url.parse(challenge, { loose: true }),
+        challenge: new Uint8Array(base64url.parse(challenge, { loose: true })),
         rpId: rpId,
       };
 
@@ -121,7 +121,7 @@ document.addEventListener('alpine:init', () => {
           authnSelectFormElements.forEach((element) => {
             if (element instanceof HTMLInputElement) {
               allowCredentials.push({
-                id: base64url.parse(element.value, { loose: true }),
+                id: new Uint8Array(base64url.parse(element.value, { loose: true })),
                 type: 'public-key',
               });
             }
